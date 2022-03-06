@@ -1,22 +1,22 @@
-const themes = {
-    "light": {
-        "accentColor": "#C37CFF",
-        "mainColor": "#e8ccff",
-        "textColor": "#333"
-    },
-    "dark": {
-        "accentColor": "#7e52a2",
-        "mainColor": "#281a33",
-        "textColor": "#DDD"
-    }
-}
-
 class ThemeManager {
     constructor(theme) {
+        this.themes = {
+            "light": {
+                "accentColor": "#C37CFF",
+                "mainColor": "#e8ccff",
+                "textColor": "#333"
+            },
+            "dark": {
+                "accentColor": "#7e52a2",
+                "mainColor": "#281a33",
+                "textColor": "#DDD"
+            }
+        }
+
         this.theme = theme;
 
         $(document).ready(async () => {
-            this._update()
+            this.update()
 
             setTimeout(() => {
                 $("body *").css("-webkit-transition", "color 1s ease, background-color 1s ease, border-color 1s ease, filter 1s ease")
@@ -40,14 +40,14 @@ class ThemeManager {
 
         localStorage.setItem("theme", this.theme)
 
-        this._update()
+        this.update()
     }
 
-    _update() {
+    update() {
         $(':root')
-            .css("--accent-color", themes[this.theme].accentColor)
-            .css("--main-color", themes[this.theme].mainColor)
-            .css("--text-color", themes[this.theme].textColor)
+            .css("--accent-color", this.themes[this.theme].accentColor)
+            .css("--main-color", this.themes[this.theme].mainColor)
+            .css("--text-color", this.themes[this.theme].textColor)
 
         if (this.theme == "light") {
             $(".svg").addClass("svgLight")
@@ -62,4 +62,4 @@ class ThemeManager {
 if (!localStorage.getItem("theme"))
     localStorage.setItem("theme", window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
 
-const themeManager = new ThemeManager(localStorage.getItem("theme"))
+new ThemeManager(localStorage.getItem("theme"))
