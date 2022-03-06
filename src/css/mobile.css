@@ -33,4 +33,10 @@
     #navbar a {
         margin: auto !important;
     }
+
+    #content .small {
+        min-width: 100% !important;
+        float: none;
+        margin: 1% 0%;
+    }
 }
