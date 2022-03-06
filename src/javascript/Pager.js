@@ -9,12 +9,20 @@ class Pager {
     }
 
     loadPage(skip) {
-        $("#content").fadeOut(skip ? 0 : 1000, () => {
-            $("#content").load(`src/html/${location.href.split("#")[1]||"projects"}.html`, (res, status, xhr) => {
+        let content = $("#content")
+
+        if ($(window).scrollTop() < content.offset().top && !skip) 
+            window.scrollTo({
+                top: content.offset().top,
+                behavior: "smooth"
+            })
+
+        content.fadeOut(skip ? 0 : 1000, () => {
+            content.load(`src/html/${location.href.split("#")[1]||"projects"}.html`, (res, status, xhr) => {
                 if(status == "error") {
-                    $("#content").html(this.error(xhr))
+                    content.html(this.error(xhr))
                 }
-                $("#content").fadeIn(skip ? 0 : 1000)
+                content.fadeIn(skip ? 0 : 1000)
             })
         })
     }
