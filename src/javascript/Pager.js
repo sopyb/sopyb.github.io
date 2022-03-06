@@ -1,6 +1,6 @@
 class Pager {
     constructor() {
-        $(document).ready(() => this.loadPage())
+        $(document).ready(() => this.loadPage(true))
     }
 
     changePage(page) {
@@ -8,11 +8,14 @@ class Pager {
         this.loadPage()
     }
 
-    loadPage() {
-        $("#content").load(`src/html/${location.href.split("#")[1]||"aboutMe"}.html`, (res, status, xhr) => {
-            if(status == "error") {
-                $("#content").html(this.error(xhr))
-            }
+    loadPage(skip) {
+        $("#content").fadeOut(skip ? 0 : 1000, () => {
+            $("#content").load(`src/html/${location.href.split("#")[1]||"aboutMe"}.html`, (res, status, xhr) => {
+                if(status == "error") {
+                    $("#content").html(this.error(xhr))
+                }
+                $("#content").fadeIn(skip ? 0 : 1000)
+            })
         })
     }
 
