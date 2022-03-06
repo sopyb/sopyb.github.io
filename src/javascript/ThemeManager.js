@@ -23,7 +23,7 @@ class ThemeManager {
                 $("body *").css("-moz-transition", "color 1s ease, background-color 1s ease, border-color 1s ease, filter 1s ease")
                 $("body *").css("-o-transition", "color 1s ease, background-color 1s ease, border-color 1s ease, filter 1s ease")
                 $("body *").css("transition", "color 1s ease, background-color 1s ease, border-color 1s ease, filter 1s ease")
-            },50)
+            }, 50)
 
             $("#lightSwitch").click(() => {
                 this.changeTheme()
@@ -49,7 +49,7 @@ class ThemeManager {
             .css("--main-color", themes[this.theme].mainColor)
             .css("--text-color", themes[this.theme].textColor)
 
-        if(this.theme == "light") {
+        if (this.theme == "light") {
             $(".svg").addClass("svgLight")
             $(".svg").removeClass("svgDark")
         } else {
@@ -59,7 +59,7 @@ class ThemeManager {
     }
 }
 
-if(!localStorage.getItem("theme")) 
+if (!localStorage.getItem("theme"))
     localStorage.setItem("theme", window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
 
 const themeManager = new ThemeManager(localStorage.getItem("theme"))

@@ -47,7 +47,7 @@ img {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 .panel {
@@ -95,4 +95,9 @@ img {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+#navbar a:hover {
+    background-color: var(--main-color);
+    color: var(--text-color);
 }
