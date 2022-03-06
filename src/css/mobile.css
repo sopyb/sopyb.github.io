@@ -1,0 +1,36 @@
+@media screen and (orientation: portrait) {
+    
+    h1 {
+        font-size: 5vh;
+    }
+
+    a, p {
+        font-size: 2vh;
+    }
+
+    button {
+        border: none;
+        padding: 2vh;
+    }
+    
+    button:hover {
+        background-color: var(--main-color);
+    }
+    
+    button img {
+        height: 3vh;
+    }
+
+    #header .center img {
+        max-height: unset !important;
+        width: 80%;
+    }
+
+    #navbar {
+        justify-content: unset !important;
+    }
+
+    #navbar a {
+        margin: auto !important;
+    }
+}
