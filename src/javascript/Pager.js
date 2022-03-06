@@ -10,7 +10,7 @@ class Pager {
 
     loadPage(skip) {
         $("#content").fadeOut(skip ? 0 : 1000, () => {
-            $("#content").load(`src/html/${location.href.split("#")[1]||"aboutMe"}.html`, (res, status, xhr) => {
+            $("#content").load(`src/html/${location.href.split("#")[1]||"projects"}.html`, (res, status, xhr) => {
                 if(status == "error") {
                     $("#content").html(this.error(xhr))
                 }
