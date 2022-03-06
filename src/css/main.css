@@ -10,6 +10,11 @@
     #333 light mode*/
 }
 
+a, a * {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
 button {
     background-color: transparent;
     border: none;
@@ -28,8 +33,20 @@ body {
     margin: 0%;
 }
 
-h1, p, a {
+h1, p, li {
     color: var(--text-color);
+}
+
+p {
+    text-indent: 5%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 1%;
 }
 
 img {
@@ -60,6 +77,10 @@ img {
     width: 100vw;
     max-width: 100%;
     min-height: 100vh;
+}
+
+#content {
+    margin: 5%;
 }
 
 #panelHolder {
@@ -104,4 +125,8 @@ img {
 #navbar a:hover {
     background-color: var(--main-color);
     color: var(--text-color);
+}
+
+#lightSwitch p {
+    white-space: nowrap;
 }
