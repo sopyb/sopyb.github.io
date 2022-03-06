@@ -1,21 +1,22 @@
-:root {
-    --accent-color: #7e52a2;
-    /* #7e52a2 dark mode
-    #C37CFF light mode*/
-    --main-color: #281a33;
-    /* #281a33 dark mode
-    #e8ccff light mode*/
-    --text-color: #DDD;
-    /* #DDD dark mode
-    #333 light mode*/
-}
+/*:root {
+    --accent-color: ;
+    #4f3366 dark mode
+    #C37CFF light mode
+    --main-color: ;
+    #0d0911 dark mode
+    #e8ccff light mode
+    --text-color: ;
+    #DDD dark mode
+    #333 light mode
+}*/
 
-a, a * {
+#content a, #content a * {
     color: var(--accent-color);
     text-decoration: none;
+    font-weight: bold;
 }
 
-a:hover, a *:hover {
+#content a:hover, #content a *:hover {
     text-decoration: underline;
 }
 
@@ -120,6 +121,7 @@ iframe {
 
 #header * {
     margin: 0px;
+    text-indent: 0% !important;
 }
 
 #header .center img {

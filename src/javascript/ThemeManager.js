@@ -7,8 +7,8 @@ class ThemeManager {
                 "textColor": "#333"
             },
             "dark": {
-                "accentColor": "#7e52a2",
-                "mainColor": "#281a33",
+                "accentColor": "#4f3366",
+                "mainColor": "#0d0911",
                 "textColor": "#DDD"
             }
         }
