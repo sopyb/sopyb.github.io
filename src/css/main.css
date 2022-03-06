@@ -20,6 +20,10 @@
     text-decoration: underline;
 }
 
+div {
+    overflow: auto 
+}
+
 button {
     background-color: transparent;
     border: none;
@@ -102,10 +106,16 @@ iframe {
     width: 100%;
 }
 
-#content .small {
+#content .imageBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#content .imageBox * {
     width: 40%; 
-    float:right;
     margin: 0% 5%;
+    align-self: center;
 }
 
 #panelHolder {
