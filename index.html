@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes">
 
@@ -12,18 +12,20 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="src/javascript/ThemeManager.js"></script>
         <script src="src/javascript/Pager.js"></script>
+
+        <title>Sopy.1</title>
     </head>
 
     <body>
 
         <div id="panelHolder">
             <div class="panel" id="header">
-                <button id="lightSwitch"><img draggable="false" class="svg" src="https://raw.githubusercontent.com/primer/octicons/main/icons/light-bulb-24.svg"><p>Toggle Lights</p></button>
+                <button id="lightSwitch"><img alt="lightBulb" draggable="false" class="svg" src="https://raw.githubusercontent.com/primer/octicons/main/icons/light-bulb-24.svg"><span>Toggle Lights</span></button>
 
                 <div class="center">
                     <h1>Sopy.one</h1>
-                    <p>Welcome, stranger, to my portofolio.</p>
-                    <img draggable="false" src="src/img/theCat.png">
+                    <p>Welcome, stranger, to my portfolio.</p>
+                    <img alt="logo" draggable="false" src="src/img/theCat.png">
                     <div id="navbar">
                         <a onclick="pager.changePage('aboutMe')">About Me</a>
                         <a onclick="pager.changePage('projects')">Projects</a>
