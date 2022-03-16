@@ -79,9 +79,9 @@ iframe {
 
 .inline-svg {
     display: inline;
-    height: 32px !important;
-    padding-left: 16px;
-    width: 32px !important;
+    height: 38px !important;
+    padding: 0 4px;
+    width: 38px !important;
     float: right;
 }
 
@@ -102,11 +102,15 @@ iframe {
     min-height: 100vh;
 }
 
+.nowrap {
+    white-space: nowrap;
+}
+
 #content {
     margin: 2% 10%;
 }
 
-#content h2 {
+#content h2, #content h2 span {
     color: var(--accent-color);
 }
 
