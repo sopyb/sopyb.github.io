@@ -24,6 +24,39 @@ div {
     overflow: auto 
 }
 
+h2 > button {
+    float: right;
+}
+
+button.skillsList {
+    white-space: nowrap;
+    padding: 0;
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+button.skillsList:before {
+    float: left;
+    font-size: 18px;
+    padding: 0 8px;
+    vertical-align: middle;
+    line-height: 38px;
+    color: var(--accent-color);
+    font-weight: bold;
+    content: "\1438";
+    transform: rotate3d(0, 1, 0, 180deg);
+    max-width: 100%;
+
+    -webkit-transition: transform 0.5s ease-in-out;
+    -moz-transition: transform 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+}
+
+button.skillsList.collapsed:before {
+    transform: rotate3d(0, 1, 0, 0deg);
+}
+
 button {
     background-color: transparent;
     border: none;
@@ -82,7 +115,7 @@ iframe {
     height: 38px !important;
     padding: 0 4px;
     width: 38px !important;
-    float: right;
+    /*float: right;*/
 }
 
 .center {
