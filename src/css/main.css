@@ -76,7 +76,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-h1, p, li, span {
+h1, h2, p, li, span {
     color: var(--text-color);
 }
 
