@@ -1,4 +1,8 @@
 <script lang="ts">
+    // app page imports
+    import Panel from "./utils/Panel.svelte";
+    import NavBar from "./utils/NavBar.svelte";
+
     // single page routing
     // import pages
     import Home from './pages/Home.svelte';
@@ -30,10 +34,14 @@
 
     // change page
     function changePage(page: string) {
-        page |= "home"; // default page
+        page == page || "home"; // default page
         location.href = "#/" + page;
         curPage = page;
         updatePageComp();
+
+        // scroll past the first panel
+        window.scrollTo({top: window.innerHeight, behavior: "smooth"});
+
     }
 
     // update page component on load
@@ -45,5 +53,13 @@
     <link href="https://www.nerdfonts.com/assets/css/combo.css" rel="stylesheet" type="text/css">
 </svelte:head>
 
-<!--add page component-->
+<!--Heading-->
+<Panel>
+    <div slot="center">
+        <h1>My Portfolio</h1>
+        <NavBar changePage={changePage} curPage={curPage} />
+    </div>
+</Panel>
+
+<!--add page content-->
 <svelte:component this={pageComponent}/>
