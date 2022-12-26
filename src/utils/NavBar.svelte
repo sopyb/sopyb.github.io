@@ -2,9 +2,9 @@
     let pages: string[] = [
         'home',
         'about',
-        'contact',
+        'projects',
     ]
-    export let changePage = (page: string) => {};
+    export let changePage = () => {};
     export let curPage: string = "home";
 </script>
 
@@ -18,5 +18,30 @@
     li {
         display: inline-block;
         margin: 0 10px;
+    }
+
+    .active {
+        color: red;
+    }
+
+    .active:hover {
+        color: red;
+    }
+
+    li:hover {
+        color: blue;
+    }
+
+/*    center ul items*/
+    ul {
+        text-align: center;
+    }
+
+    ul li {
+        display: inline-block;
+        margin: 0 10px;
+
+        padding: 10px;
+        border: 1px solid black;
     }
 </style>
