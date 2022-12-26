@@ -11,15 +11,17 @@
 <style>
     .main {
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
 
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: fit-content(100%) 1fr fit-content(100%);
+        grid-template-rows: fit-content(100%) 1fr fit-content(100%);
         grid-template-areas:
             ". cX ."
             "cY c ."
             ". . .";
+
+
     }
 
     .center-content {

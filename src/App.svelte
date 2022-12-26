@@ -1,7 +1,7 @@
 <script lang="ts">
     // app page imports
-    import Panel from "./utils/Panel.svelte";
-    import NavBar from "./utils/NavBar.svelte";
+    import Panel from "./Elements/Panel.svelte";
+    import NavBar from "./Elements/NavBar.svelte";
 
     // single page routing
     // import pages
