@@ -22,8 +22,6 @@
             ". cX ."
             "cY c ."
             ". . .";
-
-
     }
 
     .center-content {

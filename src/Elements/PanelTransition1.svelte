@@ -9,16 +9,17 @@
 <style>
     div {
         position: relative;
-        border-bottom: 5vh solid transparent;
-        border-top: 5vh solid var(--previous-color);
+        border-bottom: 3vh solid transparent;
+        border-top: 10vh solid var(--previous-color);
 
-        border-left: 30vw solid transparent;
-        border-right: 30vw solid var(--previous-color);
+        border-left: 60vw solid transparent;
+        border-right: 15vw solid var(--previous-color);
 
         height: 0;
         width: 100%;
 
-        margin-bottom: -10vh;
+        top: -1px; /* firefox fix */
+        margin-bottom: -13vh;
 
         background-color: transparent;
         z-index: 99999;

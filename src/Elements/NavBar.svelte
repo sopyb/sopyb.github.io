@@ -21,15 +21,16 @@
     }
 
     .active {
-        color: red;
+        color: #678dda;
     }
 
     .active:hover {
-        color: red;
+        color: #bb78dd;
     }
 
     li:hover {
-        color: blue;
+        color: #bb78dd;
+        background-color: #222;
     }
 
 /*    center ul items*/
@@ -42,6 +43,12 @@
         margin: 0 10px;
 
         padding: 10px;
-        border: 1px solid black;
+        border: 1px solid #DDD;
+        border-radius: 5px;
+        background-color: #444;
+    }
+
+    * {
+        transition: all 0.2s ease-in-out;
     }
 </style>

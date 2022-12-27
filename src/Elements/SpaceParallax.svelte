@@ -114,8 +114,8 @@
 
     .stars {
         position: relative;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
 
         overflow: hidden;
     }
@@ -128,12 +128,13 @@
         position: absolute;
         margin: 0;
         transform: scale(3);
+        overflow: hidden;
 
         transition: transform 0.1s linear;
     }
 
     #starContainer1 {
-        z-index: 3;
+        z-index: 1;
     }
 
     #starContainer2 {
@@ -141,6 +142,6 @@
     }
 
     #starContainer3 {
-        z-index: 1;
+        z-index: 3;
     }
 </style>

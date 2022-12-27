@@ -1,4 +1,7 @@
 <script lang="ts">
+    // fly
+    import { fly } from 'svelte/transition';
+
     // app page imports
     import Panel from "./Elements/Panel.svelte";
     import NavBar from "./Elements/NavBar.svelte";
@@ -11,7 +14,13 @@
     import NotFound from './pages/NotFound.svelte';
     import PanelTransition2 from "./Elements/PanelTransition2.svelte";
 
-    let curPage: string = location.href.split("#/")[1] || "home";
+    // let title change - counter
+    let counter = Math.floor(Math.random() * 4);
+    setInterval(() => {
+        counter = Math.floor(Math.random() * 4);
+    }, 10000);
+
+    let curPage: string = location.href.split("#/")[1] || "about";
     let pageComponent: any;
     let firstLoad: boolean = true;
     let pageNotFound: boolean = false;
@@ -40,7 +49,7 @@
 
     // change page
     function changePage(page: string) {
-        page == page || "home"; // default page
+        page == page || "about"; // default page
         location.href = "#/" + page;
         curPage = page;
         updatePageComp();
@@ -69,7 +78,15 @@
 {#if !pageNotFound}
 <Panel>
     <div>
-        <h1>My Portfolio</h1>
+        {#if counter===0}
+        <h1 in:fly={{y: -48}}>one.sopy.portfolio</h1>
+        {:else if counter===1}
+        <h1 in:fly={{y: -48}}>Sopy's portfolio</h1>
+        {:else if counter===2}
+        <h1 in:fly={{y: -48}}>Placeholder title</h1>
+        {:else if counter===3}
+        <h1 in:fly={{y: -48}}>*insert portfolio title*</h1>
+        {/if}
         <NavBar changePage={changePage} curPage={curPage} />
     </div>
 </Panel>

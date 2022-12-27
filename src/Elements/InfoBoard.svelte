@@ -57,7 +57,7 @@
 <style>
     .infoGrid {
         display: grid;
-        margin: 8px;
+        margin: 24px;
 
         width: 90vw;
 
