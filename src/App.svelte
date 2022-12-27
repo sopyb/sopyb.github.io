@@ -5,6 +5,7 @@
     // app page imports
     import Panel from "./Elements/Panel.svelte";
     import NavBar from "./Elements/NavBar.svelte";
+    import PanelTransition2 from "./Elements/PanelTransition2.svelte";
 
     // single page routing
     // import pages
@@ -12,7 +13,6 @@
     import Contact from './pages/Contact.svelte';
     import Projects from "./pages/Projects.svelte";
     import NotFound from './pages/NotFound.svelte';
-    import PanelTransition2 from "./Elements/PanelTransition2.svelte";
 
     // let title change - counter
     let counter = Math.floor(Math.random() * 4);
@@ -49,6 +49,7 @@
 
     // change page
     function changePage(page: string) {
+        if(page === curPage) return mounted();
         page == page || "about"; // default page
         location.href = "#/" + page;
         curPage = page;
