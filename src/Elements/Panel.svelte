@@ -1,5 +1,5 @@
 <script>
-    export let bgcolor = "#CCC";
+    export let bgcolor = "#444";
 </script>
 <!--div with background color = bgcolor-->
 <div class="main" style="background-color: {bgcolor};">
@@ -12,6 +12,8 @@
     .main {
         width: 100%;
         min-height: 100vh;
+
+        color: #fff;
 
         display: grid;
         grid-template-columns: fit-content(100%) 1fr fit-content(100%);

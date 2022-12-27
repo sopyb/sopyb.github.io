@@ -1,8 +1,8 @@
 <script lang="ts">
     let pages: string[] = [
-        'home',
         'about',
         'projects',
+        'contact'
     ]
     export let changePage = () => {};
     export let curPage: string = "home";

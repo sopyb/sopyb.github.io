@@ -57,18 +57,18 @@
 <style>
     .infoGrid {
         display: grid;
-        margin: 24px;
+        margin: 8px;
 
         width: 90vw;
 
-        grid-template-columns: fit-content(100%) fit-content(100%) fit-content(100%);
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%);
         grid-template-areas:
             "t t t"
             "a b c"
             "d e f"
             "g h i";
-        grid-gap: 16px;
+        grid-gap: 16px 32px;
         padding: 10px;
 
     /*    center to grid slot*/
@@ -126,9 +126,10 @@
 
     *:not(.infoGrid) {
         width: 100%;
+        height: 100%;
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 768px) {
         .infoGrid {
             grid-template-columns: 1fr;
             grid-template-rows: 0.3fr fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%);
@@ -143,6 +144,76 @@
                 "g"
                 "h"
                 "i";
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1200px) {
+        .infoGrid {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 0.3fr fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%);
+            grid-template-areas:
+                "t t"
+                "a b"
+                "c d"
+                "e f"
+                "g h"
+                "i i";
+        }
+
+        .infoGrid_item9 {
+            width: 50%;
+        }
+    }
+
+    @media (min-width: 1201px) {
+        .infoGrid_item1, .infoGrid_item4, .infoGrid_item7 {
+            transform: translate(0, 0%);
+            animation: 4s ease-in-out 1s infinite forwards float10;
+            animation-delay: -1s;
+        }
+
+        .infoGrid_item2, .infoGrid_item5, .infoGrid_item8 {
+            transform: translate(0, 10%);
+            animation: 5s ease-in-out 1s infinite forwards float5;
+            animation-delay: -1s;
+        }
+
+        .infoGrid_item3, .infoGrid_item6, .infoGrid_item9 {
+            transform: translate(0, 0%);
+            animation: 4s ease-in-out 1s infinite forwards float10;
+            animation-delay: -1s;
+        }
+    }
+
+    /*reduced motion preference*/
+    @media (prefers-reduced-motion: reduce) {
+        .infoGrid_item1, .infoGrid_item2, .infoGrid_item3, .infoGrid_item4, .infoGrid_item5, .infoGrid_item6, .infoGrid_item7, .infoGrid_item8, .infoGrid_item9 {
+            animation: none;
+        }
+    }
+
+    /*animations*/
+    @keyframes float10 {
+        0% {
+            transform: translate(0, 0%);
+        }
+        50% {
+            transform: translate(0, 10%);
+        }
+        100% {
+            transform: translate(0, 0%);
+        }
+    }
+
+    @keyframes float5 {
+        0% {
+            transform: translate(0, 2.5%);
+        }
+        50% {
+            transform: translate(0, 7.5%);
+        }
+        100% {
+            transform: translate(0, 2.5%);
         }
     }
 </style>

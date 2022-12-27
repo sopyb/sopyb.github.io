@@ -5,10 +5,11 @@
 
     // single page routing
     // import pages
-    import Home from './pages/Home.svelte';
     import About from './pages/About.svelte';
+    import Contact from './pages/Contact.svelte';
     import Projects from "./pages/Projects.svelte";
     import NotFound from './pages/NotFound.svelte';
+    import PanelTransition2 from "./Elements/PanelTransition2.svelte";
 
     let curPage: string = location.href.split("#/")[1] || "home";
     let pageComponent: any;
@@ -18,18 +19,18 @@
     // update page component
     function updatePageComp() {
         switch (curPage.toLowerCase()) {
-            case "home":
-            case "":
-                pageNotFound = false;
-                pageComponent = Home;
-                break;
             case "about":
+            case "":
                 pageNotFound = false;
                 pageComponent = About;
                 break;
             case "projects":
                 pageNotFound = false;
                 pageComponent = Projects;
+                break;
+            case "contact":
+                pageNotFound = false;
+                pageComponent = Contact;
                 break;
             default:
                 pageNotFound = true;
@@ -72,11 +73,10 @@
         <NavBar changePage={changePage} curPage={curPage} />
     </div>
 </Panel>
-{/if}
+<PanelTransition2></PanelTransition2>
 
 <!--add page content on load/change call mounted-->
-{#if pageNotFound}
-    <NotFound />
+<svelte:component this={pageComponent} on:mounted={mounted} />
 {:else}
-    <svelte:component this={pageComponent} on:mounted={mounted} />
+    <NotFound />
 {/if}
