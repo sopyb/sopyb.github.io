@@ -5,6 +5,9 @@
     import InfoCard from '../Elements/InfoCard.svelte'
     import SlashedPanelTransition from '../Elements/PanelTransition1.svelte'
     import SpaceParallax from '../Elements/SpaceParallax.svelte'
+    import PanelTransition3 from '../Elements/PanelTransition3.svelte'
+    import ContentSection from '../Elements/ContentSection.svelte'
+    import SkillShowcase from '../Elements/SkillShowcase.svelte'
 
     const dispatch = createEventDispatcher()
 
@@ -29,7 +32,7 @@
         <InfoCard color="#aaa" slot="item3">
             <div slot="header"><i class="nf nf-fa-cogs"></i> Software Developer</div>
             <div slot="subtitle">*keyboard face-plant*</div>
-            <div slot="body">I have something for customizing... I started wanting to make Minecraft mods now I'm just doing random utilities I don't need.</div>
+            <div slot="body">I have a thing for customizing... I started making Minecraft mods now I'm just doing random utilities I don't need.</div>
         </InfoCard>
         <InfoCard color="#67b4da" slot="item4">
             <div slot="header"><i class="nf nf-fa-desktop"></i> Tech Enthusiast</div>
@@ -49,15 +52,15 @@
         <InfoCard color="#add6eb" slot="item7">
             <div slot="header"><i class="nf nf-mdi-xbox_controller"></i> Gamer</div>
             <div slot="subtitle">Competitively mediocre</div>
-            <div slot="body">I've always liked to play games and to compete with others. Gaming was a core part in my uprising without which I'd never have became myself.</div>
+            <div slot="body">I've always liked to play games and to compete with others. Gaming was a core part in my emergence without which I'd never have became myself.</div>
         </InfoCard>
         <InfoCard color="#ebadeb" slot="item8">
             <div slot="header"><i class="nf nf-mdi-music_note"></i> Artist</div>
             <div slot="subtitle">Multilateral</div>
-            <div slot="body">I love poetry, photography and music so I occasionally do some myself. I use it to connect to my own feelings and to comfort others.</div>
+            <div slot="body">I love poetry, photography and music so I occasionally compose some. I use it to connect to my own feelings and to comfort others.</div>
         </InfoCard>
         <InfoCard color="#FFF" slot="item9">
-            <div slot="header"><i class="nf nf-cod-globe"></i> Traveler</div>
+            <div slot="header"><i class="nf nf-cod-globe"></i> Excursionist</div>
             <div slot="subtitle">Certified travel agent (seriously)</div>
             <div slot="body">I've visited over 10 countries across 3 continents. I've studied tourism during high-school which led to my certification.</div>
         </InfoCard>
@@ -67,5 +70,20 @@
 <SlashedPanelTransition></SlashedPanelTransition>
 
 <Panel bgcolor="#000">
-    <SpaceParallax></SpaceParallax>
+    <div>
+        <SpaceParallax>
+            <div style="padding: 1vw">
+                <h1 style="color: #DDD; font-size: 3em; font-weight: bold">Skills</h1>
+                <p style="color: #DDD; margin-bottom: 0">*Oh btw this panel has parallax*</p>
+            </div>
+        </SpaceParallax>
+    </div>
+</Panel>
+
+<PanelTransition3 previousColor="#444"></PanelTransition3>
+
+<Panel>
+    <SkillShowcase slot="centerX">
+
+    </SkillShowcase>
 </Panel>

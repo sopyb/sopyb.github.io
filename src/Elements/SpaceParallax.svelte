@@ -74,6 +74,9 @@
 </script>
 
 <div class="stars" on:mousemove={mousemove}>
+    <div class="centered">
+        <slot> </slot>
+    </div>
     <div bind:this={container1} bind:clientWidth={w} bind:clientHeight={h} id="starContainer1">
         <div class="relative">
             {#each stars[0] as star}
@@ -120,6 +123,20 @@
         overflow: hidden;
     }
 
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 4;
+
+        background-color: #33333377;
+        border-radius: 10px;
+
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
     #starContainer1,
     #starContainer2,
     #starContainer3 {
@@ -130,7 +147,7 @@
         transform: scale(3);
         overflow: hidden;
 
-        transition: transform 0.1s linear;
+        transition: transform 0.2s ease-out;
     }
 
     #starContainer1 {

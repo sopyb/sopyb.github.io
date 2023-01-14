@@ -22,7 +22,7 @@
 
                 <!--            filter categories in select-->
                 <select size=4 id="category">
-                    <option value="all">All</option>
+                    <option value="all" selected>All</option>
                     <option value="category1">Programming</option>
                     <option value="category2">Art</option>
                     <option value="category3">Others</option>
@@ -97,6 +97,7 @@
             <ResultPane />
             <ResultPane />
             <ResultPane />
+            <ResultPane />
         </div>
     </div>
 </Panel>
@@ -162,29 +163,42 @@
     }
 
     #category option {
-        background-color: #333;
+        background: linear-gradient(#333, #333);
         color: #fff;
         font-size: 1rem;
         padding: 0.4rem;
         border-radius: 10px;
+
+        transition: background 22s;
     }
+
+    #category option:hover {
+        background: linear-gradient(#555, #555);
+    }
+
+    #category option:active, #category option:focus, #category option:checked {
+        background: linear-gradient(#bb78dd,#bb78dd);
+    }
+
 
     #skill {
         display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: repeat(auto-fit, 1fr);
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: auto;
         grid-gap: 0.1rem;
 
         margin: 1rem 1rem;
     /*    set max size to 3 rows if more scroll*/
         max-height: 9.1rem;
-        width: calc(100% - 10em);
+        width: 100%;
         overflow: auto;
 
     /*    center items to their grid square*/
         align-items: center;
         justify-items: center;
     }
+
+
 
     .skill.active {
         background-color: #333;
@@ -205,7 +219,7 @@
     }
 
     .skill:hover {
-        background: #CCC;
+        background: #BBB;
     }
 
     .skill.active {
@@ -215,8 +229,8 @@
 
     .results {
         display: grid;
-        grid-template-columns: repeat(3, fit-content(100%));
-        grid-template-rows: 2fr;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
         grid-gap: 1rem;
 
         margin: 1rem 0;
@@ -226,7 +240,7 @@
         height: 100%;
     }
 
-    @media (max-width: 768px) {
+    @media (max-aspect-ratio: 5/6) {
         .controls {
             width: 100%;
             min-width: 0;
@@ -253,5 +267,21 @@
 
             max-height: unset;
         }
+
+        .results {
+            grid-template-columns: 1fr;
+            width: 100%;
+        }
     }
+
+    @media (min-aspect-ratio: 5/6) and (max-aspect-ratio: 3/2) {
+        .results {
+            grid-template-columns: 1fr;
+            width: 80%;
+
+            margin: auto;
+        }
+    }
+
+
 </style>
