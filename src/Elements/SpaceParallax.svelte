@@ -5,7 +5,7 @@
     [],
     []
   ]
-  let container1, container2, container3, w, h
+  let starcont, container1, container2, container3, w, h
 
   function createStar (parent, size) {
     stars[parent].push(`
@@ -29,7 +29,15 @@
   }
 
   // desktop parallax
-  function mousemove (e) {
+  export function mousemove (e) {
+    // check if mouse is over the star container
+    {
+        let rect = starcont.getBoundingClientRect()
+        if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
+            return
+        }
+    }
+
     let x = e.screenX,
       y = e.screenY,
       // calculate the position of the mouse on the screen as a percentage
@@ -73,7 +81,9 @@
   }
 </script>
 
-<div class="stars" on:mousemove={mousemove}>
+<svelte:body on:mousemove={mousemove} />
+
+<div class="stars" bind:this={starcont}>
     <div class="centered">
         <slot> </slot>
     </div>
