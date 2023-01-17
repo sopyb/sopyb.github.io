@@ -131,7 +131,7 @@
   })
 </script>
 <Panel bgcolor="#222">
-    <div>
+    <div slot="centerX" class="parent">
         <div class="controls">
             <!--            search bar-->
             <div class="search">
@@ -173,6 +173,10 @@
 </Panel>
 
 <style>
+    .parent {
+        margin: 2rem 0;
+    }
+
     .controls {
         padding: 0 1rem;
         width: 60vw;
