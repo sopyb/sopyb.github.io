@@ -161,10 +161,7 @@
 
         font-size: 2rem;
         font-weight: 600;
-        margin: 0;
-
-        margin-top: 0.5rem;
-        margin-left: 1rem;
+        margin: 0.5rem 0 0 1rem;
 
     }
 

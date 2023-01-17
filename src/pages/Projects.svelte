@@ -144,9 +144,9 @@
                 <!--            filter categories in select-->
                 <select bind:value={category} size=4 id="category">
                     <option value=-1>All</option>
-                    <option value=0>Discord Bots</option>
-                    <option value=1>Websites</option>
-                    <option value=2>Games</option>
+                    <option value=0>Programming</option>
+                    <option value=1>Art</option>
+                    <option value=2>Others</option>
                 </select>
 
                 <!--            Multiple select for skills asociated to category-->
@@ -318,11 +318,10 @@
         grid-template-rows: auto;
         grid-gap: 1rem;
 
-        margin: 1rem 0;
+        margin: 1rem auto;
 
         width: 80vw;
-
-        height: 100%;
+        min-height: 15rem;
     }
 
     @media (max-aspect-ratio: 5/6) {
@@ -370,10 +369,10 @@
         }
     }
 
-    @media (min-aspect-ratio: 5/6) and (max-aspect-ratio: 3/2) {
+    @media (min-aspect-ratio: 5/6) and (max-aspect-ratio: 5/4) {
         .results {
             grid-template-columns: 1fr;
-            width: 80%;
+            width: 70%;
 
             margin: auto;
         }
