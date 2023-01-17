@@ -294,4 +294,10 @@
     }
 
 
+    @supports (-webkit-overflow-scrolling:touch) {
+        #category {
+            height: 3em;
+        }
+    }
+}
 </style>
