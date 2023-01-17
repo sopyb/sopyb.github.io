@@ -27,6 +27,16 @@
         icon: "nf-fa-mobile"
       },
       {
+        title: "Discord Bot Development",
+        content: "I'm a discord bot developer. I have experience with Discord.js, Node.js, and Express.",
+        icon: "nf-mdi-discord"
+      },
+      {
+        title: "Linux Administration",
+        content: "I'm a Linux administrator. I've been daily driving Linux for 2 years, and I have experience with Ubuntu, Fedora, Arch Linux and many other distributions.",
+        icon: "nf-mdi-linux"
+      },
+      {
         title: "Music Production",
         content: "I'm a music producer with experience in FL Studio. I have experience sound design, and mixing and mastering.",
         icon: "nf-fa-music"
