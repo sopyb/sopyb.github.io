@@ -130,10 +130,10 @@
     </div>
     <div class="fullscreen">
         <div class="fscontent">
-            <div class="fsimage" style="background-image: url('{src}')" {src} alt={alt}></div>
+            <div class="fsimage" style="background-image: url('{src}')" alt={alt}></div>
             <div class="content">
                 <h1 class="title">{title}</h1>
-                <p>{@html description}</p>
+                {@html description}
             </div>
         </div>
 
@@ -237,13 +237,15 @@
     .skills {
         /*    display as horizontally scrollable list*/
         display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
+        grid-template-rows: 1rem;
 
         clear: both;
 
         margin: 0;
         padding: 0;
 
-        height: 3rem;
+        height: 4rem;
 
         overflow-x: scroll;
         overflow-y: hidden;
@@ -251,9 +253,7 @@
     }
 
     .skillItem {
-        display: inline-block;
-        position: relative;
-
+        display: block;
         width: 2rem;
         height: 3rem;
     }

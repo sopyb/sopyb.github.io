@@ -183,7 +183,7 @@
 
     #skill {
         display: grid;
-        grid-template-columns: repeat(10, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
         grid-template-rows: auto;
         grid-gap: 0.1rem;
 
@@ -242,17 +242,26 @@
 
     @media (max-aspect-ratio: 5/6) {
         .controls {
-            width: 100%;
+            width: 100vw;
             min-width: 0;
+
+            margin: 0;
+
+            padding: 1rem 0rem;
+
+            box-sizing: border-box;
         }
 
         .search {
-            margin-right: 0;
+            width: 80vw;
+            margin: auto;
         }
 
         .filters {
             flex-direction: column;
             align-items: flex-start;
+            width: 85vw;
+            margin: 1rem auto;
         }
 
         #category {
@@ -261,7 +270,7 @@
         }
 
         #skill {
-            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: auto;
             width: 100%;
             margin: 0;
 
@@ -269,8 +278,9 @@
         }
 
         .results {
-            grid-template-columns: 1fr;
-            width: 100%;
+            grid-template-columns: 100%;
+            width: 80vw;
+            margin: auto;
         }
     }
 
