@@ -17,7 +17,7 @@
     }]
 </script>
 
-<div>
+<div class="parent">
     {#each data as item, i}
         <div class="type-{i%2}">
             <div class="icon">
@@ -32,6 +32,12 @@
 </div>
 
 <style>
+    .parent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
     .type-0, .type-1{
         display: grid;
         grid-template-columns: fit-content(100%) fit-content(100%);
@@ -63,16 +69,59 @@
         font-size: 10rem;
     }
     .content {
-        width: 40vw;
+        width: 50vw;
         max-width: 90%;
-        height: 80%;
+        min-height: 70%;
         background-color: #222;
         padding: 1rem;
         border-radius: 1rem;
+
+        display: grid;
+        grid-template-rows: fit-content(100%) 1fr;
+
+        grid-gap: 1rem;
+
+        align-items: center;
+        justify-items: center;
     }
 
     .content > h3 {
         color: #bb78dd;
         font-size: 2.5rem;
+        margin: 0;
+    }
+
+    .content > p {
+        color: #fff;
+        margin: 0;
+    }
+
+    @media (max-aspect-ratio: 1/1) {
+        .parent {
+            width: 90%;
+        }
+
+        .type-0, .type-1{
+            grid-template-columns: 1fr;
+            grid-template-rows: fit-content(100%) fit-content(100%);
+
+            grid-gap: 1rem;
+            margin-bottom: 2rem;
+
+            width: 100%;
+        }
+        .type-1 .icon {
+            grid-column: 1;
+            grid-row: 1;
+
+        }
+        .type-1 .content {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .content {
+            min-width: 90%;
+        }
     }
 </style>

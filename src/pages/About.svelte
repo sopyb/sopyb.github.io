@@ -6,10 +6,32 @@
     import SlashedPanelTransition from '../Elements/PanelTransition1.svelte'
     import SpaceParallax from '../Elements/SpaceParallax.svelte'
     import PanelTransition3 from '../Elements/PanelTransition3.svelte'
-    import ContentSection from '../Elements/ContentSection.svelte'
     import SkillShowcase from '../Elements/SkillShowcase.svelte'
 
     const dispatch = createEventDispatcher()
+
+    let skills_data=[
+      {
+        title: "Full-stack Web Development",
+        content: "I'm a web developer with experience in both front-end and back-end development. I have experience with HTML, CSS, JavaScript, Typescript, jQuery, Svelte, PHP, Node.js, Express, MariaDB, Firestore, and more.",
+        icon: "nf-fa-code"
+      },
+      {
+        title: "Game Development",
+        content: "I'm a game developer with experience in Unity and C#. I have experience with Unity's UI system and 3D graphics, and game logic.",
+        icon: "nf-fa-gamepad"
+      },
+      {
+        title: "Android Development",
+        content: "I'm an android developer. I have experience with Android Studio, Java, and Kotlin.",
+        icon: "nf-fa-mobile"
+      },
+      {
+        title: "Music Production",
+        content: "I'm a music producer with experience in FL Studio. I have experience sound design, and mixing and mastering.",
+        icon: "nf-fa-music"
+      }
+    ]
 
     onMount(() => {
       dispatch('mounted', true)
@@ -83,7 +105,7 @@
 <PanelTransition3 previousColor="#444"></PanelTransition3>
 
 <Panel>
-    <SkillShowcase slot="centerX">
+    <SkillShowcase slot="centerX" data={skills_data}>
 
     </SkillShowcase>
 </Panel>
