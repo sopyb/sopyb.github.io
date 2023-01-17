@@ -299,5 +299,4 @@
             height: 3em;
         }
     }
-}
 </style>
