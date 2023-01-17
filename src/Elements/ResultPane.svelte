@@ -110,7 +110,7 @@
 </script>
 <div bind:this={parent}>
     <div class="root" on:click={openFullScreen}>
-        <div class="image" style="background-image: url('{src}')" {src} alt={alt}></div>
+        <div class="image" style='background-image: url("{src}")' alt={alt}></div>
         <div class="content">
             <h1><a href={link}>{title}</a></h1>
             <div class="skills" style="grid-template-columns: repeat({skills.length}, minmax(2.5rem, 1fr))">
@@ -137,7 +137,7 @@
             </div>
         </div>
 
-        <div class="fsexit" on:click={exitFullScreen}> </div>
+        <div class="fsexit" on:click={exitFullScreen}></div>
     </div>
 </div>
 
@@ -343,6 +343,7 @@
         .fscontent {
             width: 90%;
         }
+
         .fsimage {
             float: none;
             clear: both;
