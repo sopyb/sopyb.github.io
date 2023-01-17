@@ -2,8 +2,129 @@
   import Panel from '../Elements/Panel.svelte'
   import { createEventDispatcher, onMount } from 'svelte'
   import ResultPane from '../Elements/ResultPane.svelte'
+  import { fade } from 'svelte/transition'
+  import * as querystring from 'querystring'
 
   const dispatch = createEventDispatcher()
+
+  let skills = [
+    { name: 'Web Dev', icon: 'nf-fa-code' },
+    { name: 'Game Dev', icon: 'nf-fa-gamepad' },
+    { name: 'Android Dev', icon: 'nf-fa-mobile' },
+    { name: 'Discord Dev', icon: 'nf-mdi-discord' },
+    { name: 'Linux Admin', icon: 'nf-mdi-linux' },
+    { name: 'Music', icon: 'nf-fa-music' },
+    { name: 'AWS', icon: 'nf-dev-aws' },
+    { name: 'Bash', icon: 'nf-cod-terminal_bash' },
+    { name: 'Bootstrap', icon: 'nf-dev-bootstrap' },
+    { name: 'C', icon: 'nf-mdi-language_c' },
+    { name: 'C#', icon: 'nf-mdi-language_csharp' },
+    { name: 'CSS', icon: 'nf-dev-css3' },
+    { name: 'Digital Ocean', icon: 'nf-dev-digital_ocean' },
+    { name: 'Discord.Js', icon: 'nf-seti-javascript' },
+    { name: 'Express', icon: 'nf-mdi-web' },
+    { name: 'Firebase', icon: 'nf-dev-firebase' },
+    { name: 'GCP', icon: 'nf-dev-google_cloud_platform' },
+    { name: 'Git', icon: 'nf-mdi-git' },
+    { name: 'GitHub', icon: 'nf-cod-github_inverted' },
+    { name: 'HTML', icon: 'nf-dev-html5' },
+    { name: 'Java', icon: 'nf-fae-java' },
+    { name: 'JavaScript', icon: 'nf-dev-javascript_badge' },
+    { name: 'jQuery', icon: 'nf-dev-jquery' },
+    { name: 'Kotlin', icon: 'nf-custom-kotlin' },
+    { name: 'NodeJS', icon: 'nf-dev-nodejs_small' },
+    { name: 'Passport.js', icon: 'nf-mdi-passport' },
+    { name: 'PHP', icon: 'nf-mdi-language_php' },
+    { name: 'React', icon: 'nf-dev-react' },
+    { name: 'SQL', icon: 'nf-mdi-database' },
+    { name: 'Svelte', icon: 'nf-seti-svelte' },
+    { name: 'TypeScript', icon: 'nf-mdi-language_typescript' },
+    { name: 'Unity', icon: 'nf-dev-unity_small' },
+  ]
+
+  let projects = [
+    {
+      src: '',
+      alt: 'some image',
+      cat: 0,
+      title: 'Something',
+      skills: ['nodejs', 'javascript'],
+      shortDescription: 'test',
+      description: 'pmg',
+      link: 'ommmmmg',
+    }
+  ]
+
+  let selectedSkills = [], buttons = new Array(skills.length).fill(false)
+
+  let filteredProjects = projects
+
+  let searchQuery = '', category = '-1';
+
+  function updateSelected (skill) {
+    // check if skill is in selectedSkills
+    if (selectedSkills.includes(skill)) {
+      // remove skill from selectedSkills
+      selectedSkills = selectedSkills.filter((s) => s !== skill)
+    } else {
+      // add skill to selectedSkills
+      selectedSkills.push(skill)
+    }
+
+    // filter projects
+    updateFiltered()
+  }
+
+  function updateFiltered () {
+    // generate array of indexes of selected skills in skills array
+    let selectedIndexes = selectedSkills.map((skill) => skills.findIndex((s) => s.name === skill))
+
+    // update buttons
+    buttons = new Array(skills.length).fill(false)
+    selectedIndexes.forEach((i) => buttons[i] = true)
+
+    // filter by selected skills
+    filteredProjects = projects.filter(project => {
+      if (selectedSkills.length === 0) return true
+      // find if all of the selected skills are in the project
+      return selectedIndexes.every((i) => project.skills.includes(skills[i]))
+    }).filter(project => {
+      // filter by search query
+
+      // check in title
+      if (project.title.toLowerCase().includes(searchQuery.toLowerCase())) return true
+      // check in description
+      if (project.description.toLowerCase().includes(searchQuery.toLowerCase())) return true
+      // check in skills
+      if (project.skills.some((skill) => skill.name.toLowerCase().includes(searchQuery.toLowerCase()))) return true
+      // check in link
+      if (project.link.toLowerCase().includes(searchQuery.toLowerCase())) return true
+      // check in short description
+      if (project.shortDescription.toLowerCase().includes(searchQuery.toLowerCase())) return true
+      return false
+    }).filter(project => {
+      // filter by category
+      if (category === '-1') return true
+      return project.cat === parseInt(category)
+    })
+  }
+
+  $: {
+    category
+    searchQuery // hacky way to trigger updateFiltered change
+    updateFiltered()
+  }
+
+  for (let i = 0; i < projects.length; i++) {
+    for (let j = 0; j < projects[i].skills.length; j++) {
+      for (let k = 0; k < skills.length; k++) {
+        if (projects[i].skills[j] == skills[k].name.toLowerCase()) {
+          projects[i].skills[j] = skills[k]
+        }
+      }
+
+    }
+  }
 
   onMount(() => {
     dispatch('mounted', true)
@@ -12,92 +133,41 @@
 <Panel bgcolor="#222">
     <div>
         <div class="controls">
-<!--            search bar-->
+            <!--            search bar-->
             <div class="search">
-                <input type="text" placeholder="Search">
+                <input bind:value={searchQuery} type="text" placeholder="Search">
                 <i class="nf nf-cod-search"></i>
             </div>
 
             <div class="filters">
 
                 <!--            filter categories in select-->
-                <select size=4 id="category">
-                    <option value="all" selected>All</option>
-                    <option value="category1">Programming</option>
-                    <option value="category2">Art</option>
-                    <option value="category3">Others</option>
+                <select bind:value={category} size=4 id="category">
+                    <option value=-1>All</option>
+                    <option value=0>Discord Bots</option>
+                    <option value=1>Websites</option>
+                    <option value=2>Games</option>
                 </select>
 
                 <!--            Multiple select for skills asociated to category-->
                 <div id="skill">
-                    <button class="skill active"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
-                    <button class="skill"><i class="nf nf-mdi-music_note"></i></button>
+                    {#each skills as { name, icon }, i}
+                        <div>
+                            <button class:active={buttons[i]} on:click={() => updateSelected(name)} class="skill"><i
+                                    class="nf {icon}"></i></button>
+                            <br>
+                            <span>{name}</span>
+                        </div>
+                    {/each}
                 </div>
 
             </div>
         </div>
 
         <div class="results">
-            <ResultPane />
-            <ResultPane />
-            <ResultPane />
-            <ResultPane />
+            {#each filteredProjects as project}
+                <ResultPane {project}/>
+            {/each}
         </div>
     </div>
 </Panel>
@@ -177,32 +247,43 @@
     }
 
     #category option:active, #category option:focus, #category option:checked {
-        background: linear-gradient(#bb78dd,#bb78dd);
+        background: linear-gradient(#bb78dd, #bb78dd);
+    }
+
+    #skill span {
+        color: #fff;
+        font-size: 1rem;
+        transition: background 22s;
+
+        margin: 0;
+
+        text-align: center;
     }
 
 
     #skill {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
         grid-template-rows: auto;
         grid-gap: 0.1rem;
 
         margin: 1rem 1rem;
-    /*    set max size to 3 rows if more scroll*/
+        /*    set max size to 3 rows if more scroll*/
         max-height: 9.1rem;
         width: 100%;
         overflow: auto;
+        overflow-x: hidden;
 
-    /*    center items to their grid square*/
+        /*    center items to their grid square*/
         align-items: center;
         justify-items: center;
     }
 
 
-
     .skill.active {
         background-color: #333;
     }
+
     .skill {
         background: #DDD;
         border: none;
@@ -274,6 +355,7 @@
             width: 100%;
             margin: 0;
 
+            overflow: hidden;
             max-height: unset;
         }
 
