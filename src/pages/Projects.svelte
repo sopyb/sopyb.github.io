@@ -47,7 +47,7 @@
       src: '',
       alt: 'some image',
       cat: 0,
-      title: 'Something',
+      title: 'ProjectTItleThatCanDefoBeLonger',
       skills: ['nodejs', 'javascript'],
       shortDescription: 'test',
       description: 'pmg',
@@ -372,7 +372,7 @@
     @media (min-aspect-ratio: 5/6) and (max-aspect-ratio: 5/4) {
         .results {
             grid-template-columns: 1fr;
-            width: 70%;
+            max-width: 70%;
 
             margin: auto;
         }

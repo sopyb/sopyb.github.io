@@ -153,15 +153,13 @@
 
     /*    modal title*/
     .content h1 {
-        max-width: 100%;
-        -webkit-hyphens: auto;
-        -moz-hyphens: auto;
-        -ms-hyphens: auto;
-        hyphens: auto;
+        display: inline;
+        clear: both;
+        width: 100%;
 
         font-size: 2rem;
         font-weight: 600;
-        margin: 0.5rem 0 0 1rem;
+        margin: 0.5rem 0 0 0;
 
     }
 
@@ -244,6 +242,10 @@
     }
 
     a {
+        display:inline-block;
+        max-width: 100%;
+        word-wrap: break-word;
+
         color: #bb78dd;
         text-decoration: none;
     }
