@@ -1,9 +1,20 @@
 <script>
-  export let project;
+  export let project
 
-  let { src, alt, title, skills, shortDescription, description, link } = project;
+  let { src, alt, title, skills, shortDescription, description, link } = project
 
-  let parent;
+  // if project updates, update everything
+  $: {
+    src = project.src
+    alt = project.alt
+    title = project.title
+    skills = project.skills
+    shortDescription = project.shortDescription
+    description = project.description
+    link = project.link
+  }
+
+  let parent
 
   //      tooltip
   function showTooltip (e) {
@@ -68,7 +79,7 @@
     fullScreen.style.opacity = 1
   }
 
-  function exitFullScreen(e) {
+  function exitFullScreen (e) {
     // on click, unlock the scroll and hide the full screen
     document.body.style.overflowY = 'auto'
     let fullScreen = parent.querySelector('.fullscreen')
@@ -96,11 +107,13 @@
         <div class="content">
             <h1><a href={link}>{title}</a></h1>
             <div class="skills">
-                {#each skills as skill}
-                    <div class="skillItem" on:mouseenter={showTooltip}
-                         on:mouseleave={hideTooltip}><i class="nf {skill.icon}"></i>
-                        <p class="tooltip">{skill.name}</p></div>
-                {/each}
+                <div class="skillItemsContainer">
+                    {#each skills as skill}
+                        <div class="skillItem" on:mouseenter={showTooltip}
+                             on:mouseleave={hideTooltip}><i class="nf {skill.icon}"></i>
+                            <p class="tooltip">{skill.name}</p></div>
+                    {/each}
+                </div>
             </div>
             <p>{shortDescription}</p>
             <div class="more">
@@ -119,7 +132,7 @@
             </div>
         </div>
 
-        <div class="fsexit" on:click={exitFullScreen}> </div>
+        <div class="fsexit" on:click={exitFullScreen}></div>
     </div>
 </div>
 
@@ -165,16 +178,16 @@
 
     /*    modal description*/
     p {
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-weight: 300;
         margin: 0;
 
         text-align: justify;
 
-        clear: right;
+        clear: both;
 
         overflow: hidden;
-        white-space: nowrap;
+        white-space: normal;
         text-overflow: ellipsis;
     }
 
@@ -221,14 +234,24 @@
 
         clear: both;
 
-    /*    center*/
+        /*    center*/
         justify-content: center;
         align-items: center;
+        width: 100%;
+    }
+
+    .skillItemsContainer {
+        width: 110%;
+
+        margin: 0 1rem;
+
+        white-space: nowrap;
     }
 
     .skillItem {
-        display: block;
+        display: inline-block;
         position: relative;
+
 
         min-width: 4rem;
         height: 2rem;
@@ -242,7 +265,7 @@
     }
 
     a {
-        display:inline-block;
+        display: inline-block;
         max-width: 100%;
         word-wrap: break-word;
 
@@ -323,6 +346,7 @@
         .fscontent {
             width: 90%;
         }
+
         .fsimage {
             float: none;
             clear: both;

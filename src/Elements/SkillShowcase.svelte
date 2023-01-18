@@ -103,7 +103,6 @@
 
         .type-0, .type-1{
             grid-template-columns: 1fr;
-            grid-template-rows: fit-content(100%) fit-content(100%);
             margin-bottom: 2rem;
 
             grid-gap: 0;
@@ -125,7 +124,7 @@
             width: 10rem;
             height: 10rem;
 
-            border-radius: 50% 50% 0 0 ;
+            border-radius: 50% ;
         }
 
         .icon > i {
