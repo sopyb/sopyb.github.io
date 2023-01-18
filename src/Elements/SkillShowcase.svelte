@@ -104,9 +104,9 @@
         .type-0, .type-1{
             grid-template-columns: 1fr;
             grid-template-rows: fit-content(100%) fit-content(100%);
-
-            grid-gap: 1rem;
             margin-bottom: 2rem;
+
+            grid-gap: 0;
 
             width: 100%;
         }
@@ -118,6 +118,18 @@
         .type-1 .content {
             grid-column: 1;
             grid-row: 2;
+        }
+
+        .icon {
+            margin-bottom: -2rem;
+            width: 10rem;
+            height: 10rem;
+
+            border-radius: 50% 50% 0 0 ;
+        }
+
+        .icon > i {
+            font-size: 5rem;
         }
 
         .content {
