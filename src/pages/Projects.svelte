@@ -2,8 +2,6 @@
   import Panel from '../Elements/Panel.svelte'
   import { createEventDispatcher, onMount } from 'svelte'
   import ResultPane from '../Elements/ResultPane.svelte'
-  import { fade } from 'svelte/transition'
-  import * as querystring from 'querystring'
 
   const dispatch = createEventDispatcher()
 
@@ -44,14 +42,24 @@
 
   let projects = [
     {
-      src: '',
-      alt: 'some image',
-      cat: 0,
-      title: 'ProjectTItleThatCanDefoBeLonger',
-      skills: ['nodejs', 'javascript'],
-      shortDescription: 'test',
-      description: 'pmg',
-      link: 'ommmmmg',
+      "src": "\/img\/YT-artwork.jpg",
+      "alt": "Youtube Channel Artwork",
+      "title": "Sopy - Artist",
+      "skills": "music",
+      "shortDescription": "I've been publishing songs on youtube for a while. Eventually got OAC (Official Artist Channel)",
+      "description": "<p>I've published a total of 14 videos on the channel. Most of them I am proud of some less so, I was striving for perfection and never felt I quite got there. I silently walked away from the channel... at least for now to work on some songs without the preassure of an audience<\/p><br><h3>Some of my personal favourites songs are<\/h3><ul><li><a href=\"https:\/\/www.youtube.com\/watch?v=sofJhapQhNA\">Sunny Halloween Night<\/a><\/li><li><a href=\"https:\/\/www.youtube.com\/watch?v=ZseNxwdAUH8\">Sugar Jungle<\/a><\/li><li><a href=\"https:\/\/www.youtube.com\/watch?v=YmAXwLd4-os\">Sabai - Memories feat. Claire Ridgely (Sopy remix)<\/a><\/li><\/ul><br><p>Who knows when is the next time this channel is gonna be active?<\/p>",
+      "link": "https:\/\/youtube.com\/@DoimptSopy",
+      "cat": 1
+    },
+    {
+      "src": "\/img\/sopyonev3.png",
+      "alt": "screenshot of the sopy.one homepage",
+      "title": "Sopy.one - portfolio",
+      "skills": "web dev, css, git, github, html, javascript, svelte",
+      "shortDescription": "The third redesign of my portfolio... Sure hope I don't have this one in a few weeks and start from scratch.",
+      "description": "<p>Nothing to see here >.> at least for now<\/p>",
+      "link": "https:\/\/sopy.one",
+      "cat": 0
     }
   ]
 
@@ -107,6 +115,14 @@
       if (category === '-1') return true
       return project.cat === parseInt(category)
     })
+
+    // order randomly if no filters are applied
+    if (selectedSkills.length === 0 && searchQuery === '' && category === '-1') {
+      filteredProjects = filteredProjects.sort(() => Math.random() - 0.5)
+    } else {
+        // order alphabetically
+        filteredProjects = filteredProjects.sort((a, b) => a.title.localeCompare(b.title))
+    }
   }
 
   $: {
@@ -115,14 +131,16 @@
     updateFiltered()
   }
 
+  filteredProjects = filteredProjects.sort(() => Math.random() - 0.5)
+
   for (let i = 0; i < projects.length; i++) {
+    projects[i].skills = projects[i].skills.split(', ')
     for (let j = 0; j < projects[i].skills.length; j++) {
       for (let k = 0; k < skills.length; k++) {
         if (projects[i].skills[j] == skills[k].name.toLowerCase()) {
           projects[i].skills[j] = skills[k]
         }
       }
-
     }
   }
 
