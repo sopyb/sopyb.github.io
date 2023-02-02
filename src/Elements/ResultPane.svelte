@@ -14,7 +14,7 @@
     link = project.link
   }
 
-  let parent
+  let parent;
 
   //      tooltip
   function showTooltip (e) {
@@ -58,6 +58,8 @@
   }
 
   function openFullScreen (e) {
+    console.log(src.replace(/(\.[^.]+)$/, "-low$1"));
+
     // on click, lock the vertical scroll and show the full screen
     parent.style.overflowY = 'hidden'
     let fullScreen = parent.querySelector('.fullscreen')
@@ -103,7 +105,9 @@
 </script>
 <div bind:this={parent}>
     <div class="root" on:click={openFullScreen}>
-        <div class="image" style="background-image: url('{src}')" {src} alt={alt}></div>
+        <div class="image"
+             style="background-image: url('{src}'), url('{src.replace(/(\.[^.]+)$/, '-low$1')}')"
+             alt=" {alt}"></div>
         <div class="content">
             <h1><a href={link}>{title}</a></h1>
             <div class="skills">
@@ -165,7 +169,7 @@
     }
 
     /*    modal title*/
-    .content h1 {
+    .content :global(h1) {
         display: inline;
         clear: both;
         width: 100%;
@@ -173,7 +177,38 @@
         font-size: 2rem;
         font-weight: 600;
         margin: 0.5rem 0 0 0;
+    }
 
+    .content :global(h3) {
+        display: inline;
+        clear: both;
+        width: 100%;
+
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0.5rem 0 0 0;
+    }
+
+    .content :global(p) {
+        font-size: 1rem;
+
+        text-align: justify;
+    }
+
+    .content :global(li) {
+        font-size: 1.2rem;
+        font-weight: bold;
+
+        list-style: none;
+    }
+
+    .content :global(a) {
+        color: #bb78dd;
+        text-decoration: none;
+    }
+
+    .content :global(a:hover) {
+        text-decoration: underline;
     }
 
     /*    modal description*/
@@ -264,13 +299,26 @@
         float: right;
     }
 
-    a {
+    .content a {
         display: inline-block;
         max-width: 100%;
         word-wrap: break-word;
 
         color: #bb78dd;
         text-decoration: none;
+    }
+
+    .content a:hover {
+        color: #bb78dd;
+        text-decoration: underline;
+    }
+
+    .content a:visited {
+        color: #bb78dd;
+    }
+
+    .content li {
+        margin: 0.5rem 0;
     }
 
     .more {
@@ -313,8 +361,9 @@
     .fsimage {
         /*    image ratio 1/1 to the left side of the panel*/
         aspect-ratio: 1/1;
-        width: 40%;
+        min-height: 100%;
         height: 100%;
+        min-width: 40%;
         object-fit: cover;
         object-position: center;
 
@@ -331,6 +380,59 @@
 
         float: right;
     }
+
+    .fscontent h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin: 0.5rem 0 0 0;
+    }
+
+    .fscontent p {
+        font-size: 3.5rem;
+        font-weight: 300;
+        margin: 0;
+
+        text-align: justify;
+
+        clear: both;
+
+        overflow: hidden;
+        white-space: normal;
+        text-overflow: ellipsis;
+    }
+
+    .fscontent a {
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin: 0;
+
+        text-align: justify;
+
+        clear: both;
+
+        overflow: hidden;
+        white-space: normal;
+        text-overflow: ellipsis;
+
+        color: #bb78dd;
+        text-decoration: none;
+
+    }
+
+    .fscontent .content li {
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin: 0;
+
+        text-align: justify;
+
+        clear: both;
+
+        overflow: hidden;
+        white-space: normal;
+        text-overflow: ellipsis;
+    }
+
 
     .fsexit {
         opacity: 0;

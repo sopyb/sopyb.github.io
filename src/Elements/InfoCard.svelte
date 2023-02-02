@@ -12,7 +12,7 @@
     .infoCard {
         background-color: #333;
         color: #fff;
-        border: 4px solid #ccc;
+        border: 4px double #ccc;
         border-radius: 5px;
         padding: 10px;
         width: 100%;
@@ -24,6 +24,12 @@
         flex-direction: column;
         justify-content: space-between;
 
+        transition: border 0.5s
+
+    }
+
+    .infoCard:hover {
+        border: 4px solid #fff;
     }
 
     .infoCard h1 {

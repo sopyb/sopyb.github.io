@@ -171,55 +171,31 @@
         }
     }
 
-    @media (min-aspect-ratio: 3/2) {
-        .infoGrid_item1, .infoGrid_item4, .infoGrid_item7 {
-            transform: translate(0, 0%);
-            animation: 4s ease-in-out 1s infinite forwards float10;
-            animation-delay: -1s;
+    @media (hover: hover) {
+        .infoGrid_item1,
+        .infoGrid_item2,
+        .infoGrid_item3,
+        .infoGrid_item4,
+        .infoGrid_item5,
+        .infoGrid_item6,
+        .infoGrid_item7,
+        .infoGrid_item8,
+        .infoGrid_item9 {
+            transition: transform 0.3s ease-in-out;
+
+            transition-delay: 0.1s;
         }
 
-        .infoGrid_item2, .infoGrid_item5, .infoGrid_item8 {
-            transform: translate(0, 10%);
-            animation: 5s ease-in-out 1s infinite forwards float5;
-            animation-delay: -1s;
-        }
-
-        .infoGrid_item3, .infoGrid_item6, .infoGrid_item9 {
-            transform: translate(0, 0%);
-            animation: 4s ease-in-out 1s infinite forwards float10;
-            animation-delay: -1s;
-        }
-    }
-
-    /*reduced motion preference*/
-    @media (prefers-reduced-motion: reduce) {
-        .infoGrid_item1, .infoGrid_item2, .infoGrid_item3, .infoGrid_item4, .infoGrid_item5, .infoGrid_item6, .infoGrid_item7, .infoGrid_item8, .infoGrid_item9 {
-            animation: none;
-        }
-    }
-
-    /*animations*/
-    @keyframes float10 {
-        0% {
-            transform: translate(0, 0%);
-        }
-        50% {
-            transform: translate(0, 10%);
-        }
-        100% {
-            transform: translate(0, 0%);
-        }
-    }
-
-    @keyframes float5 {
-        0% {
-            transform: translate(0, 2.5%);
-        }
-        50% {
-            transform: translate(0, 7.5%);
-        }
-        100% {
-            transform: translate(0, 2.5%);
+        .infoGrid_item1:hover,
+        .infoGrid_item2:hover,
+        .infoGrid_item3:hover,
+        .infoGrid_item4:hover,
+        .infoGrid_item5:hover,
+        .infoGrid_item6:hover,
+        .infoGrid_item7:hover,
+        .infoGrid_item8:hover,
+        .infoGrid_item9:hover {
+            transform: scale(1.05);
         }
     }
 </style>
