@@ -45,6 +45,10 @@
                 pageNotFound = true;
                 break;
         }
+
+        let page = curPage.toLowerCase(); // lower case
+        page = page.charAt(0).toUpperCase() + page.slice(1); // upper case first letter
+        document.title = "Sopy's Online Portfolio | " + page; // change page title
     }
 
     // change page
