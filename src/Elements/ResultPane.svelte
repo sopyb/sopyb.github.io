@@ -347,7 +347,8 @@
         left: 50%;
         transform: translate(-50%, -50%);
 
-        width: 70%;
+        width: 60%;
+        min-height: 40%;
 
         background-color: #444;
         border: 4px solid #DDD;
