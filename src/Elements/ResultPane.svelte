@@ -338,7 +338,7 @@
         background-color: #2228;
         opacity: 0;
 
-        z-index: 999;
+        z-index: 999999999;
     }
 
     .fscontent {
@@ -348,7 +348,7 @@
         transform: translate(-50%, -50%);
 
         width: 60%;
-        min-height: 40%;
+        min-height: 25vw;
 
         background-color: #444;
         border: 4px solid #DDD;
@@ -367,7 +367,7 @@
         /* max between 100% height of parent n 400*/
         height: 100%;
         min-height: 100%;
-        width: 40%;
+        width: 25vw;
 
         object-fit: cover;
         object-position: center;
@@ -380,7 +380,7 @@
     }
 
     .fscontent .content {
-        width: 60%;
+        width: calc(100% - 25vw);
         padding: 1rem;
 
         float: right;

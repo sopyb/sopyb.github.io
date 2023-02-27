@@ -94,7 +94,7 @@
         position: fixed;
         top: -1px;
         width: 100%;
-        z-index: 999999999999;
+        z-index: 99999999;
 
 
 
