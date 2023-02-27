@@ -61,7 +61,10 @@
 
 /*    center ul items*/
     ul {
+        position: absolute;
+        left: 0;
         text-align: center;
+        width: 100%;
 
         display: flex;
         justify-content: center;
@@ -88,17 +91,18 @@
 
     ul:global(.fixed) {
         position: fixed;
-        top: 0;
+        top: -1px;
         left: 0;
         width: 100%;
         z-index: 999999999999;
 
 
         background-color: #bb78dd44;
-        backdrop-filter: blur(24px) saturate(1.5) brightness(1.5);
+        backdrop-filter: blur(20px) saturate(1.5) brightness(1.5);
 
         padding: 10px;
 
+        border-top: 1px solid #DDD4;
         border-bottom: 1px solid #DDD4;
         text-align: right;
     }
