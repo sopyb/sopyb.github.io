@@ -181,9 +181,9 @@
         .infoGrid_item7,
         .infoGrid_item8,
         .infoGrid_item9 {
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.15s ease-in-out;
 
-            transition-delay: 0.1s;
+            transition-delay: 0.05s;
         }
 
         .infoGrid_item1:hover,

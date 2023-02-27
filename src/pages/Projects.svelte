@@ -204,6 +204,7 @@
         min-width: 700px;
 
         margin: auto;
+        margin-top: 5vh;
     }
 
     .search {

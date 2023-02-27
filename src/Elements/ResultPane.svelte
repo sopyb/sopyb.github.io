@@ -192,7 +192,8 @@
     .content :global(p) {
         font-size: 1rem;
 
-        text-align: justify;
+        text-align: center;
+        margin: 10px 0 0 0;
     }
 
     .content :global(li) {
@@ -295,7 +296,6 @@
     .content {
         width: 60%;
         padding: 0.5rem;
-
         float: right;
     }
 
@@ -359,19 +359,23 @@
     }
 
     .fsimage {
-        /*    image ratio 1/1 to the left side of the panel*/
-        aspect-ratio: 1/1;
-        min-height: 100%;
+        display: block;
+
+        position: absolute;
+        /*    image min ratio 1/1 to the left side of the panel*/
+        /* max between 100% height of parent n 400*/
         height: 100%;
-        min-width: 40%;
+        min-height: 100%;
+        width: 40%;
+
         object-fit: cover;
         object-position: center;
+
+        border-right: #DDDDDD 4px solid;
 
         /*    background image*/
         background-size: cover;
         background-position: center;
-
-        float: left;
     }
 
     .fscontent .content {
@@ -450,9 +454,12 @@
         }
 
         .fsimage {
+            position: relative;
             float: none;
             clear: both;
             width: 100%;
+
+            border-right: unset;
 
             aspect-ratio: 10/4;
         }
