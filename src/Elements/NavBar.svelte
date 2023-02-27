@@ -62,9 +62,10 @@
 /*    center ul items*/
     ul {
         position: absolute;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
         text-align: center;
-        width: 100%;
+        width: 40%;
 
         display: flex;
         justify-content: center;
@@ -92,9 +93,9 @@
     ul:global(.fixed) {
         position: fixed;
         top: -1px;
-        left: 0;
         width: 100%;
         z-index: 999999999999;
+
 
 
         background-color: #bb78dd44;
