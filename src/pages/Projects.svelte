@@ -64,7 +64,7 @@
     {
       "src": "\/img\/ffrespawn.png",
       "alt": "In game screenshot of FusionFall Re:Spawn",
-      "title": "FussionFall Re:Spawn",
+      "title": "FusionFall Re:Spawn",
       "skills": "game dev, c#, unity",
       "shortDescription": "FusionFall Re:Spawn was a fan-made revival project of the online MMO FusionFall.",
       "description": "<p>The aim of the project has been to recreate the original game with a more recent and stable version of Unity. Rewriting the story while loosely following the original to fill narrative gaps and to leave room for exciting new stories to take place in the universe<\/p><p>The project was being developed by volunteers whose vision was to bring the game they fell in love to the newer generations. I joined the team for a similar reason: I joined the development team in hope of creating something that people will be able to enjoy as much as I enjoyed playing the original game as a kid back in 2012-2013. Sadly, the project was discontinued in December of 2021 as we couldn't find enough modelers to realistically finish the planned demo any time in the near future, much less the full game. We decided our time would be better invested in other projects, be they FusionFall related or not.<\/p><p>I worked on multiple things during my time on the team, such as movement, third person camera and generating animations for the main menu camera programmatically to save time whenever we'd make changes to it. But for the most part I was helping other volunteers by sharing informational resources from Unity's scripting documentation since I've learned my way around it relatively quickly.<\/p>",
