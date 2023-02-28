@@ -58,8 +58,6 @@
   }
 
   function openFullScreen (e) {
-    console.log(src.replace(/(\.[^.]+)$/, "-low$1"));
-
     // on click, lock the vertical scroll and show the full screen
     document.body.style.overflowY = 'hidden'
     let fullScreen = parent.querySelector('.fullscreen')
@@ -106,8 +104,8 @@
 <div bind:this={parent}>
     <div class="root" on:click={openFullScreen}>
         <div class="image"
-             style="background-image: url('{src}'), url('{src.replace(/(\.[^.]+)$/, '-low$1')}')"
-             alt=" {alt}"></div>
+             style="background-image: url('{src}')"
+             alt="{alt}"></div>
         <div class="content">
             <h1><a href={link}>{title}</a></h1>
             <div class="skills">
@@ -472,7 +470,7 @@
         font-weight: 300;
         margin: 0;
 
-        max-height: 35vh;
+        max-height: 25vw;
 
         text-align: justify;
 

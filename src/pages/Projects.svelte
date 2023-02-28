@@ -54,8 +54,8 @@
     {
       "src": "\/img\/sopyonev3.png",
       "alt": "screenshot of the sopy.one homepage",
-      "title": "Sopy.one - portfolio",
-      "skills": "web dev, css, git, github, html, javascript, svelte",
+      "title": "My portfolio",
+      "skills": "web dev, css, git, github, html, javascript, typescript, svelte",
       "shortDescription": "The third redesign of my portfolio... Sure hope I don't have this one in a few weeks and start from scratch.",
       "description": "<p>Nothing to see here >.> at least for now<\/p>",
       "link": "https:\/\/sopy.one",
@@ -69,6 +69,66 @@
       "shortDescription": "FusionFall Re:Spawn was a fan-made revival project of the online MMO FusionFall.",
       "description": "<p>The aim of the project has been to recreate the original game with a more recent and stable version of Unity. Rewriting the story while loosely following the original to fill narrative gaps and to leave room for exciting new stories to take place in the universe<\/p><p>The project was being developed by volunteers whose vision was to bring the game they fell in love to the newer generations. I joined the team for a similar reason: I joined the development team in hope of creating something that people will be able to enjoy as much as I enjoyed playing the original game as a kid back in 2012-2013. Sadly, the project was discontinued in December of 2021 as we couldn't find enough modelers to realistically finish the planned demo any time in the near future, much less the full game. We decided our time would be better invested in other projects, be they FusionFall related or not.<\/p><p>I worked on multiple things during my time on the team, such as movement, third person camera and generating animations for the main menu camera programmatically to save time whenever we'd make changes to it. But for the most part I was helping other volunteers by sharing informational resources from Unity's scripting documentation since I've learned my way around it relatively quickly.<\/p>",
       "link": "https:\/\/fusionfall.fandom.com\/wiki\/FusionFall_RE:SPAWN",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/fluidsim.png",
+      "alt": "Picture of the fluid simulation",
+      "title": "Fluid Simulation",
+      "skills": "web dev, css, git, github, html, javascript",
+      "shortDescription": "After a month of working on it, my fluid simulation was finished. (physics project go brrr)",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/fluidsimulation.sopy.one\/",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/exotictour.png",
+      "alt": "Picture of the langing page of exotictour",
+      "title": "Exotic Tour",
+      "skills": "web dev, css, git, github, html, javascript, jquery",
+      "shortDescription": "Website made for a training company I was involved in. This website had a lot of firsts.",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/exotictour.sopy.one\/",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/doimpt.png",
+      "alt": "A picture of the exotic tour website as it loaded in",
+      "title": "Doimpt",
+      "skills": "web dev, css, git, github, html",
+      "shortDescription": "Random challenge I took on to make a website ussing only android apps (linux applications ported don't count)",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/doim.pt\/",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/sopyspace.png",
+      "alt": "A picture of the sopy space website",
+      "title": "Sopy Space",
+      "skills": "web dev, css, git, github, html, javascript, jquery",
+      "shortDescription": "I bought a domain then realized I never did parallax and then that I never seen parallax using the gyroscope. ( >.>) There is the unique feature.",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/sopy.space\/",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/suaio.png",
+      "alt": "picture of the suaio website",
+      "title": "Suaio Website",
+      "skills": "web dev, css, git, github, html, javascript, jquery",
+      "shortDescription": "One of the first websites I made, in order to promote my discord bot.",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/sopy.one\/Suaio-site\/",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/bfinterpreter.png",
+      "alt": "picture with hello world in brainfuck",
+      "title": "BrainF**k interpreter",
+      "skills": "javasript, nodejs",
+      "shortDescription": "I was bored one night so i made a bf interpreter and played some tic-tac-toe with bf code someone else wrote.",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/github.com\/sopyb\/brainf--kJsInterpreter",
       "cat": 0
     }
   ]
