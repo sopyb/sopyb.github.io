@@ -42,24 +42,34 @@
 
   let projects = [
     {
-      'src': '\/img\/YT-artwork.jpg',
-      'alt': 'Youtube Channel Artwork',
-      'title': 'Sopy - Artist',
-      'skills': 'music',
-      'shortDescription': 'I\'ve been publishing songs on youtube for a while. Eventually got OAC (Official Artist Channel)',
-      'description': '<p>I\'ve published a total of 14 videos on the channel. Most of them I am proud of some less so, I was striving for perfection and never felt I quite got there. I silently walked away from the channel... at least for now to work on some songs without the preassure of an audience<\/p><br><h3>Some of my personal favourites songs are<\/h3><ul><li><a href="https:\/\/www.youtube.com\/watch?v=sofJhapQhNA">Sunny Halloween Night<\/a><\/li><li><a href="https:\/\/www.youtube.com\/watch?v=ZseNxwdAUH8">Sugar Jungle<\/a><\/li><li><a href="https:\/\/www.youtube.com\/watch?v=YmAXwLd4-os">Sabai - Memories feat. Claire Ridgely (Sopy remix)<\/a><\/li><\/ul><br><p>Who knows when is the next time this channel is gonna be active?<\/p>',
-      'link': 'https:\/\/youtube.com\/@DoimptSopy',
-      'cat': 1
+      "src": "\/img\/YT-artwork.jpg",
+      "alt": "Youtube Channel Artwork",
+      "title": "Sopy - Artist",
+      "skills": "music",
+      "shortDescription": "I've been publishing songs on youtube for a while. Eventually got OAC (Official Artist Channel)",
+      "description": "<p>I've published a total of 14 videos on the channel. Most of them I am proud of some less so, I was striving for perfection and never felt I quite got there. I silently walked away from the channel... at least for now to work on some songs without the preassure of an audience<\/p><br><h3>Some of my personal favourites songs are<\/h3><ul><li><a href=\"https:\/\/www.youtube.com\/watch?v=sofJhapQhNA\">Sunny Halloween Night<\/a><\/li><li><a href=\"https:\/\/www.youtube.com\/watch?v=ZseNxwdAUH8\">Sugar Jungle<\/a><\/li><li><a href=\"https:\/\/www.youtube.com\/watch?v=YmAXwLd4-os\">Sabai - Memories feat. Claire Ridgely (Sopy remix)<\/a><\/li><\/ul><br><p>Who knows when is the next time this channel is gonna be active?<\/p>",
+      "link": "https:\/\/youtube.com\/@DoimptSopy",
+      "cat": 1
     },
     {
-      'src': '\/img\/sopyonev3.png',
-      'alt': 'screenshot of the sopy.one homepage',
-      'title': 'Sopy.one - portfolio',
-      'skills': 'web dev, css, git, github, html, javascript, svelte',
-      'shortDescription': 'The third redesign of my portfolio... Sure hope I don\'t have this one in a few weeks and start from scratch.',
-      'description': '<p>Nothing to see here >.> at least for now<\/p>',
-      'link': 'https:\/\/sopy.one',
-      'cat': 0
+      "src": "\/img\/sopyonev3.png",
+      "alt": "screenshot of the sopy.one homepage",
+      "title": "Sopy.one - portfolio",
+      "skills": "web dev, css, git, github, html, javascript, svelte",
+      "shortDescription": "The third redesign of my portfolio... Sure hope I don't have this one in a few weeks and start from scratch.",
+      "description": "<p>Nothing to see here >.> at least for now<\/p>",
+      "link": "https:\/\/sopy.one",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/ffrespawn.png",
+      "alt": "In game screenshot of FusionFall Re:Spawn",
+      "title": "FussionFall Re:Spawn",
+      "skills": "game dev, c#, unity",
+      "shortDescription": "FusionFall Re:Spawn was a fan-made revival project of the online MMO FusionFall.",
+      "description": "<p>The aim of the project has been to recreate the original game with a more recent and stable version of Unity. Rewriting the story while loosely following the original to fill narrative gaps and to leave room for exciting new stories to take place in the universe<\/p><p>The project was being developed by volunteers whose vision was to bring the game they fell in love to the newer generations. I joined the team for a similar reason: I joined the development team in hope of creating something that people will be able to enjoy as much as I enjoyed playing the original game as a kid back in 2012-2013. Sadly, the project was discontinued in December of 2021 as we couldn't find enough modelers to realistically finish the planned demo any time in the near future, much less the full game. We decided our time would be better invested in other projects, be they FusionFall related or not.<\/p><p>I worked on multiple things during my time on the team, such as movement, third person camera and generating animations for the main menu camera programmatically to save time whenever we'd make changes to it. But for the most part I was helping other volunteers by sharing informational resources from Unity's scripting documentation since I've learned my way around it relatively quickly.<\/p>",
+      "link": "https:\/\/fusionfall.fandom.com\/wiki\/FusionFall_RE:SPAWN",
+      "cat": 0
     }
   ]
 
@@ -359,7 +369,7 @@
 
             margin: 0;
 
-            padding: 1rem 0rem;
+            padding: 1rem 0;
 
             box-sizing: border-box;
         }
