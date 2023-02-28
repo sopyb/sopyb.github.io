@@ -61,7 +61,7 @@
     console.log(src.replace(/(\.[^.]+)$/, "-low$1"));
 
     // on click, lock the vertical scroll and show the full screen
-    parent.style.overflowY = 'hidden'
+    document.body.style.overflowY = 'hidden'
     let fullScreen = parent.querySelector('.fullscreen')
 
     // update height and width
@@ -132,7 +132,9 @@
             <div class="fsimage" style="background-image: url('{src}')" alt={alt}></div>
             <div class="content">
                 <h1 class="title">{title}</h1>
-                {@html description}
+                <div class="description">
+                    {@html description}
+                </div>
             </div>
         </div>
 
@@ -192,15 +194,26 @@
     .content :global(p) {
         font-size: 1rem;
 
-        text-align: center;
+        text-align: justify;
         margin: 10px 0 0 0;
+    }
+
+    .content :global(ul) {
+        margin: 0;
     }
 
     .content :global(li) {
         font-size: 1.2rem;
         font-weight: bold;
+        text-align: left;
+        margin: 0.5rem 0 0 1rem;
 
         list-style: none;
+    }
+
+    .content :global(li:before) {
+        content: "★";
+        margin-right: 0.5rem;
     }
 
     .content :global(a) {
@@ -336,6 +349,7 @@
         width: 0;
         height: 0;
         background-color: #2228;
+        backdrop-filter: blur(8px);
         opacity: 0;
 
         z-index: 999999999;
@@ -449,6 +463,21 @@
         height: 100%;
     }
 
+    .description {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin: 0;
+
+        max-height: 35vh;
+
+        text-align: justify;
+
+        clear: both;
+
+        overflow-y: auto;
+        white-space: normal;
+    }
+
     @media (max-aspect-ratio: 1/1) {
         .fscontent {
             width: 90%;
@@ -459,16 +488,21 @@
             float: none;
             clear: both;
             width: 100%;
+            height: 25vh;
+            max-height: 25%;
 
             border-right: unset;
-
-            aspect-ratio: 10/4;
         }
 
         .fscontent .content {
             float: none;
             clear: both;
             width: 100%;
+        }
+
+
+        .description {
+            max-height: 50vh;
         }
     }
 </style>
