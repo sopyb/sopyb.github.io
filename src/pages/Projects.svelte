@@ -155,7 +155,7 @@
       "src": "\/img\/gamebot.png",
       "alt": "picture of a rank card",
       "title": "Game Bot",
-      "skills": "game dev, discord dev, linux admin, aws, css, digital ocean, discord.js, gcp,  git, github, html, javascript, nodejs, sql",
+      "skills": "game dev, discord dev, linux admin, aws, css, digital ocean, discord.js, gcp, git, github, html, javascript, nodejs, sql",
       "shortDescription": " A discord bot to play games directly in your chat written in javascript running under Node.js.",
       "description": "<p>To Be Added<\/p>",
       "link": "https:\/\/github.com\/sopyb\/Game-bot",
