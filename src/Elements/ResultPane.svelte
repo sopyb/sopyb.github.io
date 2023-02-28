@@ -117,7 +117,7 @@
                     {/each}
                 </div>
             </div>
-            <p>{shortDescription}</p>
+            <p class="shortdesc">{shortDescription}</p>
             <div class="more">
                 <i class="nf nf-cod-chevron_down">
 
@@ -292,9 +292,9 @@
     }
 
     .skillItemsContainer {
-        width: 110%;
+        width: 100%;
 
-        margin: 0 1rem;
+        /*margin: 0 1rem;*/
 
         white-space: nowrap;
     }
@@ -306,6 +306,10 @@
 
         min-width: 4rem;
         height: 2rem;
+    }
+
+    .shortdesc {
+        margin-bottom: 1.5em;
     }
 
     .content {

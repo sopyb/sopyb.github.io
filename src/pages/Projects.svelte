@@ -190,6 +190,16 @@
       "description": "<p>To Be Added<\/p>",
       "link": "https:\/\/github.com\/sopyb\/Discord_TV",
       "cat": 0
+    },
+    {
+      "src": "\/img\/asema.png",
+      "alt": "picture of the demo containing a blank roadmap",
+      "title": "Asema",
+      "skills": "web dev, linux admin, bash, css, express, git, github, html, javascript, nodejs, passport.js, react, sql, typescript",
+      "shortDescription": "Project I cooked up in 48 hours with my 4 friends at a hackathon organized by the student organization of my university on the topic of \"Innovating the current world state through leading-edge & smart technologies\"",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/github.com\/UT-Asema",
+      "cat": 0
     }
   ]
 
