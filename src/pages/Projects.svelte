@@ -124,11 +124,71 @@
     {
       "src": "\/img\/bfinterpreter.png",
       "alt": "picture with hello world in brainfuck",
-      "title": "BrainF**k interpreter",
-      "skills": "javasript, nodejs",
+      "title": "BrainF**k Interpreter",
+      "skills": "git, github, javascript, nodejs",
       "shortDescription": "I was bored one night so i made a bf interpreter and played some tic-tac-toe with bf code someone else wrote.",
       "description": "<p>To Be Added<\/p>",
       "link": "https:\/\/github.com\/sopyb\/brainf--kJsInterpreter",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/theCat.png",
+      "alt": "Picture of a cat holding  plushie cat (unrelated picture)",
+      "title": "Secret Santa",
+      "skills": "c, git, github",
+      "shortDescription": "Project for the computer programming class. :shrug: That's about it.",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/github.com\/sopyb\/SecretSanta",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/chess.png",
+      "alt": "Picture of the chess board",
+      "title": "Chess",
+      "skills": "web dev, game dev, css, git, github, html, javascript",
+      "shortDescription": "Creating a chess board... and maybe AI too?",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/github.com\/sopyb\/chess",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/gamebot.png",
+      "alt": "picture of a rank card",
+      "title": "Game Bot",
+      "skills": "game dev, discord dev, linux admin, aws, css, digital ocean, discord.js, gcp,  git, github, html, javascript, nodejs, sql",
+      "shortDescription": " A discord bot to play games directly in your chat written in javascript running under Node.js.",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/github.com\/sopyb\/Game-bot",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/bhrewards.png",
+      "alt": "Picture of the Brawlhalla rewards extension",
+      "title": "Brawlhalla Rewards Bot",
+      "skills": "git, github, javascript, nodejs",
+      "shortDescription": "I would sometimes forget to start the stream in the background to get the rewards so I decided to automate it.",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/github.com\/sopyb\/brawlhallaRewardsBot",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/vheditor.png",
+      "alt": "Picture of visual studio code on my linux desktop",
+      "title": "VHEditor Android (contributor)",
+      "skills": "android dev, git, github, java, kotlin",
+      "shortDescription": "There was this bug that kept annyoing me in the app that I made a issue about on the github page and didn't get solved for months so I took the issue in my own hands.",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/github.com\/vhqtvn\/VHEditor-Android",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/discordtv.png",
+      "alt": "Picture of the app awaing login confirmation on mobile",
+      "title": "Discord TV",
+      "skills": "android dev, git, github, java, kotlin, sql",
+      "shortDescription": "I wanted a discord app that works well on Android\/Google TV... and this project began",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/github.com\/sopyb\/Discord_TV",
       "cat": 0
     }
   ]
