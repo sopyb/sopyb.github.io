@@ -129,7 +129,11 @@
     </div>
     <div class="fullscreen">
         <div class="fscontent">
-            <div class="fsimage" style="background-image: url('{src}')" alt={alt}></div>
+            <div class="fsimage" style="background-image: url('{src}')" alt={alt}>
+                <button class="fsbutton" on:click={exitFullScreen}>
+                    <i class="nf nf-cod-chrome_close"></i>
+                </button>
+            </div>
             <div class="content">
                 <h1 class="title">{title}</h1>
                 <div class="description">
@@ -478,6 +482,31 @@
         white-space: normal;
     }
 
+    .fsbutton {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0.5rem;
+
+        text-shadow: unset;
+        background-image: unset;
+        background-color:#FFF4;
+        color: #000;
+        font-weight: unset;
+        text-decoration: none;
+
+        border: unset;
+        border-radius: 50%;
+
+        visibility: hidden;
+
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    .fsbutton:hover {
+        background-color: #FFF8;
+    }
+
     @media (max-aspect-ratio: 1/1) {
         .fscontent {
             width: 90%;
@@ -503,6 +532,10 @@
 
         .description {
             max-height: 50vh;
+        }
+
+        .fsbutton {
+            visibility: visible;
         }
     }
 </style>
