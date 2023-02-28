@@ -46,7 +46,7 @@
       "alt": "Youtube Channel Artwork",
       "title": "Sopy - Artist",
       "skills": "music",
-      "shortDescription": "I've been publishing songs on youtube for a while. Eventually got OAC (Official Artist Channel)",
+      "shortDescription": "I've been publishing songs on youtube for a while. Eventually got OAC. (Official Artist Channel)",
       "description": "<p>I've published a total of 14 videos on the channel. Most of them I am proud of some less so, I was striving for perfection and never felt I quite got there. I silently walked away from the channel... at least for now to work on some songs without the preassure of an audience<\/p><br><h3>Some of my personal favourites songs are<\/h3><ul><li><a href=\"https:\/\/www.youtube.com\/watch?v=sofJhapQhNA\">Sunny Halloween Night<\/a><\/li><li><a href=\"https:\/\/www.youtube.com\/watch?v=ZseNxwdAUH8\">Sugar Jungle<\/a><\/li><li><a href=\"https:\/\/www.youtube.com\/watch?v=YmAXwLd4-os\">Sabai - Memories feat. Claire Ridgely (Sopy remix)<\/a><\/li><\/ul><br><p>Who knows when is the next time this channel is gonna be active?<\/p>",
       "link": "https:\/\/youtube.com\/@DoimptSopy",
       "cat": 1
@@ -96,7 +96,7 @@
       "alt": "A picture of the exotic tour website as it loaded in",
       "title": "Doimpt",
       "skills": "web dev, css, git, github, html",
-      "shortDescription": "Random challenge I took on to make a website ussing only android apps (linux applications ported don't count)",
+      "shortDescription": "Random challenge I took on to make a website ussing only android apps. (linux applications ported don't count)",
       "description": "<p>To Be Added<\/p>",
       "link": "https:\/\/doim.pt\/",
       "cat": 0
@@ -176,7 +176,7 @@
       "alt": "Picture of visual studio code on my linux desktop",
       "title": "VHEditor Android (contributor)",
       "skills": "android dev, git, github, java, kotlin",
-      "shortDescription": "There was this bug that kept annyoing me in the app that I made a issue about on the github page and didn't get solved for months so I took the issue in my own hands.",
+      "shortDescription": "There was this bug that kept annyoing me in the app that I made a issue about on the github repo and didn't get solved for months so I took the issue in my own hands.",
       "description": "<p>To Be Added<\/p>",
       "link": "https:\/\/github.com\/vhqtvn\/VHEditor-Android",
       "cat": 0
@@ -186,7 +186,7 @@
       "alt": "Picture of the app awaing login confirmation on mobile",
       "title": "Discord TV",
       "skills": "android dev, git, github, java, kotlin, sql",
-      "shortDescription": "I wanted a discord app that works well on Android\/Google TV... and this project began",
+      "shortDescription": "I wanted a discord app that works well on Android\/Google TV... and this project began.",
       "description": "<p>To Be Added<\/p>",
       "link": "https:\/\/github.com\/sopyb\/Discord_TV",
       "cat": 0
@@ -196,9 +196,19 @@
       "alt": "picture of the demo containing a blank roadmap",
       "title": "Asema",
       "skills": "web dev, linux admin, bash, css, express, git, github, html, javascript, nodejs, passport.js, react, sql, typescript",
-      "shortDescription": "Project I cooked up in 48 hours with my 4 friends at a hackathon organized by the student organization of my university on the topic of \"Innovating the current world state through leading-edge & smart technologies\"",
+      "shortDescription": "Project I cooked up in 48 hours with my 4 friends at a hackathon organized by the student organization of my university on the topic of \"Innovating the current world state through leading-edge & smart technologies\".",
       "description": "<p>To Be Added<\/p>",
       "link": "https:\/\/github.com\/UT-Asema",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/cri.png",
+      "alt": "picture of the \"Creștem România Împreună\" organization's website",
+      "title": "Crestem Romania Impreuna",
+      "skills": "web dev, linux admin, bash, bootstrap, css, firebase, git, html, javascript, jquery, php, sql",
+      "shortDescription": "I worked on 3 projects with the \"Creștem România Împreună\" organization.",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/cri.org.ro\/",
       "cat": 0
     }
   ]
