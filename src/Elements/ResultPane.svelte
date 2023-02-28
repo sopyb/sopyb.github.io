@@ -483,6 +483,7 @@
     }
 
     .fsbutton {
+        aspect-ratio: 1/1;
         position: absolute;
         top: 0;
         right: 0;
