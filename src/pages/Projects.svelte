@@ -96,7 +96,7 @@
       "alt": "A picture of the exotic tour website as it loaded in",
       "title": "Doimpt",
       "skills": "web dev, css, git, github, html",
-      "shortDescription": "Random challenge I took on to make a website ussing only android apps. (linux applications ported don't count)",
+      "shortDescription": "Random challenge I took on to make a website using only android apps. (linux applications ported don't count)",
       "description": "<p>To Be Added<\/p>",
       "link": "https:\/\/doim.pt\/",
       "cat": 0
