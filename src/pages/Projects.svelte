@@ -165,7 +165,7 @@
       "src": "\/img\/bhrewards.png",
       "alt": "Picture of the Brawlhalla rewards extension",
       "title": "Brawlhalla Rewards Bot",
-      "skills": "git, github, javascript, nodejs",
+      "skills": "git, github, javascript, nodejs, typescript",
       "shortDescription": "I would sometimes forget to start the stream in the background to get the rewards so I decided to automate it.",
       "description": "<p>To Be Added<\/p>",
       "link": "https:\/\/github.com\/sopyb\/brawlhallaRewardsBot",
