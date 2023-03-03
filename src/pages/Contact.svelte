@@ -14,6 +14,16 @@
         <h1>Where can you find me?</h1>
         <div class="socialGrid">
             <div>
+                <a href="https://www.linkedin.com/in/sopy/">
+                    <i class="nf nf-fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+            <div>
+                <a href="https://github.com/sopyb">
+                    <i class="nf nf-fa-github"></i> Github
+                </a>
+            </div>
+            <div>
                 <a href="mailto:contact@sopy.one">
                     <i class="nf nf-cod-mail"></i> Email
                 </a>
@@ -21,11 +31,6 @@
             <div>
                 <a href="https://instagram.com/doimptsopy">
                     <i class="nf nf-fa-instagram"></i> Instagram
-                </a>
-            </div>
-            <div>
-                <a href="https://github.com/sopyb">
-                    <i class="nf nf-fa-github"></i> Github
                 </a>
             </div>
         </div>
