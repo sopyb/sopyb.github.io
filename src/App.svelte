@@ -1,6 +1,6 @@
 <script lang="ts">
     // fly
-    import { fly } from 'svelte/transition';
+    import {fly} from 'svelte/transition';
 
     // app page imports
     import Panel from "./Elements/Panel.svelte";
@@ -24,6 +24,8 @@
     let pageComponent: any;
     let firstLoad: boolean = true;
     let pageNotFound: boolean = false;
+    // let anim: HTMLElement;
+    let transition = false;
 
     // update page component
     function updatePageComp() {
@@ -53,11 +55,31 @@
 
     // change page
     function changePage(page: string) {
-        if(page === curPage) return mounted();
+        if (page === curPage) return mounted();
         page == page || "about"; // default page
         location.href = "#/" + page;
         curPage = page;
-        updatePageComp();
+        // scroll to top of page component then update when scroll is done
+        window.scrollTo({top: window.innerHeight, behavior: "smooth"});
+        onStaticPage(() => {
+            transition = true;
+            setTimeout(() => {
+                updatePageComp();
+            }, 500);
+        });
+    }
+
+    // function to check if page is static
+    function onStaticPage(callback: Function) {
+        let y = window.scrollY;
+        let interval = setInterval(() => {
+            if (y === window.scrollY) {
+                clearInterval(interval);
+                callback();
+            }
+            y = window.scrollY;
+        }, 50);
+
     }
 
     // update page component on load
@@ -69,8 +91,9 @@
             firstLoad = false;
             return;
         }
-        // scroll past the first panel
-        window.scrollTo({top: window.innerHeight, behavior: "smooth"});
+
+        // fade in page component
+        transition = false;
     }
 </script>
 
@@ -81,24 +104,53 @@
 
 <!--Heading-->
 {#if !pageNotFound}
-<Panel>
-    <div>
-        {#if counter===0}
-        <h1 in:fly={{y: -48}}>one.sopy.portfolio</h1>
-        {:else if counter===1}
-        <h1 in:fly={{y: -48}}>Sopy's portfolio</h1>
-        {:else if counter===2}
-        <h1 in:fly={{y: -48}}>Placeholder title</h1>
-        {:else if counter===3}
-        <h1 in:fly={{y: -48}}>*insert portfolio title*</h1>
-        {/if}
-        <NavBar changePage={changePage} curPage={curPage} />
-    </div>
-</Panel>
-<PanelTransition2></PanelTransition2>
+    <Panel>
+        <div>
+            {#if counter === 0}
+                <h1 in:fly={{y: -48}}>one.sopy.portfolio</h1>
+            {:else if counter === 1}
+                <h1 in:fly={{y: -48}}>Sopy's portfolio</h1>
+            {:else if counter === 2}
+                <h1 in:fly={{y: -48}}>Placeholder title</h1>
+            {:else if counter === 3}
+                <h1 in:fly={{y: -48}}>*insert portfolio title*</h1>
+            {/if}
+            <NavBar changePage={changePage} curPage={curPage}/>
+        </div>
+    </Panel>
+    <PanelTransition2></PanelTransition2>
 
-<!--add page content on load/change call mounted-->
-<svelte:component this={pageComponent} on:mounted={mounted} />
+    <!--add page content on load/change call mounted-->
+    <div class="cpag" class:out={transition}>
+        <svelte:component this={pageComponent} on:mounted={mounted}/>
+    </div>
 {:else}
-    <NotFound />
+    <NotFound/>
 {/if}
+
+<style>
+    .cpag {
+        position: relative;
+        min-height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        background-color: #222;
+    }
+
+    .cpag.out {
+        max-height: 100%;
+        overflow: hidden;
+
+    }
+
+    .cpag > :global(*) {
+        opacity: 100 !important;
+
+        transition: opacity 0.5s ease-in-out !important;
+    }
+
+    .cpag.out > :global(*) {
+    /*    hide all objects inside*/
+        opacity: 0 !important;
+    }
+</style>
