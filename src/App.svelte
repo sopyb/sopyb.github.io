@@ -92,6 +92,15 @@
             return;
         }
 
+        // force calculation of the css on the new page objects
+        // this is needed to trigger the transition instead of just
+        // instantly appearing
+        // REALLY NOW FRICK YOU CSS OR svelte (I'd forgive you if it were you)
+        // OR WHATEVER THE HECK IS CAUSING THIS
+
+        // @ts-ignore
+        window.getComputedStyle(document.querySelector(".cpag")).opacity;
+
         // fade in page component
         transition = false;
     }
