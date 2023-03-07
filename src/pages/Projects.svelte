@@ -40,7 +40,178 @@
     { name: 'Unity', icon: 'nf-dev-unity_small' },
   ]
 
-  let projects = [{"src":"/img/YT-artwork.jpg","alt":"Youtube Channel Artwork","title":"Sopy - Artist","skills":"music","shortDescription":"I've been publishing songs on youtube for a while. Eventually got OAC. (Official Artist Channel)","description":"<p>I've published a total of 14 videos on the channel. Most of them I am proud of some less so, I was striving for perfection and never felt I quite got there. I silently walked away from the channel... at least for now to work on some songs without the preassure of an audience</p><br><h3>Some of my personal favourites songs are</h3><ul><li><a href=\"https://www.youtube.com/watch?v=sofJhapQhNA\">Sunny Halloween Night</a></li><li><a href=\"https://www.youtube.com/watch?v=ZseNxwdAUH8\">Sugar Jungle</a></li><li><a href=\"https://www.youtube.com/watch?v=YmAXwLd4-os\">Sabai - Memories feat. Claire Ridgely (Sopy remix)</a></li></ul><br><p>Who knows when is the next time this channel is gonna be active?</p>","link":"https://youtube.com/@DoimptSopy","cat":1},{"src":"/img/sopyonev3.png","alt":"screenshot of the sopy.one homepage","title":"My portfolio","skills":"web dev, css, git, github, html, javascript, typescript, svelte","shortDescription":"The third redesign of my portfolio... Sure hope I don't hate this one in a few weeks and start from scratch.","description":"<p>Nothing to see here >.> at least for now</p>","link":"https://sopy.one","cat":0},{"src":"/img/ffrespawn.png","alt":"In game screenshot of FusionFall Re:Spawn","title":"FusionFall Re:Spawn","skills":"game dev, c#, unity","shortDescription":"FusionFall Re:Spawn was a fan-made revival project of the online MMO FusionFall.","description":"<p>The aim of the project has been to recreate the original game with a more recent and stable version of Unity. Rewriting the story while loosely following the original to fill narrative gaps and to leave room for exciting new stories to take place in the universe</p><p>The project was being developed by volunteers whose vision was to bring the game they fell in love to the newer generations. I joined the team for a similar reason: I joined the development team in hope of creating something that people will be able to enjoy as much as I enjoyed playing the original game as a kid back in 2012-2013. Sadly, the project was discontinued in December of 2021 as we couldn't find enough modelers to realistically finish the planned demo any time in the near future, much less the full game. We decided our time would be better invested in other projects, be they FusionFall related or not.</p><p>I worked on multiple things during my time on the team, such as movement, third person camera and generating animations for the main menu camera programmatically to save time whenever we'd make changes to it. But for the most part I was helping other volunteers by sharing informational resources from Unity's scripting documentation since I've learned my way around it relatively quickly.</p>","link":"https://fusionfall.fandom.com/wiki/FusionFall_RE:SPAWN","cat":0},{"src":"/img/fluidsim.png","alt":"Picture of the fluid simulation","title":"Fluid Simulation","skills":"web dev, css, git, github, html, javascript","shortDescription":"After a month of working on it, my fluid simulation was finished. (physics project go brrr)","description":"<p>To Be Added</p>","link":"https://fluidsimulation.sopy.one/","cat":0},{"src":"/img/exotictour.png","alt":"Picture of the langing page of exotictour","title":"Exotic Tour","skills":"web dev, css, git, github, html, javascript, jquery","shortDescription":"Website made for a training company I was involved in. This website had a lot of firsts.","description":"<p>To Be Added</p>","link":"https://exotictour.sopy.one/","cat":0},{"src":"/img/doimpt.png","alt":"A picture of the exotic tour website as it loaded in","title":"Doimpt","skills":"web dev, css, git, github, html","shortDescription":"Random challenge I took on to make a website using only android apps. (linux applications ported don't count)","description":"<p>To Be Added</p>","link":"https://doim.pt/","cat":0},{"src":"/img/sopyspace.png","alt":"A picture of the sopy space website","title":"Sopy Space","skills":"web dev, css, git, github, html, javascript, jquery","shortDescription":"I bought a domain then realized I never did parallax and then that I never seen parallax using the gyroscope. ( >.>) There is the unique feature.","description":"<p>To Be Added</p>","link":"https://sopy.space/","cat":0},{"src":"/img/suaio.png","alt":"picture of the suaio website","title":"Suaio Website","skills":"web dev, css, git, github, html, javascript, jquery","shortDescription":"One of the first websites I made, in order to promote my discord bot.","description":"<p>To Be Added</p>","link":"https://sopy.one/Suaio-site/","cat":0},{"src":"/img/bfinterpreter.png","alt":"picture with hello world in brainfuck","title":"BrainF**k Interpreter","skills":"git, github, javascript, nodejs","shortDescription":"I was bored one night so i made a bf interpreter and played some tic-tac-toe with bf code someone else wrote.","description":"<p>To Be Added</p>","link":"https://github.com/sopyb/brainf--kJsInterpreter","cat":0},{"src":"/img/theCat.png","alt":"Picture of a cat holding  plushie cat (unrelated picture)","title":"Secret Santa","skills":"c, git, github","shortDescription":"Project for the computer programming class. :shrug: That's about it.","description":"<p>To Be Added</p>","link":"https://github.com/sopyb/SecretSanta","cat":0},{"src":"/img/chess.png","alt":"Picture of the chess board","title":"Chess","skills":"web dev, game dev, css, git, github, html, javascript","shortDescription":"Creating a chess board... and maybe AI too?","description":"<p>To Be Added</p>","link":"https://github.com/sopyb/chess","cat":0},{"src":"/img/gamebot.png","alt":"picture of a rank card","title":"Game Bot","skills":"game dev, discord dev, linux admin, aws, css, digital ocean, discord.js, gcp, git, github, html, javascript, nodejs, sql","shortDescription":" A discord bot to play games directly in your chat written in javascript running under Node.js.","description":"<p>To Be Added</p>","link":"https://github.com/sopyb/Game-bot","cat":0},{"src":"/img/bhrewards.png","alt":"Picture of the Brawlhalla rewards extension","title":"Brawlhalla Rewards Bot","skills":"git, github, javascript, nodejs, typescript","shortDescription":"I would sometimes forget to start the stream in the background to get the rewards so I decided to automate it.","description":"<p>To Be Added</p>","link":"https://github.com/sopyb/brawlhallaRewardsBot","cat":0},{"src":"/img/vheditor.png","alt":"Picture of visual studio code on my linux desktop","title":"VHEditor Android (contributor)","skills":"android dev, git, github, java, kotlin","shortDescription":"There was this bug that kept annyoing me in the app that I made a issue about on the github repo and didn't get solved for months so I took the issue in my own hands.","description":"<p>To Be Added</p>","link":"https://github.com/vhqtvn/VHEditor-Android","cat":0},{"src":"/img/discordtv.png","alt":"Picture of the app awaing login confirmation on mobile","title":"Discord TV","skills":"android dev, git, github, java, kotlin, sql","shortDescription":"I wanted a discord app that works well on Android/Google TV... and this project began.","description":"<p>To Be Added</p>","link":"https://github.com/sopyb/Discord_TV","cat":0},{"src":"/img/asema.png","alt":"picture of the demo containing a blank roadmap","title":"Asema","skills":"web dev, linux admin, bash, css, express, git, github, html, javascript, nodejs, passport.js, react, sql, typescript","shortDescription":"Project I cooked up in 48 hours with 4 of my friends at a hackathon organized by the student organization of my university on the topic of \"Innovating the current world state through leading-edge & smart technologies\".","description":"<p>To Be Added</p>","link":"https://github.com/UT-Asema","cat":0},{"src":"/img/cri.png","alt":"picture of the \"Creștem România Împreună\" organization's website","title":"Creștem România Împreună","skills":"web dev, linux admin, bash, bootstrap, css, firebase, git, html, javascript, jquery, php, sql","shortDescription":"I worked on 3 projects with the \"Creștem România Împreună\" organization.","description":"<p>To Be Added</p>","link":"https://cri.org.ro/","cat":0}]
+  let projects = [
+    {
+      "src": "\/img\/YT-artwork.jpg",
+      "alt": "Youtube Channel Artwork",
+      "title": "Sopy - Artist",
+      "skills": "music",
+      "shortDescription": "I've been publishing songs on youtube for a while. Eventually got OAC. (Official Artist Channel)",
+      "description": "<p>I've published a total of 14 videos on the channel. Most of them I am proud of some less so, I was striving for perfection and never felt I quite got there. I silently walked away from the channel... at least for now to work on some songs without the preassure of an audience<\/p><br><h3>Some of my personal favourites songs are<\/h3><ul><li><a href=\"https:\/\/www.youtube.com\/watch?v=sofJhapQhNA\">Sunny Halloween Night<\/a><\/li><li><a href=\"https:\/\/www.youtube.com\/watch?v=ZseNxwdAUH8\">Sugar Jungle<\/a><\/li><li><a href=\"https:\/\/www.youtube.com\/watch?v=YmAXwLd4-os\">Sabai - Memories feat. Claire Ridgely (Sopy remix)<\/a><\/li><\/ul><br><p>Who knows when is the next time this channel is gonna be active?<\/p>",
+      "link": "https:\/\/youtube.com\/@DoimptSopy",
+      "cat": 1
+    },
+    {
+      "src": "\/img\/sopyonev3.png",
+      "alt": "screenshot of the sopy.one homepage",
+      "title": "My portfolio",
+      "skills": "web dev, css, git, github, html, javascript, typescript, svelte",
+      "shortDescription": "The third redesign of my portfolio... Sure hope I don't hate this one in a few weeks and start from scratch.",
+      "description": "<p>Well... here you are on the 3rd version of my web portfolio. As with my other versions I tried to do something new. This time I tried to learn svelte because I heard so many great things about it in online communities<\/p><p>The second version I've also experimented with some new things... like implementing a theme system and actually using JavaScript and letting the user interact with the page while getting better presenting who I am.<\/p><p>The first version was trying to be colorful and impressive but falling short in the design category. I tried to make a good looking website using no JavaScript at all to avoid making something overly complex (bad choice now that I have hindsight).<\/p>",
+      "link": "https:\/\/sopy.one",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/ffrespawn.png",
+      "alt": "In game screenshot of FusionFall Re:Spawn",
+      "title": "FusionFall Re:Spawn",
+      "skills": "game dev, c#, unity",
+      "shortDescription": "FusionFall Re:Spawn was a fan-made revival project of the online MMO FusionFall.",
+      "description": "<p>The aim of the project has been to recreate the original game with a more recent and stable version of Unity. Rewriting the story while loosely following the original to fill narrative gaps and to leave room for exciting new stories to take place in the universe<\/p><p>The project was being developed by volunteers whose vision was to bring the game they fell in love to the newer generations. I joined the team for a similar reason: I joined the development team in hope of creating something that people will be able to enjoy as much as I enjoyed playing the original game as a kid back in 2012-2013. Sadly, the project was discontinued in December of 2021 as we couldn't find enough modelers to realistically finish the planned demo any time in the near future, much less the full game. We decided our time would be better invested in other projects, be they FusionFall related or not.<\/p><p>I worked on multiple things during my time on the team, such as movement, third person camera and generating animations for the main menu camera programmatically to save time whenever we'd make changes to it. But for the most part I was helping other volunteers by sharing informational resources from Unity's scripting documentation since I've learned my way around it relatively quickly.<\/p>",
+      "link": "https:\/\/fusionfall.fandom.com\/wiki\/FusionFall_RE:SPAWN",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/fluidsim.png",
+      "alt": "Picture of the fluid simulation",
+      "title": "Fluid Simulation",
+      "skills": "web dev, css, git, github, html, javascript",
+      "shortDescription": "After a month of working on it, my fluid simulation was finished. (physics project go brrr)",
+      "description": "<p>In the first semester of the first year of university, in physics, we were presented with the option to make a project for extra credit on our exam. Having had the idea for quite some time to create a fluid simulation this was the best excuse to work on such a project.<\/p><p>I initially started writing this project in c but I realized I was losing too much time struggling to understand openGL shaders in order to have some kind of output to the screen (since on Linux if your objects aren't shaded nothing will be rendered at all). After that, I decided to go with technologies I was familiar with so I opted for JavaScript and Canvas API to make my fluid simulation.<\/p><p>This is one of my most interesting projects and I would've probably quit it like half way through due to the difficulty if I wasn't so determined.<\/p>",
+      "link": "https:\/\/fluidsimulation.sopy.one\/",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/exotictour.png",
+      "alt": "Picture of the langing page of exotictour",
+      "title": "Exotic Tour",
+      "skills": "web dev, css, git, github, html, javascript, jquery",
+      "shortDescription": "Website made for a training company I was involved in. This website had a lot of firsts.",
+      "description": "<p>In 12th grade I was involved in a POCU (Programe Europene Capital Uman - European Human Capital Programs) project which had 2 parts:<\/p><p><b>1)<\/b> A theoretical part where we'd further our understanding about the field we were about to graduate with a certificate in (Travel Agencies). This part lasted for approximately half the project's duration.<\/p><p><b>2)<\/b> A practical part where we'd have a practice company where we'd interact with other practice companies on the practice company market. We all had roles in the company. I was the marketing director. One of the first few activities we've done was marketing and branding. While we all took part in all stages the person responsible for each department had more tasks to accomplish. In this stage I created the website and also a <a href=\"https:\/\/exotictour.sopy.one\/src\/video\/spot.mp4\">promotional video<\/a> in which was mostly rushed, but in which I used my own music.<\/p><p>The photos in the carousel at the top of the page are all shot by me in my visits to different places. Additionally, translations (into English, German and French) of the page were also mostly done by me with the help of a few German and French friends.<\/p><p>One of the biggest challenges faced with this project was finishing the tasks at hand on time. This is especially true for this website where I had to build it from the ground up in a few short weeks.<\/p>",
+      "link": "https:\/\/exotictour.sopy.one\/",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/doimpt.png",
+      "alt": "A picture of the exotic tour website as it loaded in",
+      "title": "Doimpt",
+      "skills": "web dev, css, git, github, html",
+      "shortDescription": "Random challenge I took on to make a website using only android apps. (linux applications ported don't count)",
+      "description": "<h3>How far can you go with programming using just android apps?<\/h3><p>Is the question I asked myself one day when bored... <s>bad question<\/s>. I would soon realize that you can do about anything you can do on a desktop editor you just need too be determined enough and fight with my own inability to type correctly on a touchscreen.<\/p><p>I set up a few rules for myself on this project: <br>1) I should not use any Linux app that might've been ported as an app to Android such as VHEditor (that I also contributed to)<br>2) No extra hardware, such as mice and keyboard are allowed and,<br>3)I am not allowed to copy boilerplate code from anywhere<\/p><p>With those rules in place I was ready. I tried multiple apps before landing on <a href=\"https:\/\/spck.io\/\">Spck Editor<\/a> which had  the most complete set of features I might need.<\/p>",
+      "link": "https:\/\/doim.pt\/",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/sopyspace.png",
+      "alt": "A picture of the sopy space website",
+      "title": "Sopy Space",
+      "skills": "web dev, css, git, github, html, javascript, jquery",
+      "shortDescription": "I bought a domain then realized I never did parallax and then that I never seen parallax using the gyroscope. ( >.>) There is the unique feature.",
+      "description": "<p>I bought a domain then realized I never did parallax and then that I never seen parallax using the gyroscope. ( >.>) There is the unique feature.<\/p><p>It's such a shame the API for accessing the device's gyroscope sensor is not really standard in all browsers so some mobile users won't get to see the unique feature of this website.<\/p>",
+      "link": "https:\/\/sopy.space\/",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/suaio.png",
+      "alt": "picture of the suaio website",
+      "title": "Suaio Website",
+      "skills": "web dev, css, git, github, html, javascript, jquery",
+      "shortDescription": "One of the first websites I made, in order to promote my discord bot.",
+      "description": "<p>Suaio was one of my first programming projects ever. It's almost tragic I lost all code related to him to a HDD death, just like a lot of other early projects. It had 3 separate versions I can remember.<\/p><p>1) I remember wanting to make a Discord bot I didn't know what to name it so I took inspiration from YAGPDB (Yet Another General Purpose Discord Bot) and named my bot SUAIO (Sopy's Ultimate All In One) back in ~2017. I wasn't really good at programming so I was using this tool called Discord Bot Maker that was something like scratch you'd define the algorithm with blocks. I remember since the beginning the software had image manipulation function blocks and I was one of the few people in the community. Around this time I met Aaron and TheSongList who've already had some experiences coding and were willing to spend their time teaching me the gist of it.<\/p><p>2) Not long after meeting those 2 in about early 2018 I deprecated the old bot and started remaking it from scratch in Discord.js using the Klasa framework reaching feature parity after about a month of work. I don't have much to say about this version except I remember how much the framework was holding be back from adding more advanced features like playing music in voice and how in this time I'd steal code from people and try to understand it just to the point I could basically copy the code without looking much at the original.<\/p><p>3) Eventually I got tired of Klasa's limitations and decided to go entirely vanilla with the implementation of the bot on top of Discord.js and this is the version of the bot I remember being the most proud of. The code was bad and I knew it but I finally managed to do so many things from scratch without outside help. Sadly one day messing around with some friends in a voice chat I've sent an invite to one of the moderators of DiscordBotList (now top.gg) I had on my friend list and got permanently banned from the listing website along with my bot after which I've quit this project entirely as I no longer had any way to get it to people.<\/p> ",
+      "link": "https:\/\/sopy.one\/Suaio-site\/",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/bfinterpreter.png",
+      "alt": "picture with hello world in brainfuck",
+      "title": "BrainF**k Interpreter",
+      "skills": "git, github, javascript, nodejs",
+      "shortDescription": "I was bored one night so i made a bf interpreter and played some tic-tac-toe with bf code someone else wrote.",
+      "description": "<p>There's nothing much to say about the bf interpreter I made in JavaScript. I viewed a few videos on YouTube of people making incredible stuff inside of BrainF**k and decided if I wanna experience them first hand I better make myself a compiler\/interpreter for the language.<\/p>",
+      "link": "https:\/\/github.com\/sopyb\/brainf--kJsInterpreter",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/theCat.png",
+      "alt": "Picture of a cat holding  plushie cat (unrelated picture)",
+      "title": "Secret Santa",
+      "skills": "c, git, github",
+      "shortDescription": "Project for the computer programming class. :shrug: That's about it.",
+      "description": "<p>This was a project that was proposed by a professor at computer programming for extra credit where we had to use all knowledge we had of C to make a complex modular program with a classmate. In my case I was teamed up with my roommate M1841 and our project was to recreate the Secret Santa game in C. One of the biggest problems we've faced working on separate code bases up until a day before we were supposed to present the project was that our code was not very compatible so we had to do some massive refactoring of both code bases in less than a day, feat that we pulled off.<\/p>",
+      "link": "https:\/\/github.com\/sopyb\/SecretSanta",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/chess.png",
+      "alt": "Picture of the chess board",
+      "title": "Chess",
+      "skills": "web dev, game dev, css, git, github, html, javascript",
+      "shortDescription": "Creating a chess board... and maybe AI too?",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/github.com\/sopyb\/chess",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/gamebot.png",
+      "alt": "picture of a rank card",
+      "title": "Game Bot",
+      "skills": "game dev, discord dev, linux admin, aws, css, digital ocean, discord.js, gcp, git, github, html, javascript, nodejs, sql",
+      "shortDescription": " A discord bot to play games directly in your chat written in javascript running under Node.js.",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/github.com\/sopyb\/Game-bot",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/bhrewards.png",
+      "alt": "Picture of the Brawlhalla rewards extension",
+      "title": "Brawlhalla Rewards Bot",
+      "skills": "git, github, javascript, nodejs, typescript",
+      "shortDescription": "I would sometimes forget to start the stream in the background to get the rewards so I decided to automate it.",
+      "description": "<p>I would sometimes forget to start the stream in the background to get the rewards so I decided to automate it.<\/p>",
+      "link": "https:\/\/github.com\/sopyb\/brawlhallaRewardsBot",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/vheditor.png",
+      "alt": "Picture of visual studio code on my linux desktop",
+      "title": "VHEditor Android (contributor)",
+      "skills": "android dev, git, github, java, kotlin",
+      "shortDescription": "There was this bug that kept annyoing me in the app that I made a issue about on the github repo and didn't get solved for months so I took the issue in my own hands.",
+      "description": "<p>There was this bug that kept annyoing me in the app that I made a issue about on the github repo and didn't get solved for months so I took the issue in my own hands.<\/p>",
+      "link": "https:\/\/github.com\/vhqtvn\/VHEditor-Android",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/discordtv.png",
+      "alt": "Picture of the app awaing login confirmation on mobile",
+      "title": "Discord TV",
+      "skills": "android dev, git, github, java, kotlin, sql",
+      "shortDescription": "I wanted a discord app that works well on Android\/Google TV... and this project began.",
+      "description": "<p>To Be Added<\/p>",
+      "link": "https:\/\/github.com\/sopyb\/Discord_TV",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/asema.png",
+      "alt": "picture of the demo containing a blank roadmap",
+      "title": "Asema",
+      "skills": "web dev, linux admin, bash, css, express, git, github, html, javascript, nodejs, passport.js, react, sql, typescript",
+      "shortDescription": "Project I cooked up in 48 hours with 4 of my friends at a hackathon organized by the student organization of my university on the topic of \"Innovating the current world state through leading-edge & smart technologies\".",
+      "description": "<p>Project I cooked up in 48 hours with 4 of my friends at a hackathon organized by the student organization of my university on the topic of \"Innovating the current world state through leading-edge & smart technologies\". Our project was focused on creating a new way of learning that'd be more efficient or closer to the way humans naturally learn. With such a time psan to develop this idea we managed to formulate a decent pitch for the prezentation of our project and a decent technical demo showing what our idea would look like.<\/p><p>The biggest problem we've faced was the lack of sleep getting to us. Especially to me since I haven't slept for over 50 hours by the time the even ended.<\/p><p>We didn't win any prize at the competition but we got funding from one of the sponsoring companies of the event for a MVP that we are currently working on.<\/p>",
+      "link": "https:\/\/github.com\/UT-Asema",
+      "cat": 0
+    },
+    {
+      "src": "\/img\/cri.png",
+      "alt": "picture of the \"Creștem România Împreună\" organization's website",
+      "title": "Creștem România Împreună",
+      "skills": "web dev, linux admin, bash, bootstrap, css, firebase, git, html, javascript, jquery, php, sql",
+      "shortDescription": "I worked on 3 projects with the \"Creștem România Împreună\" organization.",
+      "description": "<p>I worked with HTML, CSS, JavaScript (jQuery), PHP, SQL (MariaDB) and Firebase’s Firestore on 3 projects.<\/p><p>I created a tool to schedule automatic Facebook content, posting local producers pulled from the malltaranesc.ro product database to county specific groups, configurable via a web interface.<\/p><p>I ported the messaging feature to the Mall Țărănesc website from their mobile app, reverse engineering the back-end interactions by correlating changes in the Firestore database with the application state<\/p><p>In collaboration with project teams, I linked together the databases of two applications, Eco Track and eco4, to supply a consistent view of events and participants between both applications, thus avoiding a costly rewrite of Eco Track and creating a straightforward way to expand with other events in the future.<\/p>",
+      "link": "https:\/\/cri.org.ro\/",
+      "cat": 0
+    }
+  ]
 
   let selectedSkills = [], buttons = new Array(skills.length).fill(false)
 
