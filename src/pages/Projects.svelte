@@ -147,7 +147,7 @@
       "title": "Chess",
       "skills": "web dev, game dev, css, git, github, html, javascript",
       "shortDescription": "Creating a chess board... and maybe AI too?",
-      "description": "<p>To Be Added<\/p>",
+      "description": "<h3>Code in the git repository is outdated, I'm rewriting the project<\/h3><p>I created a web-based chess game using JavaScript and the HTML5 Canvas API. The game allows two players to play against each other on a virtual board with classic chess pieces.<\/p><p>The game features an intuitive user interface, with clear indications of valid moves, piece selection, and check\/checkmate status. The board is updated in real-time as pieces move.<\/p><p>In addition to the basic game mechanics, the chess game also includes some advanced features such as:<\/p><ul><li>En passant capture<\/li><li>Castling<\/li><li>Promotion of pawns to other pieces<\/li><li>Highlighting of possible moves for selected pieces<\/li><li>Validation of moves to prevent illegal moves<\/li><li>Detection of check and checkmate status<\/li><\/ul><p>Future plans for the project include:<\/p><ul><li>Adding an AI opponent<\/li><li>Adding a timer<\/li><li>Adding a move history<\/li><li>Adding a move notation<\/li><li>Adding a move undo feature<\/li><\/ul>",
       "link": "https:\/\/github.com\/sopyb\/chess",
       "cat": 0
     },
@@ -167,7 +167,7 @@
       "title": "Brawlhalla Rewards Bot",
       "skills": "git, github, javascript, nodejs, typescript",
       "shortDescription": "I would sometimes forget to start the stream in the background to get the rewards so I decided to automate it.",
-      "description": "<p>I would sometimes forget to start the stream in the background to get the rewards so I decided to automate it.<\/p>",
+      "description": "<p>I would sometimes forget to start the stream in the background to get the rewards so I decided to automate it.<\/p><p>The script would fetch the calendar and open a chrome window in the background that'd be set to lowest video quality to not use a lot of bandwith. It would also collect channel points and check if the stream started and if the extension loaded in succesfully reloading the page if either of those encountered any issue.<\/p>",
       "link": "https:\/\/github.com\/sopyb\/brawlhallaRewardsBot",
       "cat": 0
     },
@@ -187,7 +187,7 @@
       "title": "Discord TV",
       "skills": "android dev, git, github, java, kotlin, sql",
       "shortDescription": "I wanted a discord app that works well on Android\/Google TV... and this project began.",
-      "description": "<p>To Be Added<\/p>",
+      "description": "<p>There is no Discord app for Android TV, so I decided to make my own worked out the QR authentication process by looking at the minified javascript from the desktop client and ported the code over to kotlin and implemented it into the app, before realizing the app would be breaking Discord's ToS and constantly miss functionality available only to users with no information in Discord's documentation, so I ended up stopping the project's development.<\/p>",
       "link": "https:\/\/github.com\/sopyb\/Discord_TV",
       "cat": 0
     },
