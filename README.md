@@ -1,47 +1,71 @@
-# Svelte + TS + Vite
+# Sopy.one - Sopy's online portfolio
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+## Table of Contents
+- [About](#about)
+- [Links](#links)
+- [Branding](#branding)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Development](#development)
+- [License](#license)
+- [Contributing](#contributing)
+## About
+This is the github repo for my online portfolio. It is built using [svelte](https://svelte.dev/) and [vite](https://vitejs.dev/). It is hosted on [github pages](https://pages.github.com/) and it was the first time messing around with a CI/CD pipeline. I used [github actions](https://github.com/features/actions) to build and deploy the site.
 
-## Recommended IDE Setup
+Now I finally have a version of the portfolio I don't start hating before I finish working on it. I'm not sure what else I could add, but I'm happy with how it turned out.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## Links
+[about](https://sopy.one/#/about) | [projects](https://sopy.one/#/projects) | [contact](https://sopy.one/#/contact)
 
-## Need an official Svelte framework?
+## Branding
+I'm not a designer, but I tried to make the site look nice. I used [Nerd Fonts](https://www.nerdfonts.com/) for the icons and chose a few colors for the site. I also made a custom favicon and a custom scrollbar.
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+| Color               | Hex     | RGB           |
+|---------------------|---------|---------------|
+| Background          | #444    | 68, 68, 68    |
+| Background (darker) | #222    | 34, 34, 34    |
+| Borders             | #DDD    | 221, 221, 221 |
+| Text                | #FFF    | 255, 255, 255 |
+| Accent (main)       | #BB78DD | 187, 120, 221 |
+| Accent (secondary)  | #678DDA | 103, 141, 218 |
 
-## Technical considerations
+## Features
+- [x] Sick about me section
+- [x] Parallax stolen from [another project](https://github.com/sopyb/sopy.space)
+- [x] Project showcase with filters and search
+- [x] Contact info
+- [ ] Vampire cat missing
+- [x] Dark mode... but only dark mode
+- [x] Responsive design
+- [ ] For real where is the cat?
+- [x] Custom scrollbars
+- [x] Custom favicon... oh I found the cat
 
-**Why use this over SvelteKit?**
+## Tech Stack
+- [html](https://developer.mozilla.org/en-US/docs/Web/HTML)/[css](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [typescript](https://www.typescriptlang.org/) (& [javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript))
+- [svelte](https://svelte.dev/)
+- [vite](https://vitejs.dev/)
+- [github pages](https://pages.github.com/)
+- [github actions](https://github.com/features/actions)
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+## Development
+### Prerequisites
+- [node](https://nodejs.org/en/) (I use v19.7.0)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) (I use npm)
+- [git](https://git-scm.com/)
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `allowJs` in the TS template?**
-
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+To run the site locally, run the following commands:
+```bash
+git clone https://github.com/sopyb/sopyb.github.io.git # clone the repo
+cd sopyb.github.io # go into the repo
+npm install # install dependencies
+npm run dev # vite will run the site on localhost:5173 by default
 ```
+
+## Contributing
+If you want to contribute to this project, feel free to make a pull request. I'm kinda outta ideas, but I'm open to suggestions.
+
+## License
+You can do whatever you want with my code, but I would appreciate it if you told me you used it in your project so I can like look at your project. >.> I'm no lawyer, but I think this works.
