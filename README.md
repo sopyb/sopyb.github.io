@@ -7,8 +7,9 @@
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Development](#development)
-- [License](#license)
+  - [Prerequisites](#prerequisites)
 - [Contributing](#contributing)
+- [License](#license)
 ## About
 This is the github repo for my online portfolio. It is built using [svelte](https://svelte.dev/) and [vite](https://vitejs.dev/). It is hosted on [github pages](https://pages.github.com/) and it was the first time messing around with a CI/CD pipeline. I used [github actions](https://github.com/features/actions) to build and deploy the site.
 
