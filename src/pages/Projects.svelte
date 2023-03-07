@@ -157,7 +157,7 @@
       "title": "Game Bot",
       "skills": "game dev, discord dev, linux admin, aws, css, digital ocean, discord.js, gcp, git, github, html, javascript, nodejs, sql",
       "shortDescription": " A discord bot to play games directly in your chat written in javascript running under Node.js.",
-      "description": "<p>To Be Added<\/p>",
+      "description": "<p>A discord bot to play games directly in your chat written in JavaScript running under Node.js. The inspiration for this bot came after I added a mines minigame to a friend's Discord bot.</p><p>Play and level up to unlock special profile card backgrounds, titles and badges to have a unique rank card. The games currently available to play are 2048, hangman and minesweeper with hopefully more to come. (once I do get around to it)</p>",
       "link": "https:\/\/github.com\/sopyb\/Game-bot",
       "cat": 0
     },
