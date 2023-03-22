@@ -1,8 +1,8 @@
 <script>
-  export let previousColor = '#222';
+    export let previousColor = 'var(--color-bg-primary)';
 
-  let cssString =
-    `--previous-color: ${previousColor};`
+    let cssString =
+        `--previous-color: ${previousColor};`
 </script>
 <div style="{cssString}"></div>
 

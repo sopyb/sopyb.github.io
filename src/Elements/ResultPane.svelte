@@ -1,105 +1,105 @@
 <script>
-  export let project
+    export let project
 
-  let { src, alt, title, skills, shortDescription, description, link } = project
+    let {src, alt, title, skills, shortDescription, description, link} = project
 
-  // if project updates, update everything
-  $: {
-    src = project.src
-    alt = project.alt
-    title = project.title
-    skills = project.skills
-    shortDescription = project.shortDescription
-    description = project.description
-    link = project.link
-  }
-
-  let parent;
-
-  //      tooltip
-  function showTooltip (e) {
-    // get object hovered over
-    let obj = e.target
-
-    // find .tooltip in objects children
-    let tooltip = obj.querySelector('.tooltip')
-
-    // animate tooltip
-    tooltip.animate([
-      { opacity: 0, transform: 'translate(-50%, -10px)' },
-      { opacity: 1, transform: 'translate(-50%, 0)' }
-    ], {
-      duration: 300,
-      easing: 'ease-out'
-    })
-
-    // prevent returning to default opacity
-    tooltip.style.opacity = 1
-  }
-
-  function hideTooltip (e) {
-    // get object hovered over
-    let obj = e.target
-
-    // find .tooltip in objects children
-    let tooltip = obj.querySelector('.tooltip')
-
-    // animate tooltip
-    tooltip.animate([
-      { opacity: 1, transform: 'translate(-50%, 0)' },
-      { opacity: 0, transform: 'translate(-50%, -10px)' }
-    ], {
-      duration: 300,
-      easing: 'ease-in-out'
-    })
-
-    // save opacity
-    tooltip.style.opacity = 0
-  }
-
-  function openFullScreen (e) {
-    // on click, lock the vertical scroll and show the full screen
-    document.body.style.overflowY = 'hidden'
-    let fullScreen = parent.querySelector('.fullscreen')
-
-    // update height and width
-    fullScreen.style.height = '100vh'
-    fullScreen.style.width = '100vw'
-
-    // animate opacity
-    fullScreen.animate([
-      { opacity: 0 },
-      { opacity: 1 }
-    ], {
-      duration: 300,
-      easing: 'ease-out'
-    })
-
-    // prevent returning to default opacity
-    fullScreen.style.opacity = 1
-  }
-
-  function exitFullScreen (e) {
-    // on click, unlock the scroll and hide the full screen
-    document.body.style.overflowY = 'auto'
-    let fullScreen = parent.querySelector('.fullscreen')
-
-    // animate opacity
-    fullScreen.animate([
-      { opacity: 1 },
-      { opacity: 0 }
-    ], {
-      duration: 300,
-      easing: 'ease-in-out'
-    }).onfinish = () => {
-      // update height and width
-      fullScreen.style.height = '0'
-      fullScreen.style.width = '0'
-
-      // save opacity
-      fullScreen.style.opacity = 0
+    // if project updates, update everything
+    $: {
+        src = project.src
+        alt = project.alt
+        title = project.title
+        skills = project.skills
+        shortDescription = project.shortDescription
+        description = project.description
+        link = project.link
     }
-  }
+
+    let parent;
+
+    //      tooltip
+    function showTooltip(e) {
+        // get object hovered over
+        let obj = e.target
+
+        // find .tooltip in objects children
+        let tooltip = obj.querySelector('.tooltip')
+
+        // animate tooltip
+        tooltip.animate([
+            {opacity: 0, transform: 'translate(-50%, -10px)'},
+            {opacity: 1, transform: 'translate(-50%, 0)'}
+        ], {
+            duration: 300,
+            easing: 'ease-out'
+        })
+
+        // prevent returning to default opacity
+        tooltip.style.opacity = 1
+    }
+
+    function hideTooltip(e) {
+        // get object hovered over
+        let obj = e.target
+
+        // find .tooltip in objects children
+        let tooltip = obj.querySelector('.tooltip')
+
+        // animate tooltip
+        tooltip.animate([
+            {opacity: 1, transform: 'translate(-50%, 0)'},
+            {opacity: 0, transform: 'translate(-50%, -10px)'}
+        ], {
+            duration: 300,
+            easing: 'ease-in-out'
+        })
+
+        // save opacity
+        tooltip.style.opacity = 0
+    }
+
+    function openFullScreen(e) {
+        // on click, lock the vertical scroll and show the full screen
+        document.body.style.overflowY = 'hidden'
+        let fullScreen = parent.querySelector('.fullscreen')
+
+        // update height and width
+        fullScreen.style.height = '100vh'
+        fullScreen.style.width = '100vw'
+
+        // animate opacity
+        fullScreen.animate([
+            {opacity: 0},
+            {opacity: 1}
+        ], {
+            duration: 300,
+            easing: 'ease-out'
+        })
+
+        // prevent returning to default opacity
+        fullScreen.style.opacity = 1
+    }
+
+    function exitFullScreen(e) {
+        // on click, unlock the scroll and hide the full screen
+        document.body.style.overflowY = 'auto'
+        let fullScreen = parent.querySelector('.fullscreen')
+
+        // animate opacity
+        fullScreen.animate([
+            {opacity: 1},
+            {opacity: 0}
+        ], {
+            duration: 300,
+            easing: 'ease-in-out'
+        }).onfinish = () => {
+            // update height and width
+            fullScreen.style.height = '0'
+            fullScreen.style.width = '0'
+
+            // save opacity
+            fullScreen.style.opacity = 0
+        }
+    }
 </script>
 <div bind:this={parent}>
     <div class="root" on:click={openFullScreen}>
@@ -167,9 +167,9 @@
         position: relative;
         width: 100%;
         height: 100%;
-        border: 4px solid #DDD;
+        border: 4px solid var(--color-border);
         border-radius: 10px;
-        background-color: #444;
+        background-color: var(--color-bg-secondary);
     }
 
     /*    modal title*/
@@ -219,7 +219,7 @@
     }
 
     .content :global(a) {
-        color: #bb78dd;
+        color: var(--color-accent);
         text-decoration: none;
     }
 
@@ -256,8 +256,8 @@
 
         text-align: center;
 
-        background-color: #222;
-        color: #fff;
+        background-color: var(--color-bg-primary);
+        color: var(--color-text-primary);
         border-radius: 6px;
 
         padding: 2px;
@@ -323,17 +323,17 @@
         max-width: 100%;
         word-wrap: break-word;
 
-        color: #bb78dd;
+        color: var(--color-accent);
         text-decoration: none;
     }
 
     .content a:hover {
-        color: #bb78dd;
+        color: var(--color-accent);
         text-decoration: underline;
     }
 
     .content a:visited {
-        color: #bb78dd;
+        color: var(--color-accent);
     }
 
     .content li {
@@ -354,7 +354,7 @@
         left: 0;
         width: 0;
         height: 0;
-        background-color: #2228;
+        background-color: var(--color-bg-primary-op);
         backdrop-filter: blur(8px);
         opacity: 0;
 
@@ -370,8 +370,8 @@
         width: 60%;
         min-height: 25vw;
 
-        background-color: #444;
-        border: 4px solid #DDD;
+        background-color: var(--color-bg-secondary);
+        border: 4px solid var(--color-border);
         border-radius: 10px;
 
         z-index: 1;
@@ -392,7 +392,7 @@
         object-fit: cover;
         object-position: center;
 
-        border-right: #DDDDDD 4px solid;
+        border-right: var(--color-border) 4px solid;
 
         /*    background image*/
         background-size: cover;
@@ -439,7 +439,7 @@
         white-space: normal;
         text-overflow: ellipsis;
 
-        color: #bb78dd;
+        color: var(--color-accent);
         text-decoration: none;
 
     }
@@ -493,21 +493,23 @@
 
         text-shadow: unset;
         background-image: unset;
-        background-color:#FFF4;
-        color: #000;
+        opacity: 60%;
+        background-color: var(--color-border);
+        color: var(--color-bg-primary);
         font-weight: unset;
         text-decoration: none;
 
         border: unset;
         border-radius: 50%;
 
+
         visibility: hidden;
 
-        transition: background-color 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
     }
 
     .fsbutton:hover {
-        background-color: #FFF8;
+        opacity: 80%;
     }
 
     @media (max-aspect-ratio: 1/1) {

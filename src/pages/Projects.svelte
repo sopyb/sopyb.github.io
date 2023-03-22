@@ -301,7 +301,7 @@
     dispatch('mounted', true)
   })
 </script>
-<Panel bgcolor="#222">
+<Panel bgcolor="var(--color-bg-primary)">
     <div slot="centerX" class="parent">
         <div class="controls">
             <!--            search bar-->
@@ -320,14 +320,15 @@
                     <option value=2>Others</option>
                 </select>
 
-                <!--            Multiple select for skills asociated to category-->
+                <!--            Multiple select for skills associated to category-->
                 <div id="skill">
                     {#each skills as { name, icon }, i}
                         <div>
-                            <button class:active={buttons[i]} on:click={() => updateSelected(name)} class="skill"><i
-                                    class="nf {icon}"></i></button>
+                            <button class:active={buttons[i]} on:click={() => updateSelected(name)} class="skill" aria-labelledby="skillbtnlabel{i}">
+                                <i class="nf {icon}"></i>
+                            </button>
                             <br>
-                            <span>{name}</span>
+                            <span id="skillbtnlabel{i}">{name}</span>
                         </div>
                     {/each}
                 </div>
@@ -361,7 +362,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        background-color: #333;
+        background-color: var(--color-bg-mid);
         border-radius: 5px;
         padding: 0.5rem;
         margin-right: 1.1rem;
@@ -372,7 +373,7 @@
     .search input {
         border: none;
         background-color: transparent;
-        color: #fff;
+        color: var(--color-text-primary);
         font-size: 1rem;
         padding: 0.5rem;
         width: 100%;
@@ -380,7 +381,7 @@
     }
 
     .search i {
-        color: #fff;
+        color: var(--color-text-primary);
         font-size: 1.5rem;
         margin-left: 0.5rem;
         float: right;
@@ -402,8 +403,8 @@
 
     #category {
         border: none;
-        background-color: #333;
-        color: #fff;
+        background-color: var(--color-bg-mid);
+        color: var(--color-text-primary);
         font-size: 1rem;
         padding: 0.5rem;
         border-radius: 5px;
@@ -414,9 +415,10 @@
         height: 9.2em;
     }
 
+
     #category option {
-        background: linear-gradient(#333, #333);
-        color: #fff;
+        background: linear-gradient(var(--color-bg-mid), var(--color-bg-mid));
+        color: var(--color-text-primary);
         font-size: 1rem;
         padding: 0.4rem;
         border-radius: 10px;
@@ -425,15 +427,15 @@
     }
 
     #category option:hover {
-        background: linear-gradient(#555, #555);
+        background: linear-gradient(var(--color-bg-secondary), var(--color-bg-secondary));
     }
 
     #category option:active, #category option:focus, #category option:checked {
-        background: linear-gradient(#bb78dd, #bb78dd);
+        background: linear-gradient(var(--color-accent), var(--color-accent));
     }
 
     #skill span {
-        color: #fff;
+        color: var(--color-text-primary);
         font-size: 1rem;
         transition: background 22s;
 
@@ -463,14 +465,14 @@
 
 
     .skill.active {
-        background-color: #333;
+        background-color: var(--color-bg-mid);
     }
 
     .skill {
-        background: #DDD;
+        background: var(--color-border);
         border: none;
         border-radius: 50%;
-        color: #222;
+        color: var(--color-text-primary);
         cursor: pointer;
         font-size: 1.5rem;
         height: 2.5rem;
@@ -482,12 +484,12 @@
     }
 
     .skill:hover {
-        background: #BBB;
+        background: var(--color-bg-mid);
     }
 
     .skill.active {
-        background: #bb78dd;
-        color: #DDD;
+        background: var(--color-accent);
+        color: var(--color-border);
     }
 
     .results {

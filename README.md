@@ -21,14 +21,15 @@ Now I finally have a version of the portfolio I don't start hating before I fini
 ## Branding
 I'm not a designer, but I tried to make the site look nice. I used [Nerd Fonts](https://www.nerdfonts.com/) for the icons and chose a few colors for the site. I also made a custom favicon and a custom scrollbar.
 
-| Color               | Hex     | RGB           |
-|---------------------|---------|---------------|
-| Background          | #444    | 68, 68, 68    |
-| Background (darker) | #222    | 34, 34, 34    |
-| Borders             | #DDD    | 221, 221, 221 |
-| Text                | #FFF    | 255, 255, 255 |
-| Accent (main)       | #BB78DD | 187, 120, 221 |
-| Accent (secondary)  | #678DDA | 103, 141, 218 |
+| Color               |   Hex    |      RGB       |
+|---------------------|:--------:|:--------------:|
+| Background          |   #444   |   68, 68, 68   |
+| Backhround (mid)    |   #333   |   51, 51, 51   |
+| Background (darker) |   #222   |   34, 34, 34   |
+| Borders             |   #DDD   | 221, 221, 221  |
+| Text                |   #FFF   | 255, 255, 255  |
+| Accent (main)       | #BB78DD  | 187, 120, 221  |
+| Accent (secondary)  | #678DDA  | 103, 141, 218  |
 
 ## Features
 - [x] Sick about me section

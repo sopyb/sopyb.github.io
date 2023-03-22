@@ -13,6 +13,7 @@
     import Contact from './pages/Contact.svelte';
     import Projects from "./pages/Projects.svelte";
     import NotFound from './pages/NotFound.svelte';
+    import ThemePicker from "./Elements/ThemePicker.svelte";
 
     // let title change - counter
     let counter = Math.floor(Math.random() * 4);
@@ -106,11 +107,6 @@
     }
 </script>
 
-<!--add stylesheet to header-->
-<svelte:head>
-    <link href="https://www.nerdfonts.com/assets/css/combo.css" rel="stylesheet" type="text/css">
-</svelte:head>
-
 <!--Heading-->
 {#if !pageNotFound}
     <Panel>
@@ -137,13 +133,15 @@
     <NotFound/>
 {/if}
 
+<ThemePicker/>
+
 <style>
     .cpag {
         position: relative;
         min-height: 100vh;
         width: 100%;
         overflow: hidden;
-        background-color: #222;
+        background-color: var(--color-bg-primary);
     }
 
     .cpag.out {
@@ -155,7 +153,7 @@
     .cpag > :global(*) {
         opacity: 100 !important;
 
-        transition: opacity 0.5s ease-in-out !important;
+        transition: all 0.3s ease-in-out !important;
     }
 
     .cpag.out > :global(*) {

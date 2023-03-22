@@ -1,8 +1,8 @@
 <script>
-  export let currentColor = '#222'
+    export let currentColor = 'var(--color-bg-primary )'
 
-  let cssString =
-    `--current-color: ${currentColor};`
+    let cssString =
+        `--current-color: ${currentColor};`
 </script>
 <div style="{cssString}"></div>
 

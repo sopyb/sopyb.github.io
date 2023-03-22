@@ -1,6 +1,7 @@
 <script lang="ts">
     // on mount import
-    import { onMount } from 'svelte';
+    import {onMount} from 'svelte';
+
     let pages: string[] = [
         'about',
         'projects',
@@ -8,7 +9,8 @@
     ]
 
     let navBar, fixed = false;
-    export let changePage = () => {};
+    export let changePage = () => {
+    };
     export let curPage: string = "home";
 
     // on mount
@@ -36,7 +38,8 @@
 
 <ul bind:this={navBar}>
     {#each pages as page}
-        <li on:click={() => changePage(page)} class:active={page === curPage}>{page.charAt(0).toUpperCase() + page.slice(1)}</li>
+        <li on:click={() => changePage(page)}
+            class:active={page === curPage}>{page.charAt(0).toUpperCase() + page.slice(1)}</li>
     {/each}
 </ul>
 
@@ -47,19 +50,19 @@
     }
 
     .active {
-        color: #678dda;
+        color: var(--color-accent-secondary);
     }
 
     .active:hover {
-        color: #bb78dd;
+        color: var(--color-accent);
     }
 
     li:hover {
-        color: #bb78dd;
-        background-color: #222;
+        color: var(--color-accent);
+        background-color: var(--color-bg-primary);
     }
 
-/*    center ul items*/
+    /*    center ul items*/
     ul {
         position: absolute;
         left: 50%;
@@ -70,7 +73,7 @@
         display: flex;
         justify-content: center;
 
-        background-color: #4440;
+        background-color: var(--color-bg-secondary);
 
         padding: 0;
     }
@@ -80,9 +83,9 @@
         margin: 0 10px;
 
         padding: 10px;
-        border: 1px solid #DDD;
+        border: 1px solid var(--color-border);
         border-radius: 5px;
-        background-color: #444;
+        background-color: var(--color-bg-secondary);
     }
 
     * {
@@ -93,12 +96,12 @@
     ul:global(.fixed) {
         position: fixed;
         top: -1px;
+
         width: 100%;
         z-index: 99999999;
 
 
-
-        background-color: #bb78dd44;
+        background-color: var(--color-accent-op);
         backdrop-filter: blur(20px) saturate(1.5) brightness(1.5);
 
         padding: 10px;
@@ -115,12 +118,12 @@
         padding: 10px;
         border: unset;
         border-radius: 5px;
-        background-color: #222;
+        background-color: var(--color-bg-primary);
     }
 
 
     ul:global(.fixed) li:hover {
-        color: #bb78dd;
+        color: var(--color-accent);
         background-color: #000;
     }
 </style>

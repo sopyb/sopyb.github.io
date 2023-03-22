@@ -1,8 +1,8 @@
 <script>
-  export let previousColor = '#222';
+    export let previousColor = 'var(--color-bg-primary)';
 
-  let cssString =
-    `--previous-color: ${previousColor};`
+    let cssString =
+        `--previous-color: ${previousColor};`
 </script>
 <div style="{cssString}"></div>
 
@@ -18,8 +18,8 @@
         height: 0;
         width: 100%;
 
-        top: -1px; /* firefox fix */
-        margin-bottom: -13vh;
+        margin-bottom: calc(-13vh + 1px);
+        margin-top: 0;
 
         background-color: transparent;
         z-index: 99999;

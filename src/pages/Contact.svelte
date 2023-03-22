@@ -1,15 +1,15 @@
 <script>
-  import Panel from '../Elements/Panel.svelte'
-  import { createEventDispatcher, onMount } from 'svelte'
+    import Panel from '../Elements/Panel.svelte'
+    import {createEventDispatcher, onMount} from 'svelte'
 
-  const dispatch = createEventDispatcher()
+    const dispatch = createEventDispatcher()
 
-  onMount(() => {
-    dispatch('mounted', true)
-  })
+    onMount(() => {
+        dispatch('mounted', true)
+    })
 </script>
 
-<Panel bgcolor="#222">
+<Panel bgcolor="var(--color-bg-primary)">
     <div class="parent">
         <h1>Where can you find me?</h1>
         <div class="socialGrid">
@@ -49,17 +49,17 @@
     }
 
     .socialGrid div {
-        background-color: #333;
+        background-color: var(--color-bg-mid);
         border-radius: 5px;
     }
 
     .socialGrid div:hover {
-        background-color: #444;
+        background-color: var(--color-bg-secondary);
     }
 
     .socialGrid div a {
         display: block;
-        color: #fff;
+        color: var(--color-text-primary);
         text-decoration: none;
         font-size: 1rem;
         padding: 1rem;
