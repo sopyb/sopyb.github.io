@@ -11,48 +11,40 @@
             "--color-text-secondary": "#A6A6B8",
             "--color-accent": "#BB78DD",
             "--color-accent-op": "#BB78DD44",
-            "--color-accent-secondary": "#678DDA"
+            "--color-accent-secondary": "#678DDA",
+            "--abtme-item1": "#678dda",
+            "--abtme-item2": "#bb78dd",
+            "--abtme-item3": "#999",
+            "--abtme-item4": "#67b4da",
+            "--abtme-item5": "#de78de",
+            "--abtme-item6": "#ccc",
+            "--abtme-item7": "#add6eb",
+            "--abtme-item8": "#ebadeb",
+            "--abtme-item9": "#FFF",
+
         },
-        altDark: {
-            // dark shades of purple
-            "--color-bg-primary": "#3c264b",
-            "--color-bg-primary-op": "#3c264b88",
-            "--color-bg-mid": "#432b54",
-            "--color-bg-mid-op": "#432b5488",
-            "--color-bg-secondary": "#4f3366",
-            "--color-border": "#654c73",
-            "--color-text-primary": "#E1E1E6",
-            "--color-text-secondary": "#A6A6B8",
-            "--color-accent": "#BB78DD",
-            "--color-accent-op": "#BB78DD44",
-            "--color-accent-secondary": "#678DDA"
+        light: {
+            "--color-bg-primary": "#beb5c5",
+            "--color-bg-primary-op": "#beb5c588",
+            "--color-bg-mid": "#cfc9d4",
+            "--color-bg-mid-op": "#cfc9d488",
+            "--color-bg-secondary": "#dfdbe1", // #dfdbe1
+            "--color-border": "#9f92a5",
+            "--color-text-primary": "#1a1a1f",
+            "--color-text-secondary": "#464658",
+            "--color-accent": "#652287",
+            "--color-accent-op": "#65228744",
+            "--color-accent-secondary": "#254b98",
+            "--abtme-item1": "#254b98",
+            "--abtme-item2": "#652287",
+            "--abtme-item3": "#666666",
+            "--abtme-item4": "#257298",
+            "--abtme-item5": "#872187",
+            "--abtme-item6": "#333333",
+            "--abtme-item7": "#143d52",
+            "--abtme-item8": "#521452",
+            "--abtme-item9": "#000000",
         },
-        // altLight: {
-        //     "--color-bg-primary": "#cbb4d9",
-        //     "--color-bg-primary-op": "#cbb4d988",
-        //     "--color-bg-mid": "#c3abd4",
-        //     "--color-bg-mid-op": "#c3abd488",
-        //     "--color-bg-secondary": "#b599cc",
-        //     "--color-border": "#a68eb4",
-        //     "--color-text-primary": "#1a1a1f",
-        //     "--color-text-secondary": "#464658",
-        //     "--color-accent": "#652287",
-        //     "--color-accent-op": "#65228744",
-        //     "--color-accent-secondary": "#1b376f"
-        // },
-        // light: {
-        //     "--color-bg-primary": "#e6e6e6",
-        //     "--color-bg-primary-op": "#e6e6e688",
-        //     "--color-bg-mid": "#f2f2f2",
-        //     "--color-bg-mid-op": "#f2f2f288",
-        //     "--color-bg-secondary": "#f8f8f8",
-        //     "--color-border": "#e6e6e6",
-        //     "--color-text-primary": "#000000",
-        //     "--color-text-secondary": "#4f4f4f",
-        //     "--color-accent": "#BB78DD",
-        //     "--color-accent-op": "#BB78DD44",
-        //     "--color-accent-secondary": "#678DDA"
-        // },
     }
 
     // get current theme from local storage
@@ -60,8 +52,9 @@
 
     // if theme is not set get user preference from browser
     if (!theme) {
-        // theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'altDark' : 'altLight';
-        theme = 'dark';
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        // save theme in local storage
+        localStorage.setItem('theme', theme);
     }
 
     // set theme colors on the :root element
@@ -84,8 +77,7 @@
     function updateTheme() {
         // check if theme is valid
         if (!themes[theme]) {
-            // theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'altDark' : 'altLight';
-            theme = 'dark';
+            theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         }
 
 

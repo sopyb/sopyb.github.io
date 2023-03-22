@@ -432,6 +432,7 @@
 
     #category option:active, #category option:focus, #category option:checked {
         background: linear-gradient(var(--color-accent), var(--color-accent));
+        color: var(--color-bg-secondary);
     }
 
     #skill span {
