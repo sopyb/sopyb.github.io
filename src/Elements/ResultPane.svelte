@@ -1,17 +1,58 @@
 <script>
+    // import fade transition
+    import {fade} from 'svelte/transition';
+    // import onMount
+    import {onMount} from "svelte";
+
     export let project
 
+
     let {src, alt, title, skills, shortDescription, description, link} = project
+    let content
+    let mounted = false;
 
     // if project updates, update everything
     $: {
-        src = project.src
-        alt = project.alt
-        title = project.title
-        skills = project.skills
-        shortDescription = project.shortDescription
-        description = project.description
-        link = project.link
+        if (!mounted) {
+            src = project.src
+            alt = project.alt
+            title = project.title
+            skills = project.skills
+            shortDescription = project.shortDescription
+            description = project.description
+            link = project.link
+
+        } else {
+            content.animate(
+                [
+                    {opacity: 1},
+                    {opacity: 0}
+                ],
+                {
+                    duration: 500,
+                    easing: 'ease-out'
+                }
+            )
+
+            src = project.src
+            alt = project.alt
+            title = project.title
+            skills = project.skills
+            shortDescription = project.shortDescription
+            description = project.description
+            link = project.link
+
+            content.animate(
+                [
+                    {opacity: 0},
+                    {opacity: 1}
+                ],
+                {
+                    duration: 500,
+                    easing: 'ease-out'
+                }
+            )
+        }
     }
 
     let parent;
@@ -100,13 +141,18 @@
             fullScreen.style.opacity = 0
         }
     }
+
+    // on mount
+    onMount(() => {
+        mounted = true;
+    })
 </script>
-<div bind:this={parent}>
+<div bind:this={parent} transition:fade={{duration: 200}}>
     <div class="root" on:click={openFullScreen}>
         <div class="image"
              style="background-image: url('{src}')"
              alt="{alt}"></div>
-        <div class="content">
+        <div class="content" bind:this={content}>
             <h1><a href={link}>{title}</a></h1>
             <div class="skills">
                 <div class="skillItemsContainer">
@@ -159,6 +205,8 @@
         background-position: center;
 
         float: left;
+
+        transition: all 0.3s ease-in-out;
     }
 
     /*    modal content*/
