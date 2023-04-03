@@ -7,7 +7,16 @@
     export let project
 
 
-    let {src, alt, title, skills, shortDescription, description, link} = project
+    let {
+        src,
+        alt,
+        title,
+        skills,
+        shortDescription,
+        description,
+        link,
+        featured
+    } = project
     let content
     let mounted = false;
 
@@ -148,17 +157,25 @@
     })
 </script>
 <div bind:this={parent} transition:fade={{duration: 200}}>
-    <div class="root" on:click={openFullScreen}>
+    <div class="root" class:featured={featured} on:click={openFullScreen}>
         <div class="image"
              style="background-image: url('{src}')"
-             alt="{alt}"></div>
+             alt="{alt}">
+
+            {#if featured}
+                <div class="featured">
+                    <i class="nf nf-fa-star"></i>
+                </div>
+            {/if}
+        </div>
         <div class="content" bind:this={content}>
             <h1><a href={link}>{title}</a></h1>
             <div class="skills">
                 <div class="skillItemsContainer">
                     {#each skills as skill}
                         <div class="skillItem" on:mouseenter={showTooltip}
-                             on:mouseleave={hideTooltip}><i class="nf {skill.icon}"></i>
+                             on:mouseleave={hideTooltip}><i
+                                class="nf {skill.icon}"></i>
                             <p class="tooltip">{skill.name}</p></div>
                     {/each}
                 </div>
@@ -173,7 +190,8 @@
     </div>
     <div class="fullscreen">
         <div class="fscontent">
-            <div class="fsimage" style="background-image: url('{src}')" alt={alt}>
+            <div class="fsimage" style="background-image: url('{src}')"
+                 alt={alt}>
                 <button class="fsbutton" on:click={exitFullScreen}>
                     <i class="nf nf-cod-chrome_close"></i>
                 </button>
@@ -209,6 +227,27 @@
         transition: all 0.3s ease-in-out;
     }
 
+    .image > .featured {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .image > .featured i {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+
+        /* change size to 3rem*/
+        font-size: 2rem;
+        color: var(--color-star);
+
+    }
+
+    div.featured {
+        border-color: var(--color-star);
+    }
+
     /*    modal content*/
     .root {
         display: block;
@@ -218,6 +257,8 @@
         border: 4px solid var(--color-border);
         border-radius: 10px;
         background-color: var(--color-bg-secondary);
+
+        overflow: hidden;
     }
 
     /*    modal title*/

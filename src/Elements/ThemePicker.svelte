@@ -21,6 +21,7 @@
             "--abtme-item7": "#add6eb",
             "--abtme-item8": "#ebadeb",
             "--abtme-item9": "#FFF",
+            "--color-star": "#F2C94C",
 
         },
         light: {
@@ -44,6 +45,7 @@
             "--abtme-item7": "#143d52",
             "--abtme-item8": "#521452",
             "--abtme-item9": "#000000",
+            "--color-star": "#FFD700",
         },
     }
 
