@@ -75,7 +75,7 @@
         <InfoCard class="infoCard" color="#var(--abtme-item4)" slot="item4">
             <div slot="header"><i class="nf nf-fa-desktop"></i> Tech Enthusiast</div>
             <div slot="subtitle">Will drive you nuts</div>
-            <div slot="body">New tech, new possibilities and new ways to break stuff. Modding tech I get my hands in is
+            <div slot="body">New tech, new possibilities and new ways to break stuff. Modding tech I get my hands on is
                 always fun, be it a phone or a VR headset.
             </div>
         </InfoCard>
