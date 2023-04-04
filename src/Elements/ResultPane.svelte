@@ -30,37 +30,49 @@
             shortDescription = project.shortDescription
             description = project.description
             link = project.link
-
+            featured = project.featured
         } else {
-            content.animate(
-                [
-                    {opacity: 1},
-                    {opacity: 0}
-                ],
-                {
-                    duration: 500,
-                    easing: 'ease-out'
-                }
-            )
+            const same = src === project.src &&
+                alt === project.alt &&
+                title === project.title &&
+                skills === project.skills &&
+                shortDescription === project.shortDescription &&
+                description === project.description &&
+                link === project.link &&
+                featured === project.featured
 
-            src = project.src
-            alt = project.alt
-            title = project.title
-            skills = project.skills
-            shortDescription = project.shortDescription
-            description = project.description
-            link = project.link
+            if (!same) {
+                content.animate(
+                    [
+                        {opacity: 1},
+                        {opacity: 0}
+                    ],
+                    {
+                        duration: 500,
+                        easing: 'ease-out'
+                    }
+                )
 
-            content.animate(
-                [
-                    {opacity: 0},
-                    {opacity: 1}
-                ],
-                {
-                    duration: 500,
-                    easing: 'ease-out'
-                }
-            )
+                src = project.src
+                alt = project.alt
+                title = project.title
+                skills = project.skills
+                shortDescription = project.shortDescription
+                description = project.description
+                link = project.link
+                featured = project.featured
+
+                content.animate(
+                    [
+                        {opacity: 0},
+                        {opacity: 1}
+                    ],
+                    {
+                        duration: 500,
+                        easing: 'ease-out'
+                    }
+                )
+            }
         }
     }
 
