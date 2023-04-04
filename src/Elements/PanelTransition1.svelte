@@ -9,6 +9,13 @@
 <style>
     div {
         position: relative;
+    }
+    div:before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: 0;
+
         border-bottom: 3vh solid transparent;
         border-top: 10vh solid var(--previous-color);
 

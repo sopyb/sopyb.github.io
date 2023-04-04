@@ -1,14 +1,22 @@
 <script>
-    export let currentColor = 'var(--color-bg-primary )'
+    export let currentColor = 'var(--color-bg-primary)'
+    export let previousColor = 'var(--color-bg-secondary)'
 
     let cssString =
-        `--current-color: ${currentColor};`
+        `--current-color: ${currentColor};
+        --previous-color: ${previousColor}`
 </script>
 <div style="{cssString}"></div>
 
 <style>
     div {
-        margin-top: -10vh;
+        position: relative;
+    }
+    div:before {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
         max-width: 100%;
         /*make sure border is included in size calc*/
         box-sizing: border-box;
@@ -17,6 +25,7 @@
 
         border-left: 50vw solid transparent;
         border-right: 50vw solid transparent;
+        background-color: var(--previous-color);
 
         height: 10vh;
         width: 100%;

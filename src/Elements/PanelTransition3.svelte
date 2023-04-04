@@ -9,6 +9,14 @@
 <style>
     div {
         position: relative;
+    }
+    div:before {
+        content: '';
+        position: absolute;
+
+        bottom: -1px;
+        left: 0;
+
         border-bottom: 10vh solid var(--previous-color);
         border-top: 3vh solid transparent;
 
@@ -18,7 +26,6 @@
         height: 0;
         width: 100%;
 
-        margin-top: calc(-13vh + 1px);
 
         background-color: transparent;
         z-index: 99999;
