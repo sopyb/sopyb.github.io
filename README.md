@@ -66,11 +66,6 @@ I'm not a designer, but I tried to make the site look nice. I used [Nerd Fonts](
 | AboutMe #8             | #521452  | 235, 173, 235 |
 | AboutMe #9             | #000000  | 255, 255, 255 |
 
-### Dark Mode
-| Color               |   Hex    |      RGB       |
-|---------------------|:--------:|:--------------:|
-| Background          |   #222   |   34, 34, 34   |
-
 ## Features
 - [x] Sick about me section
 - [x] Parallax stolen from [another project](https://github.com/sopyb/sopy.space)
