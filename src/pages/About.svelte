@@ -19,22 +19,22 @@
         {
             title: "Game Development",
             content: "I'm a game developer with experience in Unity and C#. I have experience with Unity's UI system and 3D graphics, and game logic.",
-            icon: "nf-fa-gamepad"
+            icon: "nf-md-gamepad"
         },
         {
             title: "Android Development",
             content: "I'm an android developer. I have experience with Android Studio, Java, and Kotlin.",
-            icon: "nf-fa-mobile"
+            icon: "nf-md-android"
         },
         {
             title: "Discord Bot Development",
             content: "I'm a discord bot developer. I have experience with Discord.js, Node.js, and Express.",
-            icon: "nf-mdi-discord"
+            icon: "nf-md-discord"
         },
         {
             title: "Linux Administration",
             content: "I'm a Linux administrator. I've been daily driving Linux for 2 years, and I have experience with Ubuntu, Fedora, Arch Linux and many other distributions.",
-            icon: "nf-mdi-linux"
+            icon: "nf-dev-linux"
         },
         {
             title: "Music Production",
@@ -94,14 +94,14 @@
             </div>
         </InfoCard>
         <InfoCard class="infoCard" color="var(--abtme-item7)" slot="item7">
-            <div slot="header"><i class="nf nf-mdi-xbox_controller"></i> Gamer</div>
+            <div slot="header"><i class="nf nf-md-gamepad"></i> Gamer</div>
             <div slot="subtitle">Competitively mediocre</div>
             <div slot="body">I've always liked to play games and to compete with others. Gaming was a core part in my
                 emergence without which I'd never have became myself.
             </div>
         </InfoCard>
         <InfoCard class="infoCard" color="var(--abtme-item8)" slot="item8">
-            <div slot="header"><i class="nf nf-mdi-music_note"></i> Artist</div>
+            <div slot="header"><i class="nf nf-md-music_note"></i> Artist</div>
             <div slot="subtitle">Multilateral</div>
             <div slot="body">I love poetry, photography and music so I occasionally compose some. I use it to connect to
                 my own feelings and to comfort others.
