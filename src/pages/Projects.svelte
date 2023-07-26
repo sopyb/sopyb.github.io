@@ -536,7 +536,7 @@
         min-height: 15rem;
     }
 
-    @media (max-aspect-ratio: 7/6) {
+    @media (max-aspect-ratio: 7/6), (max-width: 700px) {
         .controls {
             width: 100vw;
             min-width: 0;

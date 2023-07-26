@@ -96,10 +96,16 @@
 <div id="themePicker">
     {#each Object.keys(themes) as themeKey}
         <div
+            role="button"
+            tabindex="0"
             class="themeOption"
             class:selected={themeKey === theme}
             style="background-image: linear-gradient(45deg, {themes[themeKey]['--color-bg-primary']} 0%, {themes[themeKey]['--color-bg-secondary']} 100%);"
             on:click={() => {
+                setTheme(themeKey);
+                localStorage.setItem('themeKey', themeKey);
+            }}
+            on:keypress={() => {
                 setTheme(themeKey);
                 localStorage.setItem('themeKey', themeKey);
             }}
@@ -112,8 +118,6 @@
         position: fixed;
         bottom: 16px;
         right: 16px;
-
-        max-height: 10vh;
 
         overflow: hidden;
 
@@ -131,12 +135,15 @@
     }
 
     #themePicker .themeOption {
-        margin-bottom: calc(-10vh);
+        margin-bottom: calc(-5em);
+    }
+
+    #themePicker .themeOption{
+        transition: border 0.2s ease, margin 0.2s ease;
     }
 
     #themePicker:global(.open) .themeOption {
         margin-bottom: 8px;
-        transition: border 0.2s ease, margin 0.2s ease;
     }
 
     .themeOption:hover {
@@ -144,8 +151,8 @@
     }
 
     .themeOption {
-        min-width: 10vh;
-        min-height: 10vh;
+        width: 5em;
+        height: 5em;
         border-radius: 50%;
         border: 1px solid var(--color-border);
         /*    on mouse over make cursor */

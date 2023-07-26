@@ -129,28 +129,7 @@
         height: 100%;
     }
 
-    @media (max-aspect-ratio: 2/3) {
-        .infoGrid {
-            grid-template-columns: 1fr;
-            grid-template-rows: 0.3fr fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%);
-            grid-template-areas:
-                "t"
-                "a"
-                "b"
-                "c"
-                "d"
-                "e"
-                "f"
-                "g"
-                "h"
-                "i";
-
-
-            width: 80vw;
-        }
-    }
-
-    @media (min-aspect-ratio: 2/3) and (max-aspect-ratio: 3/2) {
+    @media (min-aspect-ratio: 2/3) and (max-aspect-ratio: 3/2), (max-width: 1200px) {
         .infoGrid {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 0.3fr fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%);
@@ -168,6 +147,27 @@
 
         .infoGrid_item9 {
             width: 50%;
+        }
+    }
+
+    @media (max-aspect-ratio: 2/3), (max-width: 550px) {
+        .infoGrid {
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.3fr fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%);
+            grid-template-areas:
+                "t"
+                "a"
+                "b"
+                "c"
+                "d"
+                "e"
+                "f"
+                "g"
+                "h"
+                "i";
+
+
+            width: 80vw;
         }
     }
 

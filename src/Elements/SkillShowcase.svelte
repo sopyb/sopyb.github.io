@@ -98,7 +98,7 @@
         margin: 0;
     }
 
-    @media (max-aspect-ratio: 1/1) {
+    @media (max-aspect-ratio: 1/1), (max-width: 650px) {
         .parent {
             width: 90%;
         }

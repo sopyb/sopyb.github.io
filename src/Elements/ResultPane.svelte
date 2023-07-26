@@ -613,7 +613,7 @@
         opacity: 80%;
     }
 
-    @media (max-aspect-ratio: 1/1) {
+    @media (max-aspect-ratio: 1/1), (max-width: 800px) {
         .fscontent {
             width: 90%;
         }
