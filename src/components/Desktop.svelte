@@ -1,16 +1,32 @@
-<script>
+<script lang="ts">
     import {onMount} from "svelte";
     import TopBar from "@src/components/desktop/TopBar.svelte";
     import Dock from "@src/components/desktop/Dock.svelte";
+    import {loading} from "@src/components/desktop/stores/statesStore.js";
 
-    let loading = true;
+    let desktop: HTMLDivElement;
+
+    loading.subscribe(value => {
+      if(value) return;
+      desktop.animate([
+        {scale: 1.25},
+        {scale: 1}
+      ], {
+        duration: 500,
+        easing: 'ease-in-out',
+        fill: 'forwards'
+      })
+
+      // save scale
+        desktop.style.transform = 'scale(1)';
+    })
 
     onMount(() => {
         console.log('mounted');
     });
 </script>
 
-<div class="h-full w-full absolute bg-pink-700">
+<div bind:this={desktop} class="h-full w-full absolute bg-pink-700 scale-125">
     <TopBar />
     <div class="flex flex-col justify-center items-center h-full">
         <div class="text-white text-4xl font-bold text-center">Work in progress...</div>
