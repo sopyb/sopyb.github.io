@@ -35,5 +35,8 @@
 	"type": "module",
 	"_moduleAliases": {
 		"@src": "src"
+	},
+	"dependencies": {
+		"@fontsource/roboto": "^5.0.8"
 	}
 }

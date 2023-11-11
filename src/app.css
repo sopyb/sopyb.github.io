@@ -1,11 +1,14 @@
+@import '@fontsource/roboto';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
+{
+    @apply box-border;
 }
 
 body {
     overflow: hidden;
+    font-family: Roboto, sans-serif;
 }
