@@ -6,6 +6,8 @@
     loading,
   } from "@src/components/desktop/stores/statesStore.js";
   import Lockscreen from "@src/components/desktop/Lockscreen.svelte";
+  import WindowManager
+    from "@src/components/desktop/windowing/WindowManager.svelte";
 
   let desktop: HTMLDivElement;
 
@@ -42,5 +44,6 @@
             later
         </div>
     </div>
+    <WindowManager/>
     <Dock/>
 </div>

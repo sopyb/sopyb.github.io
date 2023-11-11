@@ -1,0 +1,70 @@
+<script lang="ts">
+  import type {
+    DesktopWindow
+  } from "@src/components/desktop/windowing/WindowManager";
+  import {
+    closeWindow,
+    moveWindowToTop, updateWindow
+  } from "@src/components/desktop/windowing/WindowManager";
+  import { onMount } from "svelte";
+
+  export let desktopWindow: DesktopWindow = {} as DesktopWindow;
+
+  let container: HTMLDivElement;
+  let move = false;
+
+  onMount(() => {
+    container.appendChild(desktopWindow.relatedIframe)
+  });
+
+  function startDragging(e: MouseEvent) {
+    // disable text selection
+    e.preventDefault();
+
+    moveWindowToTop(desktopWindow.id);
+
+    move = true;
+  }
+
+  function stopDragging(e: MouseEvent) {
+    e.preventDefault();
+
+    move = false;
+  }
+
+  function onMouseMove(e: MouseEvent) {
+    if (move) {
+      desktopWindow.x += e.movementX;
+      desktopWindow.y += e.movementY;
+      updateWindow(desktopWindow.id, desktopWindow)
+    }
+  }
+
+</script>
+
+<svelte:body on:mouseout={stopDragging} on:mouseleave={stopDragging}/>
+<div bind:this={container}
+     class="absolute pointer-events-auto user-select-none bg-gray-900 shadow-2xl rounded-2xl overflow-hidden"
+     style={`top: ${desktopWindow.y}px; left: ${desktopWindow.x}px; z-index: ${999-desktopWindow.renderZ}`}>
+    <div class="bg-gray-800 h-8 px-2 flex gap-2 justify-between items-center"
+         style={`width: ${desktopWindow.width}px`}
+         aria-grabbed=true
+         role="toolbar"
+         tabindex={desktopWindow.renderZ}
+         on:mousedown={startDragging}
+         on:mouseup={stopDragging}
+         on:mousemove={onMouseMove}
+    >
+        <img class="h-8 w-8 p-1" src={desktopWindow.icon} alt="app icon">
+        <p class="text-white">
+            {desktopWindow.title}
+        </p>
+        <div>
+            <div class="h-4 w-4 rounded-full bg-red-500" role="button"
+                 tabindex={0}
+                 on:click={() => closeWindow(desktopWindow.id)}
+                 on:keydown={() => closeWindow(desktopWindow.id)}
+            />
+        </div>
+    </div>
+</div>

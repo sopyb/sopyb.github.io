@@ -1,11 +1,13 @@
 import {
   writable
 } from 'svelte/store';
+import type { DesktopWindow } from "@src/components/desktop/windowing/WindowManager";
 
 export const loading = writable(true);
 export const locked = writable(false);
 export const activeWorkspace = writable(0);
-export const focusedWindow = writable('');
+export const activeWindow = writable("null");
+export const windows = writable<DesktopWindow[]>([]);
 
 
 export const time = writable(new Date());
