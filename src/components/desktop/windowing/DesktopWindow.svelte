@@ -4,7 +4,8 @@
   } from "@src/components/desktop/windowing/WindowManager";
   import {
     closeWindow,
-    moveWindowToTop, updateWindow
+    moveWindowToTop,
+    updateWindow
   } from "@src/components/desktop/windowing/WindowManager";
   import { onMount } from "svelte";
 
@@ -20,6 +21,7 @@
   function startDragging(e: MouseEvent) {
     // disable text selection
     e.preventDefault();
+    e.stopPropagation();
 
     moveWindowToTop(desktopWindow.id);
 
@@ -28,11 +30,14 @@
 
   function stopDragging(e: MouseEvent) {
     e.preventDefault();
+    e.stopPropagation();
 
     move = false;
   }
 
   function onMouseMove(e: MouseEvent) {
+    e.preventDefault();
+    e.stopPropagation();
     if (move) {
       desktopWindow.x += e.movementX;
       desktopWindow.y += e.movementY;
@@ -40,9 +45,12 @@
     }
   }
 
+  $: desktopWindow.relatedIframe.style.pointerEvents = move ? "none" : "auto";
 </script>
 
-<svelte:body on:mouseout={stopDragging} on:mouseleave={stopDragging}/>
+<svelte:window
+        on:mousemove={onMouseMove} on:mouseleave={stopDragging}
+        on:mouseup={stopDragging} />
 <div bind:this={container}
      class="absolute pointer-events-auto user-select-none bg-gray-900 shadow-2xl rounded-2xl overflow-hidden"
      style={`top: ${desktopWindow.y}px; left: ${desktopWindow.x}px; z-index: ${999-desktopWindow.renderZ}`}>
@@ -52,19 +60,15 @@
          role="toolbar"
          tabindex={desktopWindow.renderZ}
          on:mousedown={startDragging}
-         on:mouseup={stopDragging}
-         on:mousemove={onMouseMove}
     >
         <img class="h-8 w-8 p-1" src={desktopWindow.icon} alt="app icon">
         <p class="text-white">
             {desktopWindow.title}
         </p>
-        <div>
-            <div class="h-4 w-4 rounded-full bg-red-500" role="button"
-                 tabindex={0}
-                 on:click={() => closeWindow(desktopWindow.id)}
-                 on:keydown={() => closeWindow(desktopWindow.id)}
-            />
-        </div>
+        <div class="h-4 w-4 rounded-full bg-red-500" role="button"
+             tabindex={0}
+             on:click={() => closeWindow(desktopWindow.id)}
+             on:keydown={() => closeWindow(desktopWindow.id)}
+        />
     </div>
 </div>
