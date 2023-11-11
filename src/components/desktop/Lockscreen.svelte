@@ -26,7 +26,7 @@
         role="presentation"
         bind:this={node}
         style="transform: translateY(-{$y}px); transition: transform 500ms; background: radial-gradient(ellipse at center, transparent 5%, #000A 100%);"
-        class="backdrop-blur-xl w-screen h-screen absolute top-0 left-0 z-50"
+        class="backdrop-blur-xl backdrop-brightness-75 w-screen h-screen absolute top-0 left-0 z-[9999999]"
         on:click={() => locked.update(() => false)}
         on:keypress={() => locked.update(() => false)}
 >
