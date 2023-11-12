@@ -52,7 +52,7 @@
         on:mousemove={onMouseMove} on:mouseleave={stopDragging}
         on:mouseup={stopDragging} />
 <div bind:this={container}
-     class="absolute pointer-events-auto user-select-none bg-gray-900 shadow-2xl rounded-2xl overflow-hidden"
+     class="absolute pointer-events-auto user-select-none bg-gray-700 shadow-2xl rounded-2xl overflow-hidden"
      style={`top: ${desktopWindow.y}px; left: ${desktopWindow.x}px; z-index: ${999-desktopWindow.renderZ}`}>
     <div class="bg-gray-800 h-8 px-2 flex gap-2 justify-between items-center"
          style={`width: ${desktopWindow.width}px`}

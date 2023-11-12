@@ -37,8 +37,7 @@
     loading.subscribe(async (value) => {
       if (value) return;
       dock.animate([
-        { bottom: -72, scale: 0.25 },
-        { bottom: 0, scale: 0.25 },
+        { bottom: -72, scale: 0.5 },
         { bottom: 0, scale: 1 }
       ], {
         delay: 1000,
@@ -56,8 +55,8 @@
   })
 </script>
 
-<div bind:this={dock} class="fixed -bottom-20 w-full h-16 m-2 flex flex-row justify-center">
-    <div class="w-fit bg-pink-50 rounded-xl flex flex-row">
+<div bind:this={dock} class="fixed -bottom-24 w-full m-2 flex flex-row justify-center">
+    <div class="w-fit h-20 bg-zinc-700 p-2 rounded-xl flex flex-row gap-1">
         {#each appList as app}
             <AppLauncher app={app}/>
         {/each}
