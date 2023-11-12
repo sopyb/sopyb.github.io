@@ -57,12 +57,14 @@ export function updateWindow(id: string, newWindow: DesktopWindow) {
 export function closeWindow(id: string) {
 	let window = get(windows).find((window) => window.id === id);
 
-	// delete the iframe from the DOM
-	window?.relatedIframe?.remove();
-
 	windows.update((value: DesktopWindow[]) => {
 		return value.filter((window) => window.id !== id);
 	});
+
+	setTimeout(() => {
+		// delete the iframe from the DOM
+		window?.relatedIframe?.remove();
+	}, 500);
 }
 
 export function moveWindowToTop(id: string) {
