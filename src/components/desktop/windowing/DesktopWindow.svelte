@@ -70,7 +70,7 @@
         on:mouseup={stopDragging}/>
 <div bind:this={container}
      class="absolute pointer-events-auto user-select-none bg-gray-700 shadow-2xl rounded-2xl overflow-hidden resize"
-     style={`top: ${desktopWindow.y}px; left: ${desktopWindow.x}px; z-index: ${999-desktopWindow.renderZ}`}>
+     style={`top: ${desktopWindow.y}px; left: ${desktopWindow.x}px; z-index: ${999-desktopWindow.renderZ}; min-width: 500px; min-height: 300px;`}>
     <div class="bg-gray-800 h-8 px-2 flex gap-2 w-100 justify-between items-center "
          aria-grabbed=true
          role="toolbar"
