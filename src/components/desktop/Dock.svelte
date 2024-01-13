@@ -1,6 +1,5 @@
 <script lang="ts">
   import AppLauncher from "@src/components/desktop/dock/AppLauncher.svelte";
-  import { loading } from "@src/components/desktop/stores/statesStore.js";
   import { onMount } from "svelte";
 
   let appList = [
@@ -33,30 +32,12 @@
     setInterval(() => {
       date = new Date();
     }, 1000)
-
-    loading.subscribe(async (value) => {
-      if (value) return;
-      dock.animate([
-        { bottom: -72, scale: 0.5 },
-        { bottom: 0, scale: 1 }
-      ], {
-        delay: 1000,
-        duration: 500,
-        easing: 'ease-out',
-        fill: 'forwards',
-      })
-
-      await new Promise(resolve => setTimeout(resolve, 1500));
-
-      //save position
-      dock.style.bottom = '0px';
-      dock.style.scale = '1';
-    });
   })
 </script>
 
-<div bind:this={dock} class="fixed -bottom-24 w-full m-2 flex flex-row justify-center">
-    <div class="w-fit h-20 bg-zinc-700 p-2 rounded-xl flex flex-row gap-1">
+<div bind:this={dock}
+     class="w-full flex flex-row justify-center z-20 bg-black p-2 flex-shrink-0">
+    <div class="w-fit h-18 bg-zinc-700 p-1 rounded-xl flex flex-row gap-1">
         {#each appList as app}
             <AppLauncher app={app}/>
         {/each}

@@ -14,7 +14,7 @@
   loading.subscribe(value => {
     if (value) return;
     desktop.animate([
-      { scale: 1.25 },
+      { scale: 1.5 },
       { scale: 1 }
     ], {
       duration: 500,
@@ -31,19 +31,11 @@
   });
 </script>
 
-<div bind:this={desktop} class="h-full w-full absolute bg-pink-700 scale-125"
-    style="background-image: url('https://wallpapercave.com/wp/wp4133751.jpg'); background-size: cover; background-position: center;"
->
-    <Lockscreen/>
-    <TopBar/>
-    <div class="flex flex-col justify-center items-center h-full">
-        <div class="text-white text-4xl font-bold text-center">Work in
-            progress...
-        </div>
-        <div class="text-white text-2xl font-bold text-center">Please come back
-            later
-        </div>
+<Lockscreen/>
+<div bind:this={desktop} class="absolute top-0 left-0 bottom-0 right-0 bg-black scale-150 z-0">
+    <div class="flex flex-col h-full w-full m-0 overflow-hidden">
+        <TopBar/>
+        <WindowManager/>
+        <Dock/>
     </div>
-    <WindowManager/>
-    <Dock/>
 </div>

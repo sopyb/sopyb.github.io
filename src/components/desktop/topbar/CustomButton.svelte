@@ -8,7 +8,7 @@
 
 
 <div role="button" tabindex="0" aria-label={alt}
-     class="text-l w-6 h-7 rounded-lg {highlight ? 'bg-transparent' : 'bg-gray-600'
+     class="text-l w-6 h-7 rounded-lg {highlight ? 'bg-gray-500' : 'bg-gray-600'
      } border-none hover:border-none {highlight? 'hover:bg-gray-700' : 'hover:bg-gray-800'
      } flex justify-center items-center {highlight ? 'text-white' : 'text-white'}"
 

@@ -35,7 +35,8 @@
 </script>
 
 <div bind:this={topbar}
-     class="fixed px-2 top-0 left-0 w-full h-10 grid grid-cols-3 select-none bg-black">
+     class="relative px-2 w-full h-10 grid grid-cols-3 select-none bg-black z-30 flex-shrink-0"
+>
     <div class="w-fit h-full flex flex-row justify-start items-center">
         <WorkspaceController/>
     </div>
