@@ -47,6 +47,8 @@ export function updateWindow(id: string, newWindow: DesktopWindow) {
 	windows.update((value: DesktopWindow[]) => {
 		return value.map((e) => {
 			if (e.id === id) {
+				newWindow.relatedIframe.style.width = newWindow.width + 'px';
+				newWindow.relatedIframe.style.height = newWindow.height + 'px';
 				return newWindow;
 			}
 			return e;
