@@ -13,7 +13,7 @@
     import Contact from './pages/Contact.svelte';
     import Projects from "./pages/Projects.svelte";
     import NotFound from './pages/NotFound.svelte';
-    import ThemePicker from "./Elements/ThemePicker.svelte";
+    import ThemePicker from "./Elements/Settings/ThemePicker.svelte";
 
     // let title change - counter
     let counter = Math.floor(Math.random() * 4);
@@ -141,7 +141,7 @@
         min-height: 100vh;
         width: 100%;
         overflow: hidden;
-        background-color: var(--color-bg-primary);
+        background-color: var(--color-base);
     }
 
     .cpag.out {

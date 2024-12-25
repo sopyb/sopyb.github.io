@@ -1,5 +1,5 @@
 <script>
-    export let bgcolor = "var(--color-bg-secondary)";
+    export let bgcolor = "var(--color-mantle)";
 </script>
 <!--div with background color = bgcolor-->
 <div class="main" style="background-color: {bgcolor};">
@@ -19,7 +19,7 @@
         width: 100%;
         min-height: 100vh;
 
-        color: var(--color-text-primary);
+        color: var(--color-text);
 
         display: grid;
         grid-template-columns: fit-content(100%) 1fr fit-content(100%);

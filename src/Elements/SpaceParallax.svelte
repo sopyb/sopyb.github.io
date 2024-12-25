@@ -140,7 +140,7 @@
         transform: translate(-50%, -50%);
         z-index: 4;
 
-        background-color: var(--color-bg-mid-op);
+        background-color: var(--color-crust);
         border-radius: 10px;
 
         backdrop-filter: blur(5px);

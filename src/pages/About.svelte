@@ -48,9 +48,9 @@
     })
 </script>
 
-<Panel bgcolor="var(--color-bg-primary)">
+<Panel bgcolor="var(--color-base)">
     <InfoBoard>
-        <h1 style="color: var(--color-text-primary)" slot="title">Who's Sopy?</h1>
+        <h1 style="color: var(--color-text)" slot="title">Who's Sopy?</h1>
         <InfoCard class="infoCard" color="var(--abtme-item1)" slot="item1">
             <div slot="header"><i class="nf nf-linux-tux"></i> Linux Nerd</div>
             <div slot="subtitle">Distro-hopper at <i class="nf nf-fa-heart" style="color:red"></i></div>
@@ -123,14 +123,14 @@
     <div>
         <SpaceParallax>
             <div style="padding: 1vw">
-                <h1 style="color:var(--color-text-primary); font-size: 3em; font-weight: bold">Skills</h1>
-                <p style="color: var(--color-text-secondary); margin-bottom: 0">*Oh btw this panel has parallax*</p>
+                <h1 style="color:var(--color-text); font-size: 3em; font-weight: bold">Skills</h1>
+                <p style="color: var(--color-subtext1); margin-bottom: 0">*Oh btw this panel has parallax*</p>
             </div>
         </SpaceParallax>
     </div>
 </Panel>
 
-<PanelTransition3 previousColor="var(--color-bg-secondary)"></PanelTransition3>
+<PanelTransition3 previousColor="var(--color-mantle)"></PanelTransition3>
 
 <Panel>
     <SkillShowcase slot="centerX" data={skills_data}>

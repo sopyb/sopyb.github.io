@@ -1,5 +1,5 @@
 <script>
-    export let previousColor = 'var(--color-bg-primary)';
+    export let previousColor = 'var(--color-base)';
 
     let cssString =
         `--previous-color: ${previousColor};`

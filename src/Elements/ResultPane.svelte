@@ -252,12 +252,12 @@
 
         /* change size to 3rem*/
         font-size: 2rem;
-        color: var(--color-star);
+        color: var(--color-yellow);
 
     }
 
     div.featured {
-        border-color: var(--color-star);
+        border-color: var(--color-yellow);
     }
 
     /*    modal content*/
@@ -266,9 +266,9 @@
         position: relative;
         width: 100%;
         height: 100%;
-        border: 4px solid var(--color-border);
+        border: 4px solid var(--color-surface2);
         border-radius: 10px;
-        background-color: var(--color-bg-secondary);
+        background-color: var(--color-mantle);
 
         overflow: hidden;
     }
@@ -357,8 +357,8 @@
 
         text-align: center;
 
-        background-color: var(--color-bg-primary);
-        color: var(--color-text-primary);
+        background-color: var(--color-base);
+        color: var(--color-text);
         border-radius: 6px;
 
         padding: 2px;
@@ -449,15 +449,12 @@
     }
 
     .fullscreen {
-
         position: fixed;
         top: 0;
         left: 0;
         width: 0;
         height: 0;
-        background-color: var(--color-bg-primary-op);
-        backdrop-filter: blur(8px);
-        opacity: 0;
+        backdrop-filter: blur(2px);
 
         z-index: 999999999;
     }
@@ -471,8 +468,8 @@
         width: 60%;
         min-height: 25vw;
 
-        background-color: var(--color-bg-secondary);
-        border: 4px solid var(--color-border);
+        background-color: var(--color-mantle);
+        border: 4px solid var(--color-surface2);
         border-radius: 10px;
 
         z-index: 1;
@@ -493,7 +490,7 @@
         object-fit: cover;
         object-position: center;
 
-        border-right: var(--color-border) 4px solid;
+        border-right: var(--color-surface2) 4px solid;
 
         /*    background image*/
         background-size: cover;
@@ -595,8 +592,8 @@
         text-shadow: unset;
         background-image: unset;
         opacity: 60%;
-        background-color: var(--color-border);
-        color: var(--color-bg-primary);
+        background-color: var(--color-surface2);
+        color: var(--color-base);
         font-weight: unset;
         text-decoration: none;
 

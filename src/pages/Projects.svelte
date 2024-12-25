@@ -333,7 +333,7 @@
         dispatch('mounted', true)
     })
 </script>
-<Panel bgcolor="var(--color-bg-primary)">
+<Panel bgcolor="var(--color-base)">
     <div slot="centerX" class="parent">
         <div class="controls">
             <!--            search bar-->
@@ -393,7 +393,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        background-color: var(--color-bg-mid);
+        background-color: var(--color-crust);
         border-radius: 5px;
         padding: 0.5rem;
         margin-right: 1.1rem;
@@ -404,7 +404,7 @@
     .search input {
         border: none;
         background-color: transparent;
-        color: var(--color-text-primary);
+        color: var(--color-text);
         font-size: 1rem;
         padding: 0.5rem;
         width: 100%;
@@ -412,7 +412,7 @@
     }
 
     .search i {
-        color: var(--color-text-primary);
+        color: var(--color-text);
         font-size: 1.5rem;
         margin-left: 0.5rem;
         float: right;
@@ -434,8 +434,8 @@
 
     #category {
         border: none;
-        background-color: var(--color-bg-mid);
-        color: var(--color-text-primary);
+        background-color: var(--color-crust);
+        color: var(--color-text);
         font-size: 1rem;
         padding: 0.5rem;
         border-radius: 5px;
@@ -448,8 +448,8 @@
 
 
     #category option {
-        background: linear-gradient(var(--color-bg-mid), var(--color-bg-mid));
-        color: var(--color-text-primary);
+        background: linear-gradient(var(--color-crust), var(--color-crust));
+        color: var(--color-text);
         font-size: 1rem;
         padding: 0.4rem;
         border-radius: 10px;
@@ -458,16 +458,16 @@
     }
 
     #category option:hover {
-        background: linear-gradient(var(--color-bg-secondary), var(--color-bg-secondary));
+        background: linear-gradient(var(--color-mantle), var(--color-mantle));
     }
 
     #category option:active, #category option:focus, #category option:checked {
         background: linear-gradient(var(--color-accent), var(--color-accent));
-        color: var(--color-bg-secondary);
+        color: var(--color-mantle);
     }
 
     #skill span {
-        color: var(--color-text-primary);
+        color: var(--color-text);
         font-size: 1rem;
         transition: background 22s;
 
@@ -497,14 +497,14 @@
 
 
     .skill.active {
-        background-color: var(--color-bg-mid);
+        background-color: var(--color-crust);
     }
 
     .skill {
-        background: var(--color-border);
+        background: var(--color-surface2);
         border: none;
         border-radius: 50%;
-        color: var(--color-text-primary);
+        color: var(--color-text);
         cursor: pointer;
         font-size: 1.5rem;
         height: 2.5rem;
@@ -516,12 +516,12 @@
     }
 
     .skill:hover {
-        background: var(--color-bg-mid);
+        background: var(--color-crust);
     }
 
     .skill.active {
         background: var(--color-accent);
-        color: var(--color-border);
+        color: var(--color-surface2);
     }
 
     .results {

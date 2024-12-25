@@ -11,18 +11,15 @@
     -webkit-text-size-adjust: 100%;
 
     /*  Default theme*/
-    --color-bg-primary: #3c264b;
-    --color-bg-primary-op: #3c264b88;
-    --color-bg-mid: #432b54;
-    --color-bg-mid-op: #432b5488;
-    --color-bg-secondary: #4f3366;
-    --color-border: #654c73;
-    --color-text-primary: #E1E1E6;
-    --color-text-secondary: #A6A6B8;
+    --color-base: #3c264b;
+    --color-crust: #432b54;
+    --color-mantle: #4f3366;
+    --color-surface2: #654c73;
+    --color-text: #E1E1E6;
+    --color-subtext1: #A6A6B8;
     --color-accent: #BB78DD;
-    --color-accent-op: #BB78DD44;
-    --color-accent-secondary: #678DDA;
-    --color-star: #F2C94C;
+    --color-pink: #678DDA;
+    --color-yellow: #F2C94C;
 
 }
 
@@ -44,13 +41,13 @@ body {
 
 /*scrollbar*/
 ::-webkit-scrollbar {
-    background-color: var(--color-bg-mid);
+    background-color: var(--color-crust);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-mantle);
 
-    border: 1px dotted var(--color-bg-primary);
+    border: 1px dotted var(--color-base);
 }
 
 

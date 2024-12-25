@@ -58,7 +58,7 @@
     .icon {
         width: 15rem;
         height: 15rem;
-        background-color: var(--color-bg-primary);
+        background-color: var(--color-base);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -74,7 +74,7 @@
         width: 50vw;
         max-width: 90%;
         min-height: 70%;
-        background-color: var(--color-bg-primary);
+        background-color: var(--color-base);
         padding: 1rem;
         border-radius: 1rem;
 
@@ -94,7 +94,7 @@
     }
 
     .content > p {
-        color: var(--color-text-primary);
+        color: var(--color-text);
         margin: 0;
     }
 

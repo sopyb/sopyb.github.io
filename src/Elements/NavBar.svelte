@@ -50,7 +50,7 @@
     }
 
     .active {
-        color: var(--color-accent-secondary);
+        color: var(--color-pink);
     }
 
     .active:hover {
@@ -59,7 +59,7 @@
 
     li:hover {
         color: var(--color-accent);
-        background-color: var(--color-bg-primary);
+        background-color: var(--color-base);
     }
 
     /*    center ul items*/
@@ -73,7 +73,7 @@
         display: flex;
         justify-content: center;
 
-        background-color: var(--color-bg-secondary);
+        background-color: var(--color-mantle);
 
         padding: 0;
     }
@@ -83,9 +83,9 @@
         margin: 0 10px;
 
         padding: 10px;
-        border: 1px solid var(--color-border);
+        border: 1px solid var(--color-surface2);
         border-radius: 5px;
-        background-color: var(--color-bg-secondary);
+        background-color: var(--color-mantle);
     }
 
     * {
@@ -101,7 +101,7 @@
         z-index: 99999999;
 
 
-        background-color: var(--color-accent-op);
+        background-color: var(--color-accent);
         backdrop-filter: blur(20px) saturate(1.5) brightness(1.5);
 
         padding: 10px;
@@ -118,7 +118,7 @@
         padding: 10px;
         border: unset;
         border-radius: 5px;
-        background-color: var(--color-bg-primary);
+        background-color: var(--color-base);
     }
 
 

@@ -9,7 +9,7 @@
     })
 </script>
 
-<Panel bgcolor="var(--color-bg-primary)">
+<Panel bgcolor="var(--color-base)">
     <div class="parent">
         <h1>Where can you find me?</h1>
         <div class="socialGrid">
@@ -49,17 +49,17 @@
     }
 
     .socialGrid div {
-        background-color: var(--color-bg-mid);
+        background-color: var(--color-crust);
         border-radius: 5px;
     }
 
     .socialGrid div:hover {
-        background-color: var(--color-bg-secondary);
+        background-color: var(--color-mantle);
     }
 
     .socialGrid div a {
         display: block;
-        color: var(--color-text-primary);
+        color: var(--color-text);
         text-decoration: none;
         font-size: 1rem;
         padding: 1rem;

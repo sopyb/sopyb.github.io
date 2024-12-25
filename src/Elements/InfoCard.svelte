@@ -20,9 +20,9 @@
 
 <style>
     .infoCard {
-        background-color: var(--color-bg-mid);
-        color: var(--color-text-secondary);
-        border: 4px double var(--color-border);
+        background-color: var(--color-crust);
+        color: var(--color-subtext1);
+        border: 4px double var(--color-surface2);
         border-radius: 5px;
         padding: 10px;
         width: 100%;
@@ -39,7 +39,7 @@
     }
 
     .infoCard:hover {
-        border: 4px solid var(--color-border);
+        border: 4px solid var(--color-surface2);
     }
 
     .infoCard h1 {
@@ -49,7 +49,7 @@
     }
 
     .infoCard h2 {
-        color: var(--color-text-primary);
+        color: var(--color-text);
         font-size: 1.7em;
         font-weight: normal;
         font-style: italic;

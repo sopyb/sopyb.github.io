@@ -1,6 +1,6 @@
 <script>
-    export let currentColor = 'var(--color-bg-primary)'
-    export let previousColor = 'var(--color-bg-secondary)'
+    export let currentColor = 'var(--color-base)'
+    export let previousColor = 'var(--color-mantle)'
 
     let cssString =
         `--current-color: ${currentColor};
