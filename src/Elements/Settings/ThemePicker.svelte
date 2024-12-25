@@ -59,7 +59,16 @@
                 style={`background-image: linear-gradient(45deg, var(--color-${themeKey}-base), var(--color-${themeKey}-mantle));`}
                 on:click={() => setTheme(themeKey)}
                 on:keypress={() => setTheme(themeKey)}
-        ></div>
+        >
+            {#if themeKey === theme}
+                <svg class="combinedShape" viewBox="0 0 100 100">
+                    <polygon points="50 0, 100 50, 50 100, 0 50"
+                             stroke="var(--color-surface2)"
+                             stroke-width=".5rem"
+                             fill="transparent"><!-- The border is stroke-width div 2 --></polygon>
+                </svg>
+            {/if}
+        </div>
     {/each}
 
     {#each Object.keys(Themes[theme]).slice(0, 14) as color, index}
@@ -71,7 +80,17 @@
                 style={`background-color: var(--color-${color}); --index: ${index + 1};`}
                 on:click={() => setAccentColor(color)}
                 on:keypress={() => setAccentColor(color)}
-        ></div>
+        >
+            {#if color === accentColor}
+                <svg class="combinedShape" viewBox="0 0 100 100">
+                    <circle cx="75" cy="75" r="20"
+                            stroke="var(--color-surface2)"
+                            stroke-width=".25rem"
+                            fill="transparent"><!-- The border is stroke-width div 2 --></circle>
+                </svg>
+            {/if}
+
+        </div>
     {/each}
 </div>
 
@@ -82,12 +101,20 @@
         right: 2rem;
         overflow: visible;
         z-index: 9999999999;
-        transition: all 0.3s ease-in-out;
+
+        transition-property: bottom, right;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-out;
     }
 
     #themePicker:global(.open) {
         bottom: 6rem;
         right: 6rem;
+    }
+
+
+    #themePicker:global(:not(.open)) .combinedShape {
+        opacity: 1;
     }
 
     #themePicker * {
@@ -108,6 +135,16 @@
         clip-path: circle(50% at 50% 50%);
     }
 
+    #themePicker .themeOption:global(.selected) svg,
+    #themePicker .accentOption:global(.selected) svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+
     #themePicker .themeOption:global(.selected),
     #themePicker .accentOption:global(.selected),
     #themePicker:global(.open) .themeOption,
@@ -115,7 +152,11 @@
         opacity: 100;
     }
 
-    :global(.selected) {
+    #themePicker .themeOption {
+        z-index: 10;
+    }
+
+    #themePicker:global(:not(.open)) :global(.selected) {
         z-index: 20;
     }
 
@@ -123,7 +164,6 @@
     #themePicker .accentOption {
         opacity: 0;
         transition-property: opacity, transform, bottom, right, background-color;
-        transition-duration: 0.5s;
         transition-timing-function: ease-in-out;
     }
 
@@ -165,10 +205,14 @@
         right: 1rem;
         opacity: 1;
         --angle: calc(var(--index) * 25.714285714285715deg);
+        --time : calc(var(--index) * 0.035s);
+        transition-duration: var(--time);
         transform: rotate(var(--angle)) translate(5rem) rotate(calc(-1 * var(--angle)));
     }
 
     #themePicker:global(.open) .accentOption:nth-child(n+5) {
-        --index: calc(var(--index) - 4);
+        --index: calc(var(--index) - 4);;
     }
+
+
 </style>
