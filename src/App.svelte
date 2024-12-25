@@ -5,7 +5,7 @@
     // app page imports
     import Panel from "./Elements/Panel.svelte";
     import NavBar from "./Elements/NavBar.svelte";
-    import PanelTransition2 from "./Elements/PanelTransition2.svelte";
+    import WavedPanelTransitionEatAbove from "./Elements/WavedPanelTransitionEatAbove.svelte";
 
     // single page routing
     // import pages
@@ -123,7 +123,8 @@
             <NavBar changePage={changePage} curPage={curPage}/>
         </div>
     </Panel>
-    <PanelTransition2></PanelTransition2>
+    <WavedPanelTransitionEatAbove previousColor="transparent" nextColor="var(--color-base)"
+    ></WavedPanelTransitionEatAbove>
 
     <!--add page content on load/change call mounted-->
     <div class="cpag" class:out={transition}>

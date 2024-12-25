@@ -3,9 +3,9 @@
     import {createEventDispatcher, onMount} from 'svelte'
     import InfoBoard from '../Elements/InfoBoard.svelte'
     import InfoCard from '../Elements/InfoCard.svelte'
-    import SlashedPanelTransition from '../Elements/PanelTransition1.svelte'
+    import SlashedPanelTransitionEatBelow from '../Elements/SlashedPanelTransitionEatBelow.svelte'
     import SpaceParallax from '../Elements/SpaceParallax.svelte'
-    import PanelTransition3 from '../Elements/PanelTransition3.svelte'
+    import SlashedPanelTransitionEatAbove from '../Elements/SlashedPanelTransitionEatAbove.svelte'
     import SkillShowcase from '../Elements/SkillShowcase.svelte'
 
     const dispatch = createEventDispatcher()
@@ -117,7 +117,7 @@
     </InfoBoard>
 </Panel>
 
-<SlashedPanelTransition></SlashedPanelTransition>
+<SlashedPanelTransitionEatBelow nextColor="transparent"></SlashedPanelTransitionEatBelow>
 
 <Panel bgcolor="#000">
     <div>
@@ -132,7 +132,7 @@
     </div>
 </Panel>
 
-<PanelTransition3 previousColor="var(--color-mantle)"></PanelTransition3>
+<SlashedPanelTransitionEatAbove previousColor="transparent" nextColor="var(--color-mantle)"></SlashedPanelTransitionEatAbove>
 
 <Panel>
     <SkillShowcase slot="centerX" data={skills_data}>
