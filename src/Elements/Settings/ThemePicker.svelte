@@ -65,7 +65,8 @@
                     <polygon points="50 0, 100 50, 50 100, 0 50"
                              stroke="var(--color-surface2)"
                              stroke-width=".5rem"
-                             fill="transparent"><!-- The border is stroke-width div 2 --></polygon>
+                             fill="transparent">
+                        <!-- The border is stroke-width div 2 --></polygon>
                 </svg>
             {/if}
         </div>
@@ -86,7 +87,8 @@
                     <circle cx="75" cy="75" r="20"
                             stroke="var(--color-surface2)"
                             stroke-width=".25rem"
-                            fill="transparent"><!-- The border is stroke-width div 2 --></circle>
+                            fill="transparent">
+                        <!-- The border is stroke-width div 2 --></circle>
                 </svg>
             {/if}
 
@@ -205,7 +207,7 @@
         right: 1rem;
         opacity: 1;
         --angle: calc(var(--index) * 25.714285714285715deg);
-        --time : calc(var(--index) * 0.035s);
+        --time: calc(var(--index) * 0.035s);
         transition-duration: var(--time);
         transform: rotate(var(--angle)) translate(5rem) rotate(calc(-1 * var(--angle)));
     }
@@ -214,5 +216,47 @@
         --index: calc(var(--index) - 4);;
     }
 
+    @media (prefers-reduced-motion: reduce) {
+        /*    making it always be open*/
+        #themePicker {
+            bottom: 6rem;
+            right: 6rem;
+        }
 
+        #themePicker .themeOption {
+            opacity: 1;
+            transform: translate(var(--translate-x), var(--translate-y));
+        }
+
+
+        #themePicker .themeOption:nth-child(1) {
+            --translate-x: 0%;
+            --translate-y: -50%;
+        }
+
+        #themePicker .themeOption:nth-child(2) {
+            --translate-x: -50%;
+            --translate-y: 0%;
+        }
+
+        #themePicker .themeOption:nth-child(3) {
+            --translate-x: 0%;
+            --translate-y: 50%;
+        }
+
+        #themePicker .themeOption:nth-child(4) {
+            --translate-x: 50%;
+            --translate-y: 0%;
+        }
+
+        #themePicker .accentOption {
+            bottom: 1rem;
+            right: 1rem;
+            opacity: 1;
+            --angle: calc(var(--index) * 25.714285714285715deg);
+            --time: calc(var(--index) * 0.035s);
+            transition-duration: var(--time);
+            transform: rotate(var(--angle)) translate(5rem) rotate(calc(-1 * var(--angle)));
+        }
+    }
 </style>
