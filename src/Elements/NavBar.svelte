@@ -50,7 +50,7 @@
     }
 
     .active {
-        color: var(--color-pink);
+        color: var(--color-accent);
     }
 
     .active:hover {

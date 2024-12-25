@@ -106,14 +106,13 @@
 
         transition-property: bottom, right;
         transition-duration: 0.5s;
-        transition-timing-function: ease-out;
+        transition-timing-function: ease-in-out;
     }
 
     #themePicker:global(.open) {
         bottom: 6rem;
         right: 6rem;
     }
-
 
     #themePicker:global(:not(.open)) .combinedShape {
         opacity: 1;
@@ -135,6 +134,11 @@
         height: 2rem;
         width: 2rem;
         clip-path: circle(50% at 50% 50%);
+
+        transition-delay: 0.25s;
+
+        --angle: 0deg;
+        transform: rotate(var(--angle)) translate(0) rotate(calc(-1 * var(--angle)));
     }
 
     #themePicker .themeOption:global(.selected) svg,
@@ -145,7 +149,6 @@
         right: 0;
         bottom: 0;
     }
-
 
     #themePicker .themeOption:global(.selected),
     #themePicker .accentOption:global(.selected),
@@ -178,8 +181,6 @@
 
     #themePicker:global(.open) .accentOption {
         opacity: 0;
-        --angle: 0deg;
-        transform: rotate(var(--angle)) translate(0) rotate(calc(-1 * var(--angle)));
     }
 
     #themePicker:global(.open) .themeOption:nth-child(1) {
@@ -213,11 +214,90 @@
     }
 
     #themePicker:global(.open) .accentOption:nth-child(n+5) {
-        --index: calc(var(--index) - 4);;
+        --index: calc(var(--index) - 4);
+    }
+
+    @media (max-width: 800px) {
+        #themePicker {
+            bottom: 1.5rem;
+            right: 1.5rem;
+        }
+
+        #themePicker * {
+            height: 3.5rem;
+            width: 3.5rem;
+        }
+
+        #themePicker .accentOption {
+            height: 1.75rem;
+            width: 1.75rem;
+        }
+
+        #themePicker:global(.open) .accentOption {
+            bottom: 0.75rem;
+            right: 0.75rem;
+            transform: rotate(var(--angle)) translate(4.75rem) rotate(calc(-1 * var(--angle)));
+        }
+    }
+
+    @media (max-width: 600px) {
+        #themePicker {
+            bottom: 1rem;
+            right: 1rem;
+        }
+
+        #themePicker:global(.open) {
+            bottom: 5rem;
+            right: 5rem;
+        }
+
+        #themePicker * {
+            height: 4rem;
+            width: 4rem;
+        }
+
+        #themePicker .accentOption {
+            height: 2rem;
+            width: 2rem;
+        }
+
+        #themePicker:global(.open) .accentOption {
+            bottom: 1rem;
+            right: 1rem;
+            transform: rotate(var(--angle)) translate(5.25rem) rotate(calc(-1 * var(--angle)));
+        }
+    }
+
+    @media (max-width: 400px) {
+        #themePicker {
+            bottom: 1rem;
+            right: 1rem;
+        }
+
+
+        #themePicker:global(.open) {
+            bottom: 4rem;
+            right: 4rem;
+        }
+
+        #themePicker * {
+            height: 3rem;
+            width: 3rem;
+        }
+
+        #themePicker .accentOption {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+
+        #themePicker:global(.open) .accentOption {
+            bottom: 0.75rem;
+            right: 0.75rem;
+            transform: rotate(var(--angle)) translate(4rem) rotate(calc(-1 * var(--angle)));
+        }
     }
 
     @media (prefers-reduced-motion: reduce) {
-        /*    making it always be open*/
         #themePicker {
             bottom: 6rem;
             right: 6rem;
@@ -227,7 +307,6 @@
             opacity: 1;
             transform: translate(var(--translate-x), var(--translate-y));
         }
-
 
         #themePicker .themeOption:nth-child(1) {
             --translate-x: 0%;
