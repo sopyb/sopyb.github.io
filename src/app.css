@@ -43,12 +43,9 @@
 }
 
 * {
-    transition: background-color 0.3s ease-in-out 0s,
-                color 0.3s ease-in-out 0s,
-                border-bottom-color 0.3s ease-in-out 0s,
-                border-left-color 0.3s ease-in-out 0s,
-                border-right-color 0.3s ease-in-out 0s,
-                border-top-color 0.3s ease-in-out 0s;
+    transition-property: background-color, color, border-color, fill, stroke;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
 }
 
 body {
