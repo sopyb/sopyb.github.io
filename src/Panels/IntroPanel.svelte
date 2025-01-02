@@ -154,8 +154,8 @@
     .info h1 i.gradientbackground,
     .tagline-panel h2 i.gradientbackground {
         color: transparent;
-        /*background-image: linear-gradient(var(--angle), #5BCEFA 0%, #F5A9B8 50%, #FFF 100%);*/
-        background-color: var(--color-accent);
+        background-image: linear-gradient(var(--angle), #5BCEFA 0%, #F5A9B8 50%, #FFF 100%);
+        /*background-color: var(--color-accent);*/
         background-clip: text;
     }
 
