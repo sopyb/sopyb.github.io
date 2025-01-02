@@ -229,7 +229,7 @@
             "featured": 0
         },
         {
-            "src": "\/img\/NavigoLearn.webp",
+            "src": "\/img\/navigo.webp",
             "alt": "Logo of NavigoLearn",
             "title": "NavigoLearn",
             "skills": "web dev, linux admin, bash, css, express, git, github, html, javascript, nodejs, react, sql, typescript",
