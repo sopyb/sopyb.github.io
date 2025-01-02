@@ -35,14 +35,34 @@
     }
   }
 
+  function keyHandler(e: KeyboardEvent) {
+    if (lock) return;
+
+    if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+      if (currentPanel < panels.length - 1) {
+        currentPanel++;
+        lock = true;
+        setTimeout(() => lock = false, 500);
+      }
+    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+      if (currentPanel > 0) {
+        currentPanel--;
+        lock = true;
+        setTimeout(() => lock = false, 500);
+      }
+    }
+  }
+
   onMount(() => {
     window.addEventListener('wheel', unifiedHandler);
     window.addEventListener('touchstart', unifiedHandler);
     window.addEventListener('touchend', unifiedHandler);
+    window.addEventListener('keydown', keyHandler);
     return () => {
       window.removeEventListener('wheel', unifiedHandler);
       window.removeEventListener('touchstart', unifiedHandler);
       window.removeEventListener('touchend', unifiedHandler);
+      window.removeEventListener('keydown', keyHandler);
     };
   });
 </script>
