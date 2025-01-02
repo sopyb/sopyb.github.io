@@ -212,7 +212,8 @@
         position: relative;
         padding-right: 7rem;
         width: calc(100% - 7rem);
-        height: 100%;
+        padding-bottom: 7rem;
+        height: calc(100% - 7rem);
         background: var(--color-crust);
     }
 
@@ -277,6 +278,16 @@
         display: block;
     }
 
+    .panel h1 {
+        color: var(--color-accent);
+        font-size: 2rem;
+        margin: 0;
+        padding: 1rem;
+
+        pointer-events: none;
+        user-select: none;
+    }
+
     @keyframes sparkle {
         0% {
             filter: blur(2px) drop-shadow(0 0 20px #fff);
@@ -297,10 +308,16 @@
         .tooltip {
             transform: scale(1.5);
         }
+
+        .panel h1 {
+            font-size: 1.5rem;
+
+        }
     }
 </style>
 
 <div class="panel">
+    <h1>My Sky Full of Projects</h1>
     <div class="sky">
         {#each stars as star (star.name)}
             <div class="star-container"
