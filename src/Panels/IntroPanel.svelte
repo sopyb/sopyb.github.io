@@ -7,34 +7,34 @@
   let taglinePanelElement: HTMLElement;
 
   let taglines = [
-    "Nerd",
-    "Linux User",
+    // "Nerd",
+    // "Linux User",
     "Open Source Contributor",
-    "Software Developer",
-    "Tech Enthusiast",
-    "Chess Player",
-    "Avicii Fan",
-    "Casual Gamer",
+    // "Software Developer",
+    // "Tech Enthusiast",
+    // "Chess Player",
+    // "Avicii Fan",
+    // "Casual Gamer",
     "Celeste Completionist",
-    "Artist",
-    "Music Lover",
-    "Producer",
-    "Photographer",
-    "Writer",
-    "World Traveler",
-    "Caffeine Addict",
-    "Introvert",
-    "Introvert",
-    "Night Owl",
-    "VR Lover",
-    "Anime Enjoyer",
+    // "Artist",
+    // "Music Lover",
+    // "Producer",
+    // "Photographer",
+    // "Writer",
+    // "World Traveler",
+    // "Caffeine Addict",
+    // "Introvert",
+    // "Introvert",
+    // "Night Owl",
+    // "VR Lover",
+    // "Anime Enjoyer",
     "Cosmic Alpha User",
-    "Hardware Modder",
-    "Docker hater",
-    "NixOS User",
-    "Rustacean",
-    "NodeJs Addict",
-    "Cat Lover",
+    // "Hardware Modder",
+    // "Docker hater",
+    // "NixOS User",
+    // "Rustacean",
+    // "NodeJs Addict",
+    // "Cat Lover",
   ];
   let current_tagline = 0;
 
@@ -103,6 +103,9 @@
                 class="gradientbackground">{taglines[current_tagline]}</i>
         </h2>
     </div>
+    <div class="moto">
+        <p>Changing the world, a line of code at a time</p>
+    </div>
 </div>
 
 <style>
@@ -163,5 +166,123 @@
         font-size: 1.5rem;
         margin: 1rem 0 0 0;
         color: var(--color-subtext0);
+    }
+
+    .moto {
+        display: none;
+    }
+
+    @media  (max-width: 1200px) {
+        .intro-panel {
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            gap: 0;
+        }
+
+        .info {
+            margin-left: 1rem;
+        }
+
+        .info::before {
+            display: none;;
+        }
+
+        .info h1 {
+            height: 6rem;
+        }
+
+        .info p {
+            display: none;
+        }
+
+        .tagline-panel {
+            margin-left: 22rem;
+        }
+
+        .tagline-panel h2 {
+            margin: 0;
+        }
+
+        .moto {
+            display: block;
+            font-size: 2rem;
+            margin-left: 8rem;
+            color: var(--color-subtext0);
+        }
+    }
+
+    @media (max-width: 900px) {
+        .tagline-panel {
+            margin-left: 14rem;
+        }
+
+        .moto {
+            margin-left: 0;
+            align-self: center;
+        }
+    }
+
+    @media (max-width: 750px) {
+        .info h1 {
+            font-size: 6rem;
+        }
+
+        .info p {
+            font-size: 1.25rem;
+        }
+
+        .tagline-panel {
+            margin-left: 1rem;
+            align-self: start;
+        }
+
+        .tagline-panel h2 {
+            font-size: 2rem;
+        }
+
+        .moto {
+            margin-left: 1rem;
+            font-size: 1.5rem;
+            align-self: start;
+        }
+    }
+
+    @media (max-width: 550px) {
+        .info h1 {
+            font-size: 4rem;
+            height: 3.5rem;
+        }
+
+        .info p {
+            font-size: 1rem;
+        }
+
+        .tagline-panel h2 {
+            font-size: 1.5rem;
+        }
+
+        .moto {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .info h1 {
+            font-size: 3rem;
+            height: 3rem;
+        }
+
+        .info p {
+            font-size: 1rem;
+        }
+
+        .tagline-panel h2 {
+            font-size: 1.25rem;
+        }
+
+        .moto {
+            font-size: .75rem;
+        }
     }
 </style>
