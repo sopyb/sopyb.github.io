@@ -5,7 +5,7 @@ name: Deploy
 on:
   push:
     branches:
-      - v3-svelte
+      - v5-svelte
 
 jobs:
   build:
