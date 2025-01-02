@@ -12,9 +12,9 @@
     import About from './old/pages/About.svelte';
     import Contact from './old/pages/Contact.svelte';
     import Projects from "./old/pages/Projects.svelte";
-    import NotFound from './old/pages/NotFound.svelte';
     import ThemePicker from "./Elements/Settings/ThemePicker.svelte";
     import VerticalCarousel from "./Elements/VerticalCarousel.svelte";
+    import IntroPanel from "./Panels/IntroPanel.svelte";
 
     // let title change - counter
     let counter = Math.floor(Math.random() * 4);
@@ -137,6 +137,7 @@
 
 <VerticalCarousel panels={
     [
+        {name: "Intro", icon: "nf-fa-home", component: IntroPanel},
         {name: "About", icon: "nf-fa-user", component: About},
         {name: "Projects", icon: "nf-fa-heart", component: Projects},
         {name: "Contact", icon: "nf-fa-envelope", component: Contact}

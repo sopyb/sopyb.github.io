@@ -59,7 +59,7 @@
         bottom: 0;
 
         border-radius: 0;
-        transition: transform 0.3s 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+        transition: transform 0.3s 0.1s ease-in-out, border-radius 0.1s ease-in-out;
 
         overflow: hidden;
     }
@@ -75,7 +75,7 @@
     .panel.out {
         pointer-events: none;
 
-        border-radius: 0 0 40% 40%;
+        border-radius: 0 0 50% 50%;
         transform: translateY(-120%);
     }
 
@@ -86,7 +86,7 @@
     .panel:not(.out) {
         transform: translateY(0);
         border-radius: 0;
-        transition: transform 0.3s ease-in-out, border-radius 0.2s 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, border-radius 0.1s 0.3s ease-in-out;
     }
 
     .navigationBar {
