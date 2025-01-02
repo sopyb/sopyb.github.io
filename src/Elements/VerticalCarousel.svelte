@@ -4,7 +4,6 @@
 
   export let panels: typeof CarouselPanel[] = [];
 
-  let carousel: HTMLDivElement;
   let currentPanel: number = 0;
   let lock: boolean = false;
   let startY: number;
@@ -152,12 +151,16 @@
     }
 </style>
 
-<div class="carousel" bind:this={carousel}>
+<div class="carousel">
     <div class="navigationBar">
         {#each panels as Panel, i}
             <div class="navButton" class:active={i === currentPanel}
+                 aria-label="Navigate to {Panel.name}"
+                 tabindex={i}
+                 role="button"
                  style={"z-index: " + (panels.length - i)}
                  on:click={() => currentPanel = i}
+                 on:keydown={(e) => e.key === 'Enter' && (currentPanel = i)}
             >
                 <i class={"nf " + Panel.icon}></i>
                 <span class="tooltip">{Panel.name}</span>
