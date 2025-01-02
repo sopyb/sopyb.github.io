@@ -7,34 +7,34 @@
   let taglinePanelElement: HTMLElement;
 
   let taglines = [
-    // "Nerd",
-    // "Linux User",
+    "Nerd",
+    "Linux User",
     "Open Source Contributor",
-    // "Software Developer",
-    // "Tech Enthusiast",
-    // "Chess Player",
-    // "Avicii Fan",
-    // "Casual Gamer",
+    "Software Developer",
+    "Tech Enthusiast",
+    "Chess Player",
+    "Avicii Fan",
+    "Casual Gamer",
     "Celeste Completionist",
-    // "Artist",
-    // "Music Lover",
-    // "Producer",
-    // "Photographer",
-    // "Writer",
-    // "World Traveler",
-    // "Caffeine Addict",
-    // "Introvert",
-    // "Introvert",
-    // "Night Owl",
-    // "VR Lover",
-    // "Anime Enjoyer",
+    "Artist",
+    "Music Lover",
+    "Producer",
+    "Photographer",
+    "Writer",
+    "World Traveler",
+    "Caffeine Addict",
+    "Introvert",
+    "Introvert",
+    "Night Owl",
+    "VR Lover",
+    "Anime Enjoyer",
     "Cosmic Alpha User",
-    // "Hardware Modder",
-    // "Docker hater",
-    // "NixOS User",
-    // "Rustacean",
-    // "NodeJs Addict",
-    // "Cat Lover",
+    "Hardware Modder",
+    "Docker hater",
+    "NixOS User",
+    "Rustacean",
+    "NodeJs Addict",
+    "Cat Lover",
   ];
   let current_tagline = 0;
 
@@ -135,6 +135,7 @@
         height: 8.25rem;
         width: .25rem;
         background: linear-gradient(180deg, #5BCEFA 0%, #F5A9B8 20%, #FFF 40%, var(--color-text) 60%);
+        filter: drop-shadow(0 0 1px var(--color-subtext1));
     }
 
     .info h1 {
@@ -160,6 +161,7 @@
         background-image: linear-gradient(var(--angle), #5BCEFA 0%, #F5A9B8 50%, #FFF 100%);
         /*background-color: var(--color-accent);*/
         background-clip: text;
+        filter: drop-shadow(0 0 1px var(--color-subtext1));
     }
 
     .info p {
