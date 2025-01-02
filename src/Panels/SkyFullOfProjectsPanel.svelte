@@ -183,11 +183,11 @@
   }
 
   function generateStars() {
-    const seed = 20;
+    const seed = 34;
     const rng = new RNG(seed);
-    stars = projects.map((project, index) => {
-      const x = rng.nextFloat() * 95;
-      const y = rng.nextFloat() * 100;
+    stars = projects.map((project) => {
+      const x = rng.nextFloat() * 100;
+      const y = rng.nextFloat() * 95;
       const row = x < 50 ? 'row' : 'revrow';
       const column = y < 50 ? 'column' : 'revcolumn';
       const orientation = Math.abs(x - 50) > Math.abs(y - 50) ? row : column;
@@ -202,11 +202,18 @@
 </script>
 
 <style>
+    .panel {
+        height: 100%;
+        width: 100%;
+        background-color: var(--color-crust);
+    }
+
     .sky {
         position: relative;
-        width: 100%;
+        padding-right: 7rem;
+        width: calc(100% - 7rem);
         height: 100%;
-        background: black;
+        background: var(--color-crust);
     }
 
     .star-container {
@@ -281,21 +288,37 @@
             filter: blur(2px) drop-shadow(0 0 20px #fff);
         }
     }
+
+    @media (max-width: 650px) {
+        .star-container {
+            transform: scale(0.75);
+        }
+
+        .tooltip {
+            transform: scale(1.5);
+        }
+    }
 </style>
 
-<div class="sky">
-    {#each stars as star (star.name)}
-        <div class={`star-container ${star.orientation}`}
-             style="left: {star.x}%; top: {star.y}%">
-            <div class="star"
-                 style="width: {star.brightness * 4 + 10}px; height: {star.brightness * 4 + 10}px; animation-delay: {star.animationDelay};"></div>
-            <div class="tooltip">
-                <a href={star.link} target="_blank"><h3>{star.name}</h3></a>
-                <p>{star.description}</p>
-                {#if star.image}
-                    <img src={star.image} alt={star.name}/>
-                {/if}
+<div class="panel">
+    <div class="sky">
+        {#each stars as star (star.name)}
+            <div class="star-container"
+                 class:row={star.orientation === 'row'}
+                 class:revrow={star.orientation === 'revrow'}
+                 class:column={star.orientation === 'column'}
+                 class:revcolumn={star.orientation === 'revcolumn'}
+                 style="left: {star.x}%; top: {star.y}%">
+                <div class="star"
+                     style="width: {star.brightness * 4 + 10}px; height: {star.brightness * 4 + 10}px; animation-delay: {star.animationDelay};"></div>
+                <div class="tooltip">
+                    <a href={star.link} target="_blank"><h3>{star.name}</h3></a>
+                    <p>{star.description}</p>
+                    {#if star.image}
+                        <img src={star.image} alt={star.name}/>
+                    {/if}
+                </div>
             </div>
-        </div>
-    {/each}
+        {/each}
+    </div>
 </div>
