@@ -1,12 +1,12 @@
 <script>
-    import Panel from '../Elements/Panel.svelte'
+    import Panel from '../elements/Panel.svelte'
     import {createEventDispatcher, onMount} from 'svelte'
-    import InfoBoard from '../Elements/InfoBoard.svelte'
-    import InfoCard from '../Elements/InfoCard.svelte'
-    import SlashedPanelTransitionEatBelow from '../Elements/SlashedPanelTransitionEatBelow.svelte'
-    import SpaceParallax from '../Elements/SpaceParallax.svelte'
-    import SlashedPanelTransitionEatAbove from '../Elements/SlashedPanelTransitionEatAbove.svelte'
-    import SkillShowcase from '../Elements/SkillShowcase.svelte'
+    import InfoBoard from '../elements/InfoBoard.svelte'
+    import InfoCard from '../elements/InfoCard.svelte'
+    import SlashedPanelTransitionEatBelow from '../elements/SlashedPanelTransitionEatBelow.svelte'
+    import SpaceParallax from '../elements/SpaceParallax.svelte'
+    import SlashedPanelTransitionEatAbove from '../elements/SlashedPanelTransitionEatAbove.svelte'
+    import SkillShowcase from '../elements/SkillShowcase.svelte'
 
     const dispatch = createEventDispatcher()
 

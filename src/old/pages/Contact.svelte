@@ -1,5 +1,5 @@
 <script>
-    import Panel from '../Elements/Panel.svelte'
+    import Panel from '../elements/Panel.svelte'
     import {createEventDispatcher, onMount} from 'svelte'
 
     const dispatch = createEventDispatcher()

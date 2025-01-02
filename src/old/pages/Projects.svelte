@@ -1,7 +1,7 @@
 <script>
-    import Panel from '../Elements/Panel.svelte'
+    import Panel from '../elements/Panel.svelte'
     import { createEventDispatcher, onMount } from 'svelte'
-    import ResultPane from '../Elements/ResultPane.svelte'
+    import ResultPane from '../elements/ResultPane.svelte'
 
     const dispatch = createEventDispatcher()
 

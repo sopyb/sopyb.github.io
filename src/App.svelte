@@ -3,17 +3,18 @@
     import {fly} from 'svelte/transition';
 
     // app page imports
-    import Panel from "./Elements/Panel.svelte";
-    import NavBar from "./Elements/NavBar.svelte";
-    import WavedPanelTransitionEatAbove from "./Elements/WavedPanelTransitionEatAbove.svelte";
+    import Panel from "./old/elements/Panel.svelte";
+    import NavBar from "./old/elements/NavBar.svelte";
+    import WavedPanelTransitionEatAbove from "./old/elements/WavedPanelTransitionEatAbove.svelte";
 
     // single page routing
-    // import pages
-    import About from './pages/About.svelte';
-    import Contact from './pages/Contact.svelte';
-    import Projects from "./pages/Projects.svelte";
-    import NotFound from './pages/NotFound.svelte';
+    // import Panels
+    import About from './old/pages/About.svelte';
+    import Contact from './old/pages/Contact.svelte';
+    import Projects from "./old/pages/Projects.svelte";
+    import NotFound from './old/pages/NotFound.svelte';
     import ThemePicker from "./Elements/Settings/ThemePicker.svelte";
+    import VerticalCarousel from "./Elements/VerticalCarousel.svelte";
 
     // let title change - counter
     let counter = Math.floor(Math.random() * 4);
@@ -108,31 +109,39 @@
 </script>
 
 <!--Heading-->
-{#if !pageNotFound}
-    <Panel>
-        <div>
-            {#if counter === 0}
-                <h1 in:fly={{y: -48}}>one.sopy.portfolio</h1>
-            {:else if counter === 1}
-                <h1 in:fly={{y: -48}}>Sopy's portfolio</h1>
-            {:else if counter === 2}
-                <h1 in:fly={{y: -48}}>Placeholder title</h1>
-            {:else if counter === 3}
-                <h1 in:fly={{y: -48}}>*insert portfolio title*</h1>
-            {/if}
-            <NavBar changePage={changePage} curPage={curPage}/>
-        </div>
-    </Panel>
-    <WavedPanelTransitionEatAbove previousColor="transparent" nextColor="var(--color-base)"
-    ></WavedPanelTransitionEatAbove>
+<!--{#if !pageNotFound}-->
+<!--    <Panel>-->
+<!--        <div>-->
+<!--            {#if counter === 0}-->
+<!--                <h1 in:fly={{y: -48}}>one.sopy.portfolio</h1>-->
+<!--            {:else if counter === 1}-->
+<!--                <h1 in:fly={{y: -48}}>Sopy's portfolio</h1>-->
+<!--            {:else if counter === 2}-->
+<!--                <h1 in:fly={{y: -48}}>Placeholder title</h1>-->
+<!--            {:else if counter === 3}-->
+<!--                <h1 in:fly={{y: -48}}>*insert portfolio title*</h1>-->
+<!--            {/if}-->
+<!--            <NavBar changePage={changePage} curPage={curPage}/>-->
+<!--        </div>-->
+<!--    </Panel>-->
+<!--    <WavedPanelTransitionEatAbove previousColor="transparent" nextColor="var(&#45;&#45;color-base)"-->
+<!--    ></WavedPanelTransitionEatAbove>-->
 
-    <!--add page content on load/change call mounted-->
-    <div class="cpag" class:out={transition}>
-        <svelte:component this={pageComponent} on:mounted={mounted}/>
-    </div>
-{:else}
-    <NotFound/>
-{/if}
+<!--    &lt;!&ndash;add page content on load/change call mounted&ndash;&gt;-->
+<!--    <div class="cpag" class:out={transition}>-->
+<!--        <svelte:component this={pageComponent} on:mounted={mounted}/>-->
+<!--    </div>-->
+<!--{:else}-->
+<!--    <NotFound/>-->
+<!--{/if}-->
+
+<VerticalCarousel panels={
+    [
+        {name: "About", icon: "nf-fa-user", component: About},
+        {name: "Projects", icon: "nf-fa-heart", component: Projects},
+        {name: "Contact", icon: "nf-fa-envelope", component: Contact}
+    ]
+} />
 
 <ThemePicker/>
 

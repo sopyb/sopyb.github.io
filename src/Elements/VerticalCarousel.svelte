@@ -1,0 +1,176 @@
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import type CarouselPanel from "../Types/CarouselPanel";
+
+  export let panels: typeof CarouselPanel[] = [];
+
+  let carousel: HTMLDivElement;
+  let currentPanel: number = 0;
+  let lock: boolean = false;
+  let startY: number;
+
+  function unifiedHandler(e: Event) {
+    if (lock) return;
+
+    let deltaY: number;
+
+    if (e instanceof WheelEvent) {
+      deltaY = e.deltaY;
+    } else if (e instanceof TouchEvent) {
+      if (e.type === 'touchstart') {
+        startY = e.touches[0].clientY;
+        return;
+      } else if (e.type === 'touchend') {
+        deltaY = startY - e.changedTouches[0].clientY;
+      }
+    }
+
+    if (deltaY > 50 || deltaY < -50) {
+      if (deltaY > 0 && currentPanel < panels.length - 1) {
+        currentPanel++;
+      } else if (deltaY < 0 && currentPanel > 0) {
+        currentPanel--;
+      }
+      lock = true;
+      setTimeout(() => lock = false, 500);
+    }
+  }
+
+  onMount(() => {
+    window.addEventListener('wheel', unifiedHandler);
+    window.addEventListener('touchstart', unifiedHandler);
+    window.addEventListener('touchend', unifiedHandler);
+    return () => {
+      window.removeEventListener('wheel', unifiedHandler);
+      window.removeEventListener('touchstart', unifiedHandler);
+      window.removeEventListener('touchend', unifiedHandler);
+    };
+  });
+</script>
+
+
+<style>
+    .panel {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        border-radius: 0;
+        transition: transform 0.3s 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+
+        overflow: hidden;
+    }
+
+    .carousel {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: var(--color-base);
+    }
+
+    .panel.out {
+        pointer-events: none;
+
+        border-radius: 0 0 40% 40%;
+        transform: translateY(-120%);
+    }
+
+    .dropshadow {
+        filter: drop-shadow(0px 10px 4px var(--color-accent));
+    }
+
+    .panel:not(.out) {
+        transform: translateY(0);
+        border-radius: 0;
+        transition: transform 0.3s ease-in-out, border-radius 0.2s 0.3s ease-in-out;
+    }
+
+    .navigationBar {
+        position: fixed;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        z-index: 9999999999;
+    }
+
+    .navButton {
+        position: relative;
+        background-color: var(--color-surface2);
+        padding: 0.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+        height: 4rem;
+        aspect-ratio: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+
+        transition-property: color, background-color;
+        transition-duration: 0.3s;
+        transition-timing-function: linear;
+    }
+
+    .navButton.active {
+        background-color: var(--color-accent);
+        color: var(--color-base);
+    }
+
+    .tooltip {
+        visibility: hidden;
+        width: 8rem;
+        height: 2rem;
+        padding: 0.25rem;
+        color: var(--color-text);
+        background-color: var(--color-surface2);
+        text-align: center;
+        border-radius: 6px;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        right: 110%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navButton:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+    }
+</style>
+
+<div class="carousel" bind:this={carousel}>
+    <div class="navigationBar">
+        {#each panels as Panel, i}
+            <div class="navButton" class:active={i === currentPanel}
+                 style={"z-index: " + (panels.length - i)}
+                 on:click={() => currentPanel = i}
+            >
+                <i class={"nf " + Panel.icon}></i>
+                <span class="tooltip">{Panel.name}</span>
+            </div>
+        {/each}
+    </div>
+
+    {#each panels as Panel, i}
+        <div class="panel" class:out={i < currentPanel}
+             class:dropshadow={i === currentPanel || i === currentPanel - 1}
+             style={"z-index: " + (panels.length - i)}
+        >
+            <Panel.component/>
+        </div>
+    {/each}
+</div>
