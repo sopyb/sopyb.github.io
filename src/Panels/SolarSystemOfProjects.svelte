@@ -141,13 +141,20 @@
     setTimeout(() => tooltip.style.display = 'none', 0);
   }
 
+  function adjustTooltipPositionImg(event) {
+    // search the hitbox based on planet name
+    let planet = document.querySelector(`.hitbox[aria-label="${event.target.alt}"]`);
+
+    adjustTooltipPosition({ target: planet });
+  }
+
   onMount(() => {
     initializePlanetsPerOrbit(projects.length);
     generatePlanets();
     generateOrbitSpeeds();
 
-    window.addEventListener('resize', adjustTooltipPosition);
-    return () => window.removeEventListener('resize', adjustTooltipPosition);
+    img.addEventListener('load', adjustTooltipPositionImg);
+    return () => img.removeEventListener('load', adjustTooltipPositionImg);
   });
 </script>
 
@@ -262,6 +269,7 @@
             {#each planets.filter(p => p.orbit === i) as planet (planet.name)}
                 <g class="planet-group">
                     <circle class="hitbox" cx={planet.x} cy={planet.y} r={4}
+                            aria-label="{planet.name}"
                             on:mouseover={(e) => showTooltip(e, planet)}
                             on:focus={(e) => showTooltip(e, planet)}
                             on:mouseout={hideTooltip} on:blur={hideTooltip}/>
