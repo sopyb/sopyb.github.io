@@ -73,7 +73,7 @@
 
         const numPlanetsInOrbit = planetsPerOrbit[orbit];
         const baseAngle = (index % numPlanetsInOrbit) * (2 * Math.PI / numPlanetsInOrbit);
-        const offset = rng.nextFloat() * (360 / numPlanetsInOrbit) * Math.PI / 180;
+        const offset = rng.nextFloat() * (360 / numPlanetsInOrbit) * Math.PI / 180 * .9;
         const angle = (baseAngle + baseOrbitStart + offset) % (2 * Math.PI);
         const radius = ((orbit + 1) / planetsPerOrbit.length) * maxRadius;
         const x = centerX + radius * Math.cos(angle);
