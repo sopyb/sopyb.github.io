@@ -120,6 +120,17 @@
 </script>
 
 <style>
+    .title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 1rem;
+        font-size: 2rem;
+        font-weight: bolder;
+        color: var(--color-text);
+    }
+
     .solar-system {
         aspect-ratio: 1;
         width: 100%;
@@ -157,6 +168,8 @@
         color: var(--color-accent);
     }
 </style>
+
+<h1 class="title">Solar System of Projects</h1>
 
 <svg class="solar-system" viewBox="0 0 100 100">
     {#each planetsPerOrbit as _, i}
