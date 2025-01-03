@@ -9,6 +9,7 @@
   let startY: number;
 
   function unifiedHandler(e: Event) {
+    if (currentPanel !== 0) e.preventDefault();
     if (lock) return;
 
     let deltaY: number;
