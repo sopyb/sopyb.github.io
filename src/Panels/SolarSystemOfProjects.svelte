@@ -5,6 +5,8 @@
 
   let planets = [];
   let planetsPerOrbit: number[] = [];
+  let tooltip = null;
+  let tooltipContent = { name: '', description: '', link: '', image: '' };
 
   function generatePrimes(n: number): number[] {
     const primes = [];
@@ -58,9 +60,7 @@
 
     planets = projects
       .sort(() => rng.nextFloat() - 0.5)
-
       .map((project, index) => {
-
         if (index === cumulativeSum) {
           orbit++;
           cumulativeSum += planetsPerOrbit[orbit];
@@ -68,10 +68,8 @@
         }
 
         const numPlanetsInOrbit = planetsPerOrbit[orbit];
-
         const baseAngle = (index % numPlanetsInOrbit) * (2 * Math.PI / numPlanetsInOrbit);
         const offset = rng.nextFloat() * (360 / numPlanetsInOrbit) * Math.PI / 180;
-
         const angle = (baseAngle + baseOrbitStart + offset) % (2 * Math.PI);
         const radius = ((orbit + 1) / planetsPerOrbit.length) * maxRadius;
         const x = centerX + radius * Math.cos(angle);
@@ -80,11 +78,47 @@
       });
   }
 
+  function showTooltip(event, planet) {
+    tooltipContent = planet;
+    setTimeout(() => {
+        tooltip.style.display = 'block';
+        const tooltipWidth = tooltip.offsetWidth;
+        const tooltipHeight = tooltip.offsetHeight;
+        const planetRect = event.target.getBoundingClientRect();
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+
+        let left = planetRect.left + (planetRect.width / 2);
+        let top = planetRect.top + (planetRect.height / 2);
+
+        if (left < centerX) {
+          left += 10;
+        } else {
+          left -= tooltipWidth + 10;
+        }
+
+        if (top < centerY) {
+          top += 10;
+        } else {
+          top -= tooltipHeight + 10
+        }
+
+        tooltip.style.left = `${Math.max(10, Math.min(left, window.innerWidth - tooltipWidth - 10))}px`;
+        tooltip.style.top = `${Math.max(10, Math.min(top, window.innerHeight - tooltipHeight - 10))}px`;
+    }, 0);
+  }
+
+  function hideTooltip() {
+    setTimeout(() => tooltip.style.display = 'none', 0);
+  }
+
   onMount(() => {
     initializePlanetsPerOrbit(projects.length);
     generatePlanets();
+    tooltip = document.getElementById('tooltip');
   });
 </script>
+
 <style>
     .solar-system {
         aspect-ratio: 1;
@@ -95,22 +129,32 @@
 
     .planet {
         fill: var(--color-accent);
-        cursor: pointer;
+        pointer-events: none;
     }
 
+    .hitbox {
+        fill: none;
+        pointer-events: all;
+    }
+
+
     .tooltip {
-        display: none;
         position: absolute;
+        width: max-content;
+        max-width: 24rem;
         background-color: var(--color-base);
         color: var(--color-surface);
         padding: 10px;
         border-radius: 5px;
-        width: max-content;
-        max-width: 24rem;
+        display: none;
     }
 
-    .planet-group:hover .tooltip {
-        display: block;
+    .tooltip a {
+        color: var(--color-accent);
+    }
+
+    .tooltip a:active {
+        color: var(--color-accent);
     }
 </style>
 
@@ -122,19 +166,26 @@
 
     {#each planets as planet (planet.name)}
         <g class="planet-group">
+            <circle class="hitbox" cx={planet.x} cy={planet.y} r={4}
+                    on:mouseover={(e) => showTooltip(e, planet)}
+                    on:focus={(e) => showTooltip(e, planet)}
+                    on:mouseout={hideTooltip} on:blur={hideTooltip}/>
             <circle class="planet" cx={planet.x} cy={planet.y}
-                    r={planet.brightness * 0.15+0.75}/>
-            <foreignObject x={planet.x + 1} y={planet.y + 1} width="5"
-                           height="5">
-                <div class="tooltip">
-                    <a href={planet.link} target="_blank"><h3>{planet.name}</h3>
-                    </a>
-                    <p>{planet.description}</p>
-                    {#if planet.image}
-                    {/if}
-                    <img src={planet.image} alt={planet.name} width="100%"/>
-                </div>
-            </foreignObject>
+                    r={planet.brightness * 0.2 + 1}/>
         </g>
     {/each}
 </svg>
+
+<div id="tooltip" class="tooltip"
+     on:mouseover={() => setTimeout(() => tooltip.style.display = 'block', 0)}
+     on:focus={() => setTimeout(() => tooltip.style.display = 'block', 0)}
+     on:mouseout={hideTooltip}
+     on:blur={hideTooltip}
+>
+    <a href={tooltipContent.link} target="_blank"><h3>{tooltipContent.name}</h3>
+    </a>
+    <p>{tooltipContent.description}</p>
+    {#if tooltipContent.image}
+        <img src={tooltipContent.image} alt={tooltipContent.name} width="100%"/>
+    {/if}
+</div>
