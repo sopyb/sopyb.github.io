@@ -94,7 +94,7 @@
     .panel.out {
         pointer-events: none;
 
-        border-radius: 0 0 50% 50%;
+        border-radius: 0 0 50vw 50vw;
         transform: translateY(-120%);
     }
 
