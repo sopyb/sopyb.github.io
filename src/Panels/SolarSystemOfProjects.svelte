@@ -12,6 +12,8 @@
   let tooltip: HTMLElement;
   let tooltipContent = { name: '', description: '', link: '', image: '' };
 
+  let lastHoveredProject: string = null;
+
   function generatePrimes(n: number): number[] {
     const primes = [];
     let sum = 0;
@@ -76,7 +78,7 @@
         const radius = ((orbit + 1) / planetsPerOrbit.length) * maxRadius;
         const x = centerX + radius * Math.cos(angle);
         const y = centerY + radius * Math.sin(angle);
-        return { ...project, x, y, orbit };
+        return { ...project, x, y, orbit, visited: false };
       });
   }
 
@@ -85,6 +87,9 @@
   }
 
   function showTooltip(event, planet) {
+    lastHoveredProject = planet.name;
+    planets = planets.map(p => ({ ...p, visited: p.name === planet.name ? true : p.visited }));
+
     tooltipContent = planet;
     setTimeout(() => {
       tooltip.style.display = 'block';
@@ -154,8 +159,19 @@
     }
 
     .planet {
-        fill: var(--color-accent);
         pointer-events: none;
+    }
+
+    .planet:not(.visited) {
+        fill: var(--color-accent);
+    }
+
+    .planet.visited {
+        fill: var(--color-surface2);
+    }
+
+    .planet.lastVisited {
+        fill: var(--color-overlay1);
     }
 
     .hitbox {
@@ -212,7 +228,10 @@
                             on:mouseover={(e) => showTooltip(e, planet)}
                             on:focus={(e) => showTooltip(e, planet)}
                             on:mouseout={hideTooltip} on:blur={hideTooltip}/>
-                    <circle class="planet" cx={planet.x} cy={planet.y}
+                    <circle class="planet"
+                            class:visited={planet.visited}
+                            class:lastVisited={planet.name === lastHoveredProject}
+                            cx={planet.x} cy={planet.y}
                             r={planet.brightness * 0.2 + 1}/>
                 </g>
             {/each}
