@@ -34,21 +34,28 @@
     .parent h1 {
         width: 100%;
         text-align: center;
-        margin-bottom: 2rem; /* Add some space between h1 and the grid */
+        margin-bottom: 2rem;
         color: var(--color-text);
     }
 
     .socialGrid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Increased min-width */
-        grid-gap: 1.5rem; /* Increased gap */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 1.5rem;
         width: 80%;
+
+        max-width: 1500px;
+    }
+
+    .socialGrid i {
+        font-size: 3rem;
+        margin-right: 1rem;
     }
 
     .socialGrid div {
         background-color: var(--color-crust);
         border-radius: 5px;
-        padding: 1.5rem; /* Increased padding */
+        padding: 1rem;
     }
 
     .socialGrid div:hover {
