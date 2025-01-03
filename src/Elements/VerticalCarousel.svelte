@@ -169,6 +169,32 @@
         visibility: visible;
         opacity: 1;
     }
+
+    @media (max-aspect-ratio: 1/1) {
+        .navigationBar {
+            position: absolute;
+            flex-direction: row;
+            gap: 2rem;
+            top: auto;
+            bottom: 0;
+            left: 1rem;
+        }
+
+        .tooltip {
+            top: -70%;
+            right: 50%;
+            transform: translateX(50%);
+
+            font-size: 1rem;
+            width: max-content;
+            height: max-content;
+            padding: 0.5rem;
+
+
+            display: block;
+
+        }
+    }
 </style>
 
 <div class="carousel">

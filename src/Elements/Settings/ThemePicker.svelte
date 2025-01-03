@@ -219,7 +219,7 @@
 
     @media (max-width: 800px) {
         #themePicker {
-            bottom: 1.5rem;
+            bottom: 2rem;
             right: 1.5rem;
         }
 
@@ -242,7 +242,7 @@
 
     @media (max-width: 600px) {
         #themePicker {
-            bottom: 1rem;
+            bottom: 2rem;
             right: 1rem;
         }
 
@@ -270,7 +270,7 @@
 
     @media (max-width: 400px) {
         #themePicker {
-            bottom: 1rem;
+            bottom: 2.5rem;
             right: 1rem;
         }
 
