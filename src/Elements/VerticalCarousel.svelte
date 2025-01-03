@@ -57,8 +57,8 @@
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     window.addEventListener('wheel', unifiedHandler);
-    window.addEventListener('touchstart', unifiedHandler);
-    window.addEventListener('touchend', unifiedHandler);
+    window.addEventListener('touchstart', unifiedHandler, { passive: false });
+    window.addEventListener('touchend', unifiedHandler, { passive: false });
     window.addEventListener('keydown', keyHandler);
     return () => {
       window.removeEventListener('wheel', unifiedHandler);
