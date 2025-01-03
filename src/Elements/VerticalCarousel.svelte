@@ -53,12 +53,6 @@
     }
   }
 
-  function preventPullToRefresh(e: TouchEvent) {
-    if (currentPanel !== 0) {
-      e.preventDefault();
-    }
-  }
-
   onMount(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
@@ -66,13 +60,11 @@
     window.addEventListener('touchstart', unifiedHandler);
     window.addEventListener('touchend', unifiedHandler);
     window.addEventListener('keydown', keyHandler);
-    window.addEventListener('touchmove', preventPullToRefresh);
     return () => {
       window.removeEventListener('wheel', unifiedHandler);
       window.removeEventListener('touchstart', unifiedHandler);
       window.removeEventListener('touchend', unifiedHandler);
       window.removeEventListener('keydown', keyHandler);
-      window.removeEventListener('touchmove', preventPullToRefresh);
     };
   });
 </script>
