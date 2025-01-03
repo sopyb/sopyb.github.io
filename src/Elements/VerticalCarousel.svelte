@@ -7,11 +7,9 @@
   let currentPanel: number = 0;
   let lock: boolean = false;
   let startY: number;
+  let styleElement: HTMLStyleElement;
 
   function unifiedHandler(e: Event) {
-    if (currentPanel !== 0) {
-        e.preventDefault();
-    }
     if (lock) return;
 
     let deltaY: number;
@@ -27,7 +25,7 @@
       }
     }
 
-    if (deltaY > 50 || deltaY < -50) {
+    if (deltaY > 25 || deltaY < -25) {
       if (deltaY > 0 && currentPanel < panels.length - 1) {
         currentPanel++;
       } else if (deltaY < 0 && currentPanel > 0) {
@@ -35,6 +33,19 @@
       }
       lock = true;
       setTimeout(() => lock = false, 500);
+    }
+
+    if (currentPanel !== 0) {
+      styleElement = document.createElement('style');
+      styleElement.textContent = `
+      html, body {
+        overscroll-behavior-y: contain;
+      }
+    `;
+      document.head.appendChild(styleElement);
+    } else if (styleElement) {
+      document.head.removeChild(styleElement);
+      styleElement = null;
     }
   }
 
