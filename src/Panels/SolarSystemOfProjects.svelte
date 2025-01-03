@@ -88,7 +88,10 @@
 
   function showTooltip(event, planet) {
     lastHoveredProject = planet.name;
-    planets = planets.map(p => ({ ...p, visited: p.name === planet.name ? true : p.visited }));
+    planets = planets.map(p => ({
+      ...p,
+      visited: p.name === planet.name ? true : p.visited
+    }));
 
     tooltipContent = planet;
     setTimeout(() => {
@@ -121,8 +124,10 @@
         top -= tooltipHeight + 10;
       }
 
+      const maxBottom = 6 * 16; // 6rem in pixels
+      const maxTop = window.innerHeight - maxBottom - tooltipHeight - 10;
       tooltip.style.left = `${Math.max(10, Math.min(left, window.innerWidth - tooltipWidth - 10))}px`;
-      tooltip.style.top = `${Math.max(10, Math.min(top, window.innerHeight - tooltipHeight - 10))}px`;
+      tooltip.style.top = `${Math.max(10, Math.min(top, maxTop))}px`;
     }, 0);
 
   }
@@ -212,6 +217,17 @@
         to {
             transform: rotate(360deg);
         }
+    }
+
+    @media (max-width: 600px) {
+        .title {
+            font-size: 1.5rem;
+        }
+
+        .tooltip {
+            max-width: 16rem;
+        }
+
     }
 
     @media (prefers-reduced-motion: reduce) {
