@@ -6,13 +6,14 @@
     import VerticalCarousel from "./Elements/VerticalCarousel.svelte";
     import IntroPanel from "./Panels/IntroPanel.svelte";
     import SkyFullOfProjectsPanel from "./Panels/SkyFullOfProjectsPanel.svelte";
+    import SolarSystemOfProjects from "./Panels/SolarSystemOfProjects.svelte";
 </script>
 
 
 <VerticalCarousel panels={
     [
         {name: "Intro", icon: "nf-fa-home", component: IntroPanel},
-        {name: "Projects", icon: "nf-fa-heart", component: SkyFullOfProjectsPanel},
+        {name: "Projects", icon: "nf-fa-heart", component: SolarSystemOfProjects},
         {name: "Contact", icon: "nf-fa-envelope", component: Contact}
     ]
 } />
