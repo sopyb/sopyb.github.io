@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Themes } from "./Themes.js";
+  import { onMount } from 'svelte';
 
   let theme = localStorage.getItem('theme');
   let accentColor = localStorage.getItem('accentColor');
@@ -41,12 +42,27 @@
     document.documentElement.style.setProperty('--color-accent', Themes[theme][accentColor]);
   }
 
-  Object.keys(Themes).forEach(themeKey => {
-    document.documentElement.style.setProperty(`--color-${themeKey}-base`, Themes[themeKey].base);
-    document.documentElement.style.setProperty(`--color-${themeKey}-mantle`, Themes[themeKey].mantle);
+  function closeThemePicker(event) {
+    const themePicker = document.getElementById('themePicker');
+    if (themePicker && !themePicker.contains(event.target as Node)) {
+      themePicker.classList.remove('open');
+    }
+  }
+
+  onMount(() => {
+    updateTheme();
+
+    Object.keys(Themes).forEach(themeKey => {
+      document.documentElement.style.setProperty(`--color-${themeKey}-base`, Themes[themeKey].base);
+      document.documentElement.style.setProperty(`--color-${themeKey}-mantle`, Themes[themeKey].mantle);
+    });
+
+    document.addEventListener('click', closeThemePicker);
+    return () => {
+      document.removeEventListener('click', closeThemePicker);
+    }
   });
 
-  updateTheme();
 </script>
 
 <div id="themePicker">
