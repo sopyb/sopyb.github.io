@@ -35,6 +35,7 @@
         width: 100%;
         text-align: center;
         margin-bottom: 2rem; /* Add some space between h1 and the grid */
+        color: var(--color-text);
     }
 
     .socialGrid {
@@ -82,6 +83,12 @@
     @media (max-width: 400px) {
         .socialGrid div {
             padding: 0.5rem;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .socialGrid div {
+            transition: none;
         }
     }
 </style>

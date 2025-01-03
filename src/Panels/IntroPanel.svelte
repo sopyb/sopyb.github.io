@@ -75,8 +75,9 @@
 
   onMount(() => {
     taglines = taglines.sort(() => Math.random() - 0.5);
-
     updateNChar(true);
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     return setInterval(() => {
       if (taglinePanelElement) {
@@ -146,14 +147,19 @@
         color: var(--color-text);
     }
 
+    .tagline-panel h2 {
+        margin: 0;
+        color: var(--color-text);
+    }
 
     .info h1 i {
         --angle: 110deg;
     }
 
-    .tagline-panel {
+    .tagline-panel h2 i {
         --angle: 250deg
     }
+
 
     .info h1 i.gradientbackground,
     .tagline-panel h2 i.gradientbackground {

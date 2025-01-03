@@ -54,6 +54,8 @@
   }
 
   onMount(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     window.addEventListener('wheel', unifiedHandler);
     window.addEventListener('touchstart', unifiedHandler);
     window.addEventListener('touchend', unifiedHandler);
@@ -193,6 +195,38 @@
 
             display: block;
 
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .carousel {
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+        }
+
+        .panel {
+            position: relative;
+            top: auto;
+            left: auto;
+            right: auto;
+            bottom: auto;
+            transition: none;
+            scroll-snap-align: start;
+            min-height: 100vh;
+        }
+
+        .dropshadow {
+            filter: none;
+        }
+
+        .navButton {
+            display: none;
+        }
+
+        .tooltip {
+            transition: none;
         }
     }
 </style>

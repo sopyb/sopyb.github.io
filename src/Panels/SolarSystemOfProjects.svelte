@@ -213,6 +213,12 @@
             transform: rotate(360deg);
         }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+        .orbit-group {
+            animation: none;
+        }
+    }
 </style>
 
 <h1 class="title">Solar System of Projects</h1>
