@@ -10,6 +10,7 @@
   let planetsPerOrbit: number[] = [];
   let orbitSpeeds: number[] = [];
   let tooltip: HTMLElement;
+  let img: HTMLElement;
   let tooltipContent = { name: '', description: '', link: '', image: '' };
 
   let lastHoveredProject: string = null;
@@ -86,6 +87,42 @@
     orbitSpeeds = planetsPerOrbit.map((_, i) => i * 30 + 300).reverse()
   }
 
+  function adjustTooltipPosition(event) {
+    tooltip.style.display = 'block';
+    const tooltipWidth = tooltip.offsetWidth;
+    const tooltipHeight = tooltip.offsetHeight;
+
+    const svgElement = event.target;
+    const ctm = svgElement.getScreenCTM();
+    const point = svgElement.ownerSVGElement.createSVGPoint();
+    point.x = svgElement.cx.baseVal.value;
+    point.y = svgElement.cy.baseVal.value;
+    const transformedPoint = point.matrixTransform(ctm);
+
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    let left = transformedPoint.x;
+    let top = transformedPoint.y;
+
+    if (left < centerX) {
+      left += 10;
+    } else {
+      left -= tooltipWidth + 10;
+    }
+
+    if (top < centerY) {
+      top += 10;
+    } else {
+      top -= tooltipHeight + 10;
+    }
+
+    const maxBottom = 6 * 16; // 6rem in pixels
+    const maxTop = window.innerHeight - maxBottom - tooltipHeight - 10;
+    tooltip.style.left = `${Math.max(10, Math.min(left, window.innerWidth - tooltipWidth - 10))}px`;
+    tooltip.style.top = `${Math.max(10, Math.min(top, maxTop))}px`;
+  }
+
   function showTooltip(event, planet) {
     lastHoveredProject = planet.name;
     planets = planets.map(p => ({
@@ -96,40 +133,8 @@
     tooltipContent = planet;
     setTimeout(() => {
       tooltip.style.display = 'block';
-      const tooltipWidth = tooltip.offsetWidth;
-      const tooltipHeight = tooltip.offsetHeight;
-
-      const svgElement = event.target;
-      const ctm = svgElement.getScreenCTM();
-      const point = svgElement.ownerSVGElement.createSVGPoint();
-      point.x = svgElement.cx.baseVal.value;
-      point.y = svgElement.cy.baseVal.value;
-      const transformedPoint = point.matrixTransform(ctm);
-
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
-
-      let left = transformedPoint.x;
-      let top = transformedPoint.y;
-
-      if (left < centerX) {
-        left += 10;
-      } else {
-        left -= tooltipWidth + 10;
-      }
-
-      if (top < centerY) {
-        top += 10;
-      } else {
-        top -= tooltipHeight + 10;
-      }
-
-      const maxBottom = 6 * 16; // 6rem in pixels
-      const maxTop = window.innerHeight - maxBottom - tooltipHeight - 10;
-      tooltip.style.left = `${Math.max(10, Math.min(left, window.innerWidth - tooltipWidth - 10))}px`;
-      tooltip.style.top = `${Math.max(10, Math.min(top, maxTop))}px`;
+      adjustTooltipPosition(event);
     }, 0);
-
   }
 
   function hideTooltip() {
@@ -140,7 +145,9 @@
     initializePlanetsPerOrbit(projects.length);
     generatePlanets();
     generateOrbitSpeeds();
-    tooltip = document.getElementById('tooltip');
+
+    window.addEventListener('resize', adjustTooltipPosition);
+    return () => window.removeEventListener('resize', adjustTooltipPosition);
   });
 </script>
 
@@ -202,6 +209,14 @@
 
     .tooltip a:active {
         color: var(--color-accent);
+    }
+
+    .tooltip img {
+        display: none;
+    }
+
+    .tooltip img.visible {
+        display: block;
     }
 
     .orbit-group {
@@ -270,7 +285,7 @@
     <a href={tooltipContent.link} target="_blank"><h3>{tooltipContent.name}</h3>
     </a>
     <p>{tooltipContent.description}</p>
-    {#if tooltipContent.image}
-        <img src={tooltipContent.image} alt={tooltipContent.name} width="100%"/>
-    {/if}
+    <img bind:this={img}
+         class:visible={tooltipContent.image}
+         src={tooltipContent.image} alt={tooltipContent.name} width="100%"/>
 </div>
