@@ -3,9 +3,13 @@
   import { projects } from "../Stores/Projects";
   import RNG from "../Utils/RNG";
 
+  const seed = 72;
+  const rng = new RNG(seed);
+
   let planets = [];
   let planetsPerOrbit: number[] = [];
-  let tooltip = null;
+  let orbitSpeeds: number[] = [];
+  let tooltip: HTMLElement;
   let tooltipContent = { name: '', description: '', link: '', image: '' };
 
   function generatePrimes(n: number): number[] {
@@ -51,8 +55,6 @@
     const centerX = 50;
     const centerY = 50;
     const maxRadius = 40;
-    const seed = 72;
-    const rng = new RNG(seed);
 
     let baseOrbitStart = rng.nextFloat() * Math.PI * 2;
     let orbit = 0;
@@ -74,38 +76,50 @@
         const radius = ((orbit + 1) / planetsPerOrbit.length) * maxRadius;
         const x = centerX + radius * Math.cos(angle);
         const y = centerY + radius * Math.sin(angle);
-        return { ...project, x, y };
+        return { ...project, x, y, orbit };
       });
+  }
+
+  function generateOrbitSpeeds() {
+    orbitSpeeds = planetsPerOrbit.map((_, i) => i * 30 + 300).reverse()
   }
 
   function showTooltip(event, planet) {
     tooltipContent = planet;
     setTimeout(() => {
-        tooltip.style.display = 'block';
-        const tooltipWidth = tooltip.offsetWidth;
-        const tooltipHeight = tooltip.offsetHeight;
-        const planetRect = event.target.getBoundingClientRect();
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 2;
+      tooltip.style.display = 'block';
+      const tooltipWidth = tooltip.offsetWidth;
+      const tooltipHeight = tooltip.offsetHeight;
 
-        let left = planetRect.left + (planetRect.width / 2);
-        let top = planetRect.top + (planetRect.height / 2);
+      const svgElement = event.target;
+      const ctm = svgElement.getScreenCTM();
+      const point = svgElement.ownerSVGElement.createSVGPoint();
+      point.x = svgElement.cx.baseVal.value;
+      point.y = svgElement.cy.baseVal.value;
+      const transformedPoint = point.matrixTransform(ctm);
 
-        if (left < centerX) {
-          left += 10;
-        } else {
-          left -= tooltipWidth + 10;
-        }
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
 
-        if (top < centerY) {
-          top += 10;
-        } else {
-          top -= tooltipHeight + 10
-        }
+      let left = transformedPoint.x;
+      let top = transformedPoint.y;
 
-        tooltip.style.left = `${Math.max(10, Math.min(left, window.innerWidth - tooltipWidth - 10))}px`;
-        tooltip.style.top = `${Math.max(10, Math.min(top, window.innerHeight - tooltipHeight - 10))}px`;
+      if (left < centerX) {
+        left += 10;
+      } else {
+        left -= tooltipWidth + 10;
+      }
+
+      if (top < centerY) {
+        top += 10;
+      } else {
+        top -= tooltipHeight + 10;
+      }
+
+      tooltip.style.left = `${Math.max(10, Math.min(left, window.innerWidth - tooltipWidth - 10))}px`;
+      tooltip.style.top = `${Math.max(10, Math.min(top, window.innerHeight - tooltipHeight - 10))}px`;
     }, 0);
+
   }
 
   function hideTooltip() {
@@ -115,6 +129,7 @@
   onMount(() => {
     initializePlanetsPerOrbit(projects.length);
     generatePlanets();
+    generateOrbitSpeeds();
     tooltip = document.getElementById('tooltip');
   });
 </script>
@@ -167,29 +182,45 @@
     .tooltip a:active {
         color: var(--color-accent);
     }
+
+    .orbit-group {
+        animation: orbit var(--orbit-speed) linear infinite;
+
+        transform-origin: center;
+    }
+
+    @keyframes orbit {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
 </style>
 
 <h1 class="title">Solar System of Projects</h1>
 
 <svg class="solar-system" viewBox="0 0 100 100">
     {#each planetsPerOrbit as _, i}
-        <circle cx="50" cy="50" r={(i + 1) * (40 / planetsPerOrbit.length)}
-                stroke="var(--color-base)" stroke-width="0.25" fill="none"/>
-    {/each}
-
-    {#each planets as planet (planet.name)}
-        <g class="planet-group">
-            <circle class="hitbox" cx={planet.x} cy={planet.y} r={4}
-                    on:mouseover={(e) => showTooltip(e, planet)}
-                    on:focus={(e) => showTooltip(e, planet)}
-                    on:mouseout={hideTooltip} on:blur={hideTooltip}/>
-            <circle class="planet" cx={planet.x} cy={planet.y}
-                    r={planet.brightness * 0.2 + 1}/>
+        <g class="orbit-group" style={`--orbit-speed: ${orbitSpeeds[i]}s`}>
+            <circle cx="50" cy="50" r={(i + 1) * (40 / planetsPerOrbit.length)}
+                    stroke="var(--color-base)" stroke-width="0.25" fill="none"/>
+            {#each planets.filter(p => p.orbit === i) as planet (planet.name)}
+                <g class="planet-group">
+                    <circle class="hitbox" cx={planet.x} cy={planet.y} r={4}
+                            on:mouseover={(e) => showTooltip(e, planet)}
+                            on:focus={(e) => showTooltip(e, planet)}
+                            on:mouseout={hideTooltip} on:blur={hideTooltip}/>
+                    <circle class="planet" cx={planet.x} cy={planet.y}
+                            r={planet.brightness * 0.2 + 1}/>
+                </g>
+            {/each}
         </g>
     {/each}
 </svg>
 
-<div id="tooltip" class="tooltip"
+<div id="tooltip" class="tooltip" bind:this={tooltip}
      on:mouseover={() => setTimeout(() => tooltip.style.display = 'block', 0)}
      on:focus={() => setTimeout(() => tooltip.style.display = 'block', 0)}
      on:mouseout={hideTooltip}
