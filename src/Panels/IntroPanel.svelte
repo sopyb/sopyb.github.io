@@ -193,7 +193,7 @@
         }
 
         .info::before {
-            display: none;;
+            display: none;
         }
 
         .info h1 {
