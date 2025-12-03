@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { projects } from "../Stores/Projects";
   import RNG from "../Utils/RNG";
+  import { processCelesteWiggle } from "../Utils/TextWiggle";
 
   const seed = 72;
   const rng = new RNG(seed);
@@ -292,7 +293,7 @@
 >
     <a href={tooltipContent.link} target="_blank"><h3>{tooltipContent.name}</h3>
     </a>
-    <p>{tooltipContent.description}</p>
+    <p>{@html processCelesteWiggle(tooltipContent.description)}</p>
     <img bind:this={img}
          class:visible={tooltipContent.image}
          src={tooltipContent.image} alt={tooltipContent.name} width="100%"/>

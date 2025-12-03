@@ -72,3 +72,43 @@ body {
 .app {
     width: 100vw;
 }
+
+@keyframes celeste-wiggle {
+    0%    { transform: translateY(0); }
+    5%    { transform: translateY(-0.93px); }
+    10%   { transform: translateY(-1.76px); }
+    15%   { transform: translateY(-2.43px); }
+    20%   { transform: translateY(-2.82px); }
+    25%   { transform: translateY(-3px); }
+    30%   { transform: translateY(-2.82px); }
+    35%   { transform: translateY(-2.43px); }
+    40%   { transform: translateY(-1.76px); }
+    45%   { transform: translateY(-0.93px); }
+    50%   { transform: translateY(0); }
+    55%   { transform: translateY(0.93px); }
+    60%   { transform: translateY(1.76px); }
+    65%   { transform: translateY(2.43px); }
+    70%   { transform: translateY(2.82px); }
+    75%   { transform: translateY(3px); }
+    80%   { transform: translateY(2.82px); }
+    85%   { transform: translateY(2.43px); }
+    90%   { transform: translateY(1.76px); }
+    95%   { transform: translateY(0.93px); }
+    100%  { transform: translateY(0); }
+}
+
+.celeste-textwiggle {
+    display: inline-flex;
+}
+
+.celeste-textwiggle span {
+    display: inline-block;
+    animation: celeste-wiggle 1s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .celeste-textwiggle span {
+        display: inline-block;
+        animation: unset;
+    }
+}
