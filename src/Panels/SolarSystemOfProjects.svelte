@@ -154,6 +154,13 @@
     generatePlanets();
     generateOrbitSpeeds();
 
+    projects.forEach(project => {
+      if (project.image) {
+        const preloadImg = new window.Image();
+        preloadImg.src = project.image;
+      }
+    });
+
     img.addEventListener('load', adjustTooltipPositionImg);
     return () => img.removeEventListener('load', adjustTooltipPositionImg);
   });
