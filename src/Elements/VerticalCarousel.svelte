@@ -127,7 +127,7 @@
     .navigationBar {
         position: fixed;
         top: 50%;
-        right: 1rem;
+        left: 1rem;
         transform: translateY(-50%);
         display: flex;
         flex-direction: column;

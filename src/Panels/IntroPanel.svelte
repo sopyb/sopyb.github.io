@@ -117,6 +117,7 @@
         left: 0;
         right: 0;
         bottom: 0;
+        padding-left: 5rem;
         display: flex;
         align-items: center;
         justify-content: start;
@@ -186,6 +187,7 @@
             justify-content: center;
             align-items: start;
             gap: 0;
+            padding-left: 0;
         }
 
         .info {
